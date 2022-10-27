@@ -1,0 +1,17 @@
+.box{
+    position: absolute;
+    width: 600px;
+    height: 912px;
+    left: 340px;
+    top: 88px;
+
+    /* interface/bg */
+
+    background: #131316;
+}
+.card {
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 1;
+}
