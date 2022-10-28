@@ -27,5 +27,6 @@
     flex-grow: 0;
 }
 .header-logo {
-    flex: 3;
+    flex: 1;
+    padding-right: 120px;
 }

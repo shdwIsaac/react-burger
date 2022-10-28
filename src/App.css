@@ -42,10 +42,13 @@
   top: 88px;
   width: 80%;
   margin: auto;
+
 }
 .app-content-constructor {
   display: flex;
-}
+  gap: 40px;
+  justify-content: center;
+} 
 
 .app-content-ingridient-wrapper {
   flex: 1;

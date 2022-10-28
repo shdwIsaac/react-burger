@@ -2,65 +2,88 @@ import React from "react";
 import { Tab, Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import data from '../../utils/data.json'
 import './burger-ingredients-module.css'
+import PropTypes from "prop-types";
 
-
+const burgerIngredientsPropTypes = PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+})
 
 export const BurgerIngredients = () => {
     const [current, setCurrent] = React.useState('one')
-    const ref = React.useRef(null)
+
+    const handleTabClick = (value) => {
+        window.location.href = `#${value}`
+        setCurrent(value)
+    }
+
     return(
-        <div className="box pb-4">
-            <div style={{ display: 'flex' }}>
-                <Tab value="one" active={current === 'one'} onClick={setCurrent}>
+
+        <div className="ingredient-content box pb-4">
+            <p className="pt-10 pb-5 text text_type_main-large left">Соберите бургер</p>
+            <div className="ingredients-tabs" style={{ display: 'flex' }}>
+                <Tab className="ingredient-tab" value="buns" active={current === 'buns'} onClick={handleTabClick}>
                     Булки
                 </Tab>
-                <Tab value="two" active={current === 'two'} onClick={setCurrent}>
+                <Tab className="ingredient-tab" value="sauces" active={current === 'sauces'} onClick={handleTabClick}>
                     Соусы
                 </Tab>
-                <Tab value="three" active={current === 'three'} onClick={setCurrent}>
+                <Tab className="ingredient-tab" value="mains" active={current === 'mains'} onClick={handleTabClick}>
                     Начинки
                 </Tab>
             </div>
-            <div className="scroll">
-                <p ref={ref} className="text-left text text_type_main-medium pb-6">
-                    Булки
-                </p>
-                <div style={{ display: 'flex', flexFlow :'wrap'}} >
-                    {data.map((ingredient, index)=> {
-                        return ingredient.type === 'bun' &&
-                            <div className="card" style={{width: '50%'}}>
-                                <img src={ingredient.image}/>
-                                    <p className="text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                <p className="text text_type_main-medium">{ingredient.name}</p>
-                            </div>
-                    })}
+            <div className="ingredients-scroll">
+                <div id="buns" className="ingredient-type">
+                    <p className="text-left text text_type_main-medium pb-6">
+                        Булки
+                    </p>
+                    <div className="ingrediens-wrapper">
+                        {data.map((ingredient, index) => {
+                            const isShowCount = index === 0
+                            return ingredient.type === 'bun' &&
+                                <div className="card">
+                                    <img src={ingredient.image}/>
+                                        <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
+                                    <p className="text text_type_main-default">{ingredient.name}</p>
+                                    {isShowCount && <Counter count={1} size="default" />}
+                                </div>
+                        })}
+                    </div>
                 </div>
-                <p ref={ref} className="text-left text text_type_main-medium pb-6">
-                    Соусы
-                </p>
-                <div style={{ display: 'flex', flexFlow :'wrap'}} >
-                    {data.map((ingredient, index)=> {
-                        return ingredient.type === 'sauce' &&
-
-                            <div className="card" style={{width: '50%'}}>
-                                <img src={ingredient.image}/>
-                                <p className="text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                <p className="text text_type_main-medium">{ingredient.name}</p>
-                            </div>
-                    })}
+                <div id="sauces" className="ingredient-type">
+                    <p className="text-left text text_type_main-medium pb-6">
+                        Соусы
+                    </p>
+                    <div className="ingrediens-wrapper">
+                        {data.map((ingredient, index)=> {
+                            const isShowCount = ingredient._id === '60666c42cc7b410027a1a9b8'
+                            return ingredient.type === 'sauce' &&
+                                <div className="card">
+                                    <img src={ingredient.image}/>
+                                    <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
+                                    <p className="text text_type_main-default">{ingredient.name}</p>
+                                    {isShowCount && <Counter count={1} size="default" />}
+                                </div>
+                        })}
+                    </div>
                 </div>
-                <p ref={ref} className="text-left text text_type_main-medium pb-6">
-                    Начинки
-                </p>
-                <div style={{ display: 'flex', flexFlow :'wrap' }} >
-                    {data.map((ingredient, index)=> {
-                        return ingredient.type === 'main' &&
-                            <div className="card" style={{width: '50%'}}>
-                                <img src={ingredient.image}/>
-                                <p className="text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                <p className="text text_type_main-medium">{ingredient.name}</p>
-                            </div>
-                    })}
+                <div id="mains" className="ingredient-type">
+                    <p className="text-left text text_type_main-medium pb-6">
+                        Начинки
+                    </p>
+                    <div className="ingrediens-wrapper">
+                        {data.map((ingredient, index)=> {
+                            return ingredient.type === 'main' &&
+                                <div className="card">
+                                    <img src={ingredient.image}/>
+                                    <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
+                                    <p className="text text_type_main-default">{ingredient.name}</p>
+                                </div>
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

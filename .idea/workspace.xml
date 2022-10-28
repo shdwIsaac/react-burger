@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header-module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Subversion",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Issue.Navigation",
     "ts.external.directory.path": "C:\\Users\\User\\WebstormProjects\\react-burger\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -84,7 +85,7 @@
       <updated>1666764392629</updated>
       <workItem from="1666764393864" duration="49000" />
       <workItem from="1666764775320" duration="6866000" />
-      <workItem from="1666772887187" duration="33835000" />
+      <workItem from="1666772887187" duration="36265000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -93,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666883226193</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix">
+      <created>1666964145713</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666964145713</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +139,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx</url>
-          <line>65</line>
+          <line>88</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

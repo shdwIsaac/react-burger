@@ -10,14 +10,12 @@ function App() {
     <div className="App">
       <AppHeader/>
       <div className="app-content">
-        <p className="pt-10 pb-5 text text_type_main-large left">Соберите бургер</p>
+
+
         <div className="app-content-constructor">
-          <div className="p-5">
-              <BurgerIngredients/>
-          </div>
-          <div className="p-5">
-              <BurgerConstructor/>
-          </div>
+
+            <BurgerIngredients/>
+            <BurgerConstructor/>
         </div>
 
       </div>
