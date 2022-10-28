@@ -1,17 +1,17 @@
 .box{
-    position: absolute;
-    width: 600px;
-    height: 912px;
-    left: 340px;
-    top: 88px;
-
-    /* interface/bg */
-
     background: #131316;
+    height: 90%;
 }
 .card {
-    flex: none;
+    flex: 0 1 auto;
     order: 2;
     align-self: stretch;
     flex-grow: 1;
+}
+.text-left {
+    text-align: left;
+}
+.scroll {
+    overflow: scroll;
+    overflow-x: hidden;
 }

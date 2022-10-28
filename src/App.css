@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.app-content {
+  position: relative;
+  top: 88px;
+  width: 80%;
+  margin: auto;
+}
+.app-content-constructor {
+  display: flex;
+}
+
+.app-content-ingridient-wrapper {
+  flex: 1;
+}
+
+.app-content-constructor-wrapper {
+  flex: 1;
+}
+
+.left {
+  text-align: initial;
+}

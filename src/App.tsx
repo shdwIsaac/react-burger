@@ -9,15 +9,18 @@ function App() {
   return (
     <div className="App">
       <AppHeader/>
-        <div style={{display : 'flex'}} className="pl-10">
-            <div>
-                <p className="pt-10 pb-5 text text_type_main-large">Соберите бургер</p>
-                <BurgerIngredients/>
-            </div>
-            <div className="pt-25">
-                <BurgerConstructor/>
-            </div>
+      <div className="app-content">
+        <p className="pt-10 pb-5 text text_type_main-large left">Соберите бургер</p>
+        <div className="app-content-constructor">
+          <div className="p-5">
+              <BurgerIngredients/>
+          </div>
+          <div className="p-5">
+              <BurgerConstructor/>
+          </div>
         </div>
+
+      </div>
     </div>
   );
 }
