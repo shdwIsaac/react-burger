@@ -48,9 +48,11 @@ export const BurgerConstructor = () => {
       </div>
       <div className="controls pt-10 pl-25">
             <div><p className="pt-4 mr-10 text text_type_digits-medium">660 <CurrencyIcon type="primary"/></p></div>
-            <Button onClick="" type="primary" size="large">
-                Оформить заказ
-            </Button>
+          <form type="submit">
+              <Button type="primary" onClick="" size="large">
+                  Оформить заказ
+              </Button>
+          </form>
         </div>
     </div>
   );
