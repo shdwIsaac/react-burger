@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import {
   Button,
@@ -6,11 +6,14 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import data from "../../utils/data.json";
 import "./burger-constructor-module.css";
+import {PopupOrder} from "../PopupOrder/popup-order";
 
 
 
 
 export const BurgerConstructor = () => {
+
+    const [showPopup, setShowPopup] = useState(false);
   return (
     <div className="constructor-content">
       <div className="bun-wrapper">
@@ -25,10 +28,9 @@ export const BurgerConstructor = () => {
       <div className="constructor-scroll">
         {data.slice(1).map((ingredient, index) => {
           return (
-            <div>
+            <div key={ingredient._id}>
               <DragIcon type="primary" />
               <ConstructorElement
-                key={ingredient.id}
                 text={ingredient.name}
                 price={ingredient.price}
                 thumbnail={ingredient.image}
@@ -48,12 +50,12 @@ export const BurgerConstructor = () => {
       </div>
       <div className="controls pt-10 pl-25">
             <div><p className="pt-4 mr-10 text text_type_digits-medium">660 <CurrencyIcon type="primary"/></p></div>
-          <form type="submit">
-              <Button type="primary" onClick="" size="large">
+              <Button htmlType="button" type="primary" onClick={()=>setShowPopup(!showPopup)} size="large">
                   Оформить заказ
               </Button>
-          </form>
         </div>
+        {showPopup && <PopupOrder/>}
     </div>
+
   );
 };

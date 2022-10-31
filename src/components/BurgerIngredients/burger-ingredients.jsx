@@ -38,7 +38,7 @@ export const BurgerIngredients = () => {
                         {data.map((ingredient, index) => {
                             const isShowCount = index === 0
                             return ingredient.type === 'bun' &&
-                                <div className="card" key={ingredient.id}>
+                                <div className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                         <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>
@@ -55,7 +55,7 @@ export const BurgerIngredients = () => {
                         {data.map((ingredient, index)=> {
                             const isShowCount = ingredient._id === '60666c42cc7b410027a1a9b8'
                             return ingredient.type === 'sauce' &&
-                                <div className="card" key={ingredient.id}>
+                                <div className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                     <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>
@@ -71,7 +71,7 @@ export const BurgerIngredients = () => {
                     <div className="ingredients-wrapper">
                         {data.map((ingredient, index)=> {
                             return ingredient.type === 'main' &&
-                                <div className="card" key={ingredient.id}>
+                                <div className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                     <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>

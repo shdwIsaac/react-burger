@@ -4,6 +4,7 @@ import './App.css';
 import {AppHeader} from "../AppHeader/app-header";
 import {BurgerIngredients} from "../BurgerIngredients/burger-ingredients";
 import {BurgerConstructor} from "../BurgerConstructor/burger-constructor";
+import {PopupOrder} from "../PopupOrder/popup-order";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
             <BurgerIngredients/>
             <BurgerConstructor/>
         </div>
-
       </div>
+
     </div>
+
   );
 }
 
