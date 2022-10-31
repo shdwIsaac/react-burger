@@ -6,16 +6,9 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import data from "../../utils/data.json";
 import "./burger-constructor-module.css";
-import PropTypes from "prop-types";
 
 
-const burgerConstructorPropTypes = PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-})
+
 
 export const BurgerConstructor = () => {
   return (
@@ -23,11 +16,10 @@ export const BurgerConstructor = () => {
       <div className="bun-wrapper">
         <ConstructorElement
           type="top"
-          key="60666c42cc7b410027a1a9b1"
           isLocked
-          text="Краторная булка N-200i (верх)"
-          price={1255}
-          thumbnail="https://code.s3.yandex.net/react/code/bun-02.png"
+          text={data[0].name+" (верх)"}
+          price={data[0].price}
+          thumbnail={data[0].image}
         />
       </div>
       <div className="constructor-scroll">
@@ -48,11 +40,10 @@ export const BurgerConstructor = () => {
       <div className="bun-wrapper">
         <ConstructorElement
           type="bottom"
-          key="60666c42cc7b410027a1a9b1"
           isLocked
-          text="Краторная булка N-200i (ybp)"
-          price={1255}
-          thumbnail="https://code.s3.yandex.net/react/code/bun-02.png"
+          text={data[0].name+" (низ)"}
+          price={data[0].price}
+          thumbnail={data[0].image}
         />
       </div>
       <div className="controls pt-10 pl-25">
