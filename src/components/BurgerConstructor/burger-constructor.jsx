@@ -1,17 +1,14 @@
 import React, {useState} from "react";
-import { ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import {
-  Button,
-  CurrencyIcon,
-} from "@ya.praktikum/react-developer-burger-ui-components";
-import data from "../../utils/data.json";
+import {ConstructorElement, DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import {Button, CurrencyIcon,} from "@ya.praktikum/react-developer-burger-ui-components";
 import "./burger-constructor-module.css";
-import {PopupOrder} from "../PopupOrder/popup-order";
+import {OrderDetails} from "../OrderDetails/order-details";
+import {BurgerConstructorPropTypes} from './burger-constructor-prop-types'
 
 
 
 
-export const BurgerConstructor = () => {
+export const BurgerConstructor = (props) => {
 
     const [showPopup, setShowPopup] = useState(false);
   return (
@@ -20,13 +17,13 @@ export const BurgerConstructor = () => {
         <ConstructorElement
           type="top"
           isLocked
-          text={data[0].name+" (верх)"}
-          price={data[0].price}
-          thumbnail={data[0].image}
+          text={props.data[0].name+" (верх)"}
+          price={props.data[0].price}
+          thumbnail={props.data[0].image}
         />
       </div>
       <div className="constructor-scroll">
-        {data.slice(1).map((ingredient, index) => {
+        {props.data.slice(1).map((ingredient, index) => {
           return (
             <div key={ingredient._id}>
               <DragIcon type="primary" />
@@ -43,9 +40,9 @@ export const BurgerConstructor = () => {
         <ConstructorElement
           type="bottom"
           isLocked
-          text={data[0].name+" (низ)"}
-          price={data[0].price}
-          thumbnail={data[0].image}
+          text={props.data[0].name+" (низ)"}
+          price={props.data[0].price}
+          thumbnail={props.data[0].image}
         />
       </div>
       <div className="controls pt-10 pl-25">
@@ -54,8 +51,9 @@ export const BurgerConstructor = () => {
                   Оформить заказ
               </Button>
         </div>
-        {showPopup && <PopupOrder/>}
+        {showPopup && <OrderDetails header="" setShowPopup={setShowPopup}/>}
     </div>
 
   );
-};
+}
+BurgerConstructor.propTypes = BurgerConstructorPropTypes;
