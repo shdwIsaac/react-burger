@@ -12,14 +12,16 @@ export const Modal = (props) => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         document.addEventListener('keydown', keyDownEscape);
         return () => {
-            document.removeEventListener("keydown",keyDownEscape);
+            document.removeEventListener("keydown", keyDownEscape);
         }
     }, [])
 
-    return <ModalOverlay setShowPopup={props.setShowPopup}>
+    return (
+        <>
+
         <div className="modalContainer">
             <div className="header">
                 <div className="text text_type_main-medium">
@@ -34,10 +36,11 @@ export const Modal = (props) => {
                     </button>
                 </div>
             </div>
-            <div>
+            <div className="centered">
                 {props.children}
             </div>
         </div>
-    </ModalOverlay>
-};
+            <ModalOverlay setShowPopup={props.setShowPopup}/>
+        </>
+            ) };
 Modal.propTypes=ModalPropTypes;

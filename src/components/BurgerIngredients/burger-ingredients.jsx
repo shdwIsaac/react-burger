@@ -39,7 +39,7 @@ export const BurgerIngredients = (props) => {
                         {props.data.map((ingredient, index) => {
                             const isShowCount = index === 0
                             return ingredient.type === 'bun' &&
-                                <div onDoubleClick={()=>{
+                                <div onClick={()=>{
                                     setShowPopup(!showPopup)
                                     setCurrentIngredient(ingredient)
                                 }} className="card" key={ingredient._id}>
@@ -59,7 +59,7 @@ export const BurgerIngredients = (props) => {
                         {props.data.map((ingredient, index)=> {
                             const isShowCount = ingredient._id === '60666c42cc7b410027a1a9b8'
                             return ingredient.type === 'sauce' &&
-                                <div onDoubleClick={
+                                <div onClick={
                                     ()=>{
                                         setShowPopup(!showPopup)
                                         setCurrentIngredient(ingredient)
@@ -80,7 +80,7 @@ export const BurgerIngredients = (props) => {
                     <div className="ingredients-wrapper">
                         {props.data.map((ingredient, index)=> {
                             return ingredient.type === 'main' &&
-                                <div onDoubleClick={()=>{
+                                <div onClick={()=>{
                                     setShowPopup(!showPopup)
                                     setCurrentIngredient(ingredient)
                                 }} className="card" key={ingredient._id}>

@@ -12,7 +12,9 @@ function App() {
         data: []
     });
 
-
+    //Константу и вызов fetch стоит спрятать в отдельный файл, чтобы тут была только логика присвоения полученных данных, а вся работа с запросом была бы спрятана
+    //Разбить бургер ингридиент на компоненту и вызывать просто 3 раза
+    //вынести разделенние данных в костанту черех фильтр в бургер ингридиент
     useEffect(() => {
         const url = "https://norma.nomoreparties.space/api/ingredients";
 
@@ -20,6 +22,9 @@ function App() {
             try {
                 setState({ ...state, hasError: false, isLoading: true });
                 const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Ответ сети был не ok.');
+                }
                 const dataJson = await response.json();
                 setState({ ...state, data: dataJson.data, isLoading: false })
                 console.log(dataJson.data);
@@ -47,8 +52,7 @@ function App() {
                     <BurgerConstructor data={data}/>
         </div>}
       </div>
-        <div id="react-modals">
-        </div>
+
     </div>
 
   );

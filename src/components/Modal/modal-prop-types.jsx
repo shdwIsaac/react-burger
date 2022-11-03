@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export let ModalPropTypes = {
-    setShowPopup: PropTypes.object.isRequired,
+    setShowPopup: PropTypes.func.isRequired,
     header: PropTypes.string,
-    children : PropTypes.object
+    children : PropTypes.array
 }
