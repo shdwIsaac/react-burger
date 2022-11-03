@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="step-2">
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="step-2 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-prop-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal-module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-prop-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +87,7 @@
       <workItem from="1666764393864" duration="49000" />
       <workItem from="1666764775320" duration="6866000" />
       <workItem from="1666772887187" duration="37639000" />
-      <workItem from="1667052411934" duration="29976000" />
+      <workItem from="1667052411934" duration="30203000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -148,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667388187118</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="step-2 fix">
+      <created>1667479316561</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667479316561</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +180,7 @@
     <MESSAGE value="step-1 fix" />
     <MESSAGE value="step-2 add popup" />
     <MESSAGE value="step-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="step-2" />
+    <MESSAGE value="step-2 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="step-2 fix" />
   </component>
 </project>

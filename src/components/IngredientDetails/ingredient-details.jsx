@@ -6,9 +6,9 @@ import {IngredientDetailsPropTypes} from "./ingredient-details-prop-types";
 
 export const IngredientDetails = (props) => {
 
-    const modalRoot = document.getElementById("react-modals");
 
-    return ReactDOM.createPortal(
+
+    return (
         <Modal header={props.header} setShowPopup={props.setShowPopup}>
             <img className="mb-15 mt-15 image" src={props.ingredient.image}/>
             <p className="text text_type_main-default">{props.ingredient.name}</p>
@@ -18,7 +18,7 @@ export const IngredientDetails = (props) => {
                 <p className="text text_type_main-default text_color_inactive">Жиры, г {props.ingredient.fat}</p>
                 <p className="text text_type_main-default text_color_inactive">Углеводы, г {props.ingredient.carbohydrates}</p>
             </div>
-        </Modal>, modalRoot
+        </Modal>
     )
 }
 IngredientDetails.propTypes = IngredientDetailsPropTypes;

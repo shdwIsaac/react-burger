@@ -3,8 +3,11 @@ import {ModalOverlay} from "../ModalOverlay/modal-overlay";
 import './modal-module.css'
 import {CloseIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import {ModalPropTypes} from "./modal-prop-types";
+import ReactDOM from "react-dom";
 
 export const Modal = (props) => {
+
+    const modalRoot = document.getElementById("react-modals");
 
     const keyDownEscape = (e) => {
         if (e.key === 'Escape') {
@@ -19,7 +22,7 @@ export const Modal = (props) => {
         }
     }, [])
 
-    return (
+    return ReactDOM.createPortal(
         <>
 
         <div className="modalContainer">
@@ -41,6 +44,6 @@ export const Modal = (props) => {
             </div>
         </div>
             <ModalOverlay setShowPopup={props.setShowPopup}/>
-        </>
-            ) };
+        </>, modalRoot
+    ) };
 Modal.propTypes=ModalPropTypes;
