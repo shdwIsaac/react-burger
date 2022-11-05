@@ -3,12 +3,17 @@ import { Tab, Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger
 import './burger-ingredients-module.css'
 import {IngredientDetails} from "../IngredientDetails/ingredient-details";
 import {BurgerIngredientsPropTypes} from "./burger-ingredients-prop-types";
+import {TabComponent} from "../TabComponent/tab-component";
 
 
 export const BurgerIngredients = (props) => {
-    const [current, setCurrent] = React.useState('one')
+    const [current, setCurrent] = useState('one')
     const [showPopup, setShowPopup] = useState(false);
     const [currentIngredient, setCurrentIngredient] = useState(null);
+
+    const buns = props.data.filter((ingredient) => ingredient.type==='bun');
+    const mains = props.data.filter((ingredient) => ingredient.type==='main');
+    const sauces = props.data.filter((ingredient) => ingredient.type==='sauce');
 
 
     const handleTabClick = (value) => {
@@ -31,66 +36,9 @@ export const BurgerIngredients = (props) => {
                 </Tab>
             </div>
             <div className="ingredients-scroll">
-                <div id="buns" className="ingredient-type">
-                    <p className="text-left text text_type_main-medium pb-6">
-                        Булки
-                    </p>
-                    <div className="ingredients-wrapper">
-                        {props.data.map((ingredient, index) => {
-                            const isShowCount = index === 0
-                            return ingredient.type === 'bun' &&
-                                <div onClick={()=>{
-                                    setShowPopup(!showPopup)
-                                    setCurrentIngredient(ingredient)
-                                }} className="card" key={ingredient._id}>
-                                    <img src={ingredient.image}/>
-                                        <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                    <p className="text text_type_main-default">{ingredient.name}</p>
-                                    {isShowCount && <Counter count={1} size="default" />}
-                                </div>
-                        })}
-                    </div>
-                </div>
-                <div id="sauces" className="ingredient-type">
-                    <p className="text-left text text_type_main-medium pb-6">
-                        Соусы
-                    </p>
-                    <div className="ingredients-wrapper">
-                        {props.data.map((ingredient, index)=> {
-                            const isShowCount = ingredient._id === '60666c42cc7b410027a1a9b8'
-                            return ingredient.type === 'sauce' &&
-                                <div onClick={
-                                    ()=>{
-                                        setShowPopup(!showPopup)
-                                        setCurrentIngredient(ingredient)
-                                    }
-                                } className="card" key={ingredient._id}>
-                                    <img src={ingredient.image}/>
-                                    <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                    <p className="text text_type_main-default">{ingredient.name}</p>
-                                    {isShowCount && <Counter count={1} size="default" />}
-                                </div>
-                        })}
-                    </div>
-                </div>
-                <div id="mains" className="ingredient-type">
-                    <p className="text-left text text_type_main-medium pb-6">
-                        Начинки
-                    </p>
-                    <div className="ingredients-wrapper">
-                        {props.data.map((ingredient, index)=> {
-                            return ingredient.type === 'main' &&
-                                <div onClick={()=>{
-                                    setShowPopup(!showPopup)
-                                    setCurrentIngredient(ingredient)
-                                }} className="card" key={ingredient._id}>
-                                    <img src={ingredient.image}/>
-                                    <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
-                                    <p className="text text_type_main-default">{ingredient.name}</p>
-                                </div>
-                        })}
-                    </div>
-                </div>
+               <TabComponent id="buns" data={buns} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
+                <TabComponent id="sauces" data={sauces} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
+                <TabComponent id="mains" data={mains} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
             </div>
             {showPopup && <IngredientDetails header="Детали ингредиента" setShowPopup={setShowPopup} ingredient={currentIngredient}/>}
         </div>

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="step-2 fix">
-      <change afterPath="$PROJECT_DIR$/src/components/App/app-functions.jsx" afterDir="false" />
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step1 initial">
+      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component-module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/burger-constructor-context.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint1/step1" />
+        <entry key="$PROJECT_DIR$" value="sprint1/step2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,7 +93,7 @@
       <workItem from="1666764775320" duration="6866000" />
       <workItem from="1666772887187" duration="37639000" />
       <workItem from="1667052411934" duration="31872000" />
-      <workItem from="1667646197805" duration="360000" />
+      <workItem from="1667646197805" duration="7456000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -152,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667479566502</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sprint2/step1 initial">
+      <created>1667646763634</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667646763634</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +201,7 @@
     <MESSAGE value="step-2 add popup" />
     <MESSAGE value="step-2" />
     <MESSAGE value="step-2 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="step-2 fix" />
+    <MESSAGE value="sprint2/step1 initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step1 initial" />
   </component>
 </project>

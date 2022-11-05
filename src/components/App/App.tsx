@@ -5,6 +5,7 @@ import {AppHeader} from "../AppHeader/app-header";
 import {BurgerIngredients} from "../BurgerIngredients/burger-ingredients";
 import {BurgerConstructor} from "../BurgerConstructor/burger-constructor";
 import {fetchData} from './app-functions.jsx';
+import {IngredientsContext} from "../../services/burger-constructor-context";
 
 function App() {
     const [state, setState] = useState({
@@ -13,8 +14,7 @@ function App() {
         data: []
     });
 
-    //Разбить бургер ингридиент на компоненту и вызывать просто 3 раза
-    //вынести разделенние данных в костанту черех фильтр в бургер ингридиент
+
     useEffect(() => {
         fetchData(state,setState);
     }, []);
@@ -25,14 +25,16 @@ function App() {
     <div className="App">
       <AppHeader/>
       <div className="app-content">
-
+<IngredientsContext.Provider value={state.data}>
           {!isLoading &&
               !hasError &&
               data.length &&
         <div className="app-content-constructor">
                     <BurgerIngredients data={data}/>
-                    <BurgerConstructor data={data}/>
-        </div>}
+                    <BurgerConstructor/>
+        </div>
+          }
+</IngredientsContext.Provider>
       </div>
 
     </div>
