@@ -1,21 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import { Tab, Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import data from '../../utils/data.json'
 import './burger-ingredients-module.css'
+import {IngredientDetails} from "../IngredientDetails/ingredient-details";
+import {BurgerIngredientsPropTypes} from "./burger-ingredients-prop-types";
 
 
-export const BurgerIngredients = () => {
+export const BurgerIngredients = (props) => {
     const [current, setCurrent] = React.useState('one')
+    const [showPopup, setShowPopup] = useState(false);
+    const [currentIngredient, setCurrentIngredient] = useState(null);
+
 
     const handleTabClick = (value) => {
         let element = document.getElementById(value);
         element.scrollIntoView({ behavior: "smooth" });
-        //window.location.href = `#${value}`
-        //setCurrent(value)
     }
 
     return(
-
         <div className="ingredient-content box pb-4">
             <p className="pt-10 pb-5 text text_type_main-large left">Соберите бургер</p>
             <div className="ingredients-tabs">
@@ -35,10 +36,13 @@ export const BurgerIngredients = () => {
                         Булки
                     </p>
                     <div className="ingredients-wrapper">
-                        {data.map((ingredient, index) => {
+                        {props.data.map((ingredient, index) => {
                             const isShowCount = index === 0
                             return ingredient.type === 'bun' &&
-                                <div className="card" key={ingredient.id}>
+                                <div onClick={()=>{
+                                    setShowPopup(!showPopup)
+                                    setCurrentIngredient(ingredient)
+                                }} className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                         <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>
@@ -52,10 +56,15 @@ export const BurgerIngredients = () => {
                         Соусы
                     </p>
                     <div className="ingredients-wrapper">
-                        {data.map((ingredient, index)=> {
+                        {props.data.map((ingredient, index)=> {
                             const isShowCount = ingredient._id === '60666c42cc7b410027a1a9b8'
                             return ingredient.type === 'sauce' &&
-                                <div className="card" key={ingredient.id}>
+                                <div onClick={
+                                    ()=>{
+                                        setShowPopup(!showPopup)
+                                        setCurrentIngredient(ingredient)
+                                    }
+                                } className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                     <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>
@@ -69,9 +78,12 @@ export const BurgerIngredients = () => {
                         Начинки
                     </p>
                     <div className="ingredients-wrapper">
-                        {data.map((ingredient, index)=> {
+                        {props.data.map((ingredient, index)=> {
                             return ingredient.type === 'main' &&
-                                <div className="card" key={ingredient.id}>
+                                <div onClick={()=>{
+                                    setShowPopup(!showPopup)
+                                    setCurrentIngredient(ingredient)
+                                }} className="card" key={ingredient._id}>
                                     <img src={ingredient.image}/>
                                     <p className="ingredient-price text_type_digits-default">{ingredient.price} <CurrencyIcon type="primary"/></p>
                                     <p className="text text_type_main-default">{ingredient.name}</p>
@@ -80,6 +92,8 @@ export const BurgerIngredients = () => {
                     </div>
                 </div>
             </div>
+            {showPopup && <IngredientDetails header="Детали ингредиента" setShowPopup={setShowPopup} ingredient={currentIngredient}/>}
         </div>
     );
 }
+BurgerIngredients.propsType = BurgerIngredientsPropTypes

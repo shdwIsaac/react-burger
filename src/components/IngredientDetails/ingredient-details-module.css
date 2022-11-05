@@ -1,0 +1,9 @@
+.description {
+    display: flex;
+    gap: 20px;
+    align-self: center;
+}
+.image {
+    width: 480px;
+    height: 240px;
+}

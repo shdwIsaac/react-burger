@@ -1,0 +1,37 @@
+.modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: #1C1C21;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -290px;
+    position: fixed;
+}
+.titleCloseBtn {
+    justify-content: flex-end;
+    align-self: end;
+    margin-left: auto;
+}
+
+.titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header{
+    display: flex;
+}
+.headerText{
+    margin: 0;
+}
+.centered{
+   align-self: center;
+    align-content: center;
+    text-align-last: center;
+}
