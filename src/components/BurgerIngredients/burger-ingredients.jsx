@@ -1,47 +1,82 @@
-import React, {useState} from "react";
-import { Tab, Counter, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import './burger-ingredients-module.css'
+import React, {useEffect, useRef, useState} from "react";
+import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
+import styles from './burger-ingredients.module.css'
 import {IngredientDetails} from "../IngredientDetails/ingredient-details";
-import {BurgerIngredientsPropTypes} from "./burger-ingredients-prop-types";
 import {TabComponent} from "../TabComponent/tab-component";
+import {Modal} from "../Modal/modal";
+import {useDispatch, useSelector} from "react-redux";
+import {ingredientsSelector} from "../../services/slices/ingredients";
+import {modalSelector} from "../../services/slices/modal";
 
 
-export const BurgerIngredients = (props) => {
-    const [current, setCurrent] = useState('one')
-    const [showPopup, setShowPopup] = useState(false);
-    const [currentIngredient, setCurrentIngredient] = useState(null);
+export const BurgerIngredients = () => {
 
-    const buns = props.data.filter((ingredient) => ingredient.type==='bun');
-    const mains = props.data.filter((ingredient) => ingredient.type==='main');
-    const sauces = props.data.filter((ingredient) => ingredient.type==='sauce');
+    const dispatch=useDispatch()
+    const {ingredients} = useSelector(ingredientsSelector);
+    const {isOpenIngredient} = useSelector(modalSelector)
+
+    const buns = ingredients.filter((ingredient) => ingredient.type === 'bun');
+    const mains = ingredients.filter((ingredient) => ingredient.type === 'main');
+    const sauces = ingredients.filter((ingredient) => ingredient.type === 'sauce');
+
+    const bunsRef = useRef(null)
+    const saucesRef = useRef(null)
+    const mainsRef = useRef(null)
 
 
-    const handleTabClick = (value) => {
-        let element = document.getElementById(value);
-        element.scrollIntoView({ behavior: "smooth" });
+    const executeScroll = (ref) => {
+        const element = ref
+        element.current.scrollIntoView({
+            behavior: "smooth",
+            inline: "start"
+        });
+
+
     }
 
-    return(
-        <div className="ingredient-content box pb-4">
-            <p className="pt-10 pb-5 text text_type_main-large left">Соберите бургер</p>
-            <div className="ingredients-tabs">
-                <Tab className="ingredient-tab" value="buns" active={current === 'buns'} onClick={handleTabClick}>
+    const handleScroll = () => {
+
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    return (
+        <div className={`${styles.ingredientContent} ${styles.box} pb-4`}>
+            <p className={`${styles.left} pt-10 pb-5 text text_type_main-large`}>Соберите бургер</p>
+            <div className={styles.ingredientsTabs}>
+                <Tab  onClick={() => executeScroll(bunsRef)}>
                     Булки
                 </Tab>
-                <Tab className="ingredient-tab" value="sauces" active={current === 'sauces'} onClick={handleTabClick}>
+                <Tab  onClick={() => executeScroll(saucesRef)}>
                     Соусы
                 </Tab>
-                <Tab className="ingredient-tab" value="mains" active={current === 'mains'} onClick={handleTabClick}>
+                <Tab onClick={() => executeScroll(mainsRef)}>
                     Начинки
                 </Tab>
             </div>
-            <div className="ingredients-scroll">
-               <TabComponent id="buns" data={buns} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
-                <TabComponent id="sauces" data={sauces} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
-                <TabComponent id="mains" data={mains} setShowPopup={setShowPopup} showPopup={showPopup} setCurrentIngredient={setCurrentIngredient}/>
+            <div className={styles.ingredientsScroll}>
+                <div ref={bunsRef}>
+                    <TabComponent data={buns} name="Булки"/>
+                </div>
+                <div ref={saucesRef}>
+                    <TabComponent data={sauces} name="Соусы"/>
+                </div>
+                <div ref={mainsRef}>
+                    <TabComponent data={mains} name="Начинки"/>
+                </div>
+
             </div>
-            {showPopup && <IngredientDetails header="Детали ингредиента" setShowPopup={setShowPopup} ingredient={currentIngredient}/>}
+            {
+                isOpenIngredient &&
+                <Modal header="Детали ингредиента">
+                    <IngredientDetails/>
+                </Modal>
+            }
         </div>
     );
 }
-BurgerIngredients.propsType = BurgerIngredientsPropTypes

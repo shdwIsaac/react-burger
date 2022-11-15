@@ -1,9 +1,9 @@
-.App {
+.app {
   text-align: center;
   position: relative;
 }
 
-.App-logo {
+.appLogo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -14,7 +14,7 @@
   }
 }
 
-.App-header {
+.appHeader {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -25,7 +25,7 @@
   color: white;
 }
 
-.App-link {
+.appLink {
   color: #61dafb;
 }
 
@@ -38,24 +38,24 @@
   }
 }
 
-.app-content {
+.appContent {
   position: relative;
   top: 88px;
   width: 80%;
   margin: auto;
 
 }
-.app-content-constructor {
+.appContentConstructor {
   display: flex;
   gap: 40px;
   justify-content: center;
 } 
 
-.app-content-ingridient-wrapper {
+.appContentIngredientWrapper {
   flex: 1;
 }
 
-.app-content-constructor-wrapper {
+.appContentConstructorWrapper {
   flex: 1;
 }
 

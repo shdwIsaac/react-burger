@@ -1,4 +1,4 @@
-.header-wrapper {
+.header {
     display: flex;
     background: #1C1C21;
     position: absolute;
@@ -8,12 +8,12 @@
 
     height: 88px;
 }
-.box-header {
+.boxHeader {
     display: flex;
     width: 80%;
     margin: auto;
 }
-.element-header {
+.elementHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,7 +26,7 @@
     order: 0;
     flex-grow: 0;
 }
-.header-logo {
+.headerLogo {
     flex: 1;
     padding-right: 120px;
 }

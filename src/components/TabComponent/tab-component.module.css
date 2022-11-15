@@ -7,23 +7,27 @@
     align-items: center;
 }
 
+.textLeft {
+    text-align: left;
+}
+
 .card > img {
     width: 240px;
     height: 120px;
 }
 
-.ingredient-price {
+.ingredientPrice {
     margin: 4px 0;
 }
 
-.ingredients-wrapper {
+.ingredientsWrapper {
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 32px;
 }
 
-.ingredient-type {
+.ingredientType {
     margin: 40px 0;
     width: 100%;
     display: flex;

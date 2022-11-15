@@ -1,10 +1,12 @@
 import React from "react";
-import './modal-overlay-module.css'
-import {ModalOverlayPropTypes} from "./modal-overlay-prop-types";
+import styles from './modal-overlay.module.css'
+import {useDispatch} from "react-redux";
+import {close} from "../../services/slices/modal";
 
-export const ModalOverlay = (props) => {
+export const ModalOverlay = () => {
+    const dispatch = useDispatch()
+
     return (
-    <div onClick={() => {props.setShowPopup(false)}} className="backdrop">
+    <div onClick={() => {dispatch(close())}} className={styles.backdrop}>
     </div>);
 };
-ModalOverlay.propTypes=ModalOverlayPropTypes;

@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step1 initial">
-      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component-module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/burger-constructor-context.jsx" afterDir="false" />
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step1 fix">
+      <change afterPath="$PROJECT_DIR$/src/components/App/app.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/Ingredient-details.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/ingredients.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/slices/order-details.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/constatnts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/app-functions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/app-functions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-prop-types.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-prop-types.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +93,11 @@
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\AppHeader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\WebstormProjects\react-burger\src\services\slices" />
+      <recent name="C:\Users\User\WebstormProjects\react-burger\src\utils" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\images" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\App" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\BurgerIngredients" />
-      <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\app-header" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +124,11 @@
       <workItem from="1666764775320" duration="6866000" />
       <workItem from="1666772887187" duration="37639000" />
       <workItem from="1667052411934" duration="31872000" />
-      <workItem from="1667646197805" duration="7456000" />
+      <workItem from="1667646197805" duration="12271000" />
+      <workItem from="1667706972901" duration="70000" />
+      <workItem from="1667707055647" duration="3261000" />
+      <workItem from="1668061415339" duration="984000" />
+      <workItem from="1668226697511" duration="60957000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -165,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667646763634</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="sprint2/step1 fix">
+      <created>1667653959436</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667653959436</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +244,7 @@
     <MESSAGE value="step-2" />
     <MESSAGE value="step-2 fix" />
     <MESSAGE value="sprint2/step1 initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step1 initial" />
+    <MESSAGE value="sprint2/step1 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step1 fix" />
   </component>
 </project>

@@ -1,0 +1,39 @@
+.box{
+    background: #131316;
+    height: 90%;
+}
+.ingredientsScroll {
+    height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.ingredientsScroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.ingredientsScroll::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.ingredientsScroll::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
+}
+
+.ingredientContent {
+    width: 600px;
+}
+
+.ingredientsTabs {
+    width: 100%;
+    display: flex
+}
+
+.ingredientsTabs > div {
+    flex-grow: 1;
+}
+.left {
+    text-align: left;
+}

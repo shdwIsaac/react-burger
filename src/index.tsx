@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './components/App/App';
+import App from './components/App/app';
 import reportWebVitals from './reportWebVitals';
 import '@ya.praktikum/react-developer-burger-ui-components'
+import {configureStore} from "@reduxjs/toolkit";
+import {rootReducer} from "./services/slices";
+import {Provider} from "react-redux";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
+
+const store = configureStore({
+    reducer: rootReducer
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+      <Provider store={store}>
+          <DndProvider backend={HTML5Backend}>
       <App/>
+          </DndProvider>
+      </Provider>
   </React.StrictMode>
 );
 
