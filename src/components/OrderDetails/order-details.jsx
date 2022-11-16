@@ -1,10 +1,8 @@
 import React from "react";
-import {Modal} from "../Modal/modal";
 import Accepted from '../../images/accepted.png';
 import styles from './order-details.module.css'
-import {OrderDetailsPropTypes} from "./order-details-prop-types";
 
-export const OrderDetails = (props) => {
+export const OrderDetails = () => {
 
 
     return (
@@ -18,4 +16,3 @@ export const OrderDetails = (props) => {
         </>
     )
 }
-OrderDetails.propTypes = OrderDetailsPropTypes;

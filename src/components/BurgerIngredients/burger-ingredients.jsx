@@ -11,7 +11,6 @@ import {modalSelector} from "../../services/slices/modal";
 
 export const BurgerIngredients = () => {
 
-    const dispatch=useDispatch()
     const {ingredients} = useSelector(ingredientsSelector);
     const {isOpenIngredient} = useSelector(modalSelector)
 
@@ -19,13 +18,14 @@ export const BurgerIngredients = () => {
     const mains = ingredients.filter((ingredient) => ingredient.type === 'main');
     const sauces = ingredients.filter((ingredient) => ingredient.type === 'sauce');
 
+    const tabsRef = useRef(null)
     const bunsRef = useRef(null)
     const saucesRef = useRef(null)
     const mainsRef = useRef(null)
 
-    let bunTab = true;
-    let sauceTab = false;
-    let mainTab = false;
+    const [bunTab,setBunTab] = useState(true)
+    const [sauceTab, setSauceTab] = useState(false)
+    const [mainTab, setMainTab] = useState(false)
 
     const executeScroll = (ref) => {
         const element = ref
@@ -38,62 +38,52 @@ export const BurgerIngredients = () => {
     function getPositionAtCenter(element) {
         const {top, left, width, height} = element.getBoundingClientRect();
         return {
-            x: left + width / 2,
-            y: top + height / 2
+            y: top
         };
     }
     function getDistanceBetweenElements(a, b) {
         const aPosition = getPositionAtCenter(a);
         const bPosition = getPositionAtCenter(b);
 
-        return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);
+        return Math.hypot(aPosition.y - bPosition.y);
     }
 
     const handleScroll = (event) => {
-        console.log(event)
         const distance1 = getDistanceBetweenElements(
-            document.getElementById("tabs"),
-            document.getElementById("bun"))
+            tabsRef.current,
+            bunsRef.current)
         const distance2 = getDistanceBetweenElements(
-            document.getElementById("tabs"),
-            document.getElementById("sauce"))
+            tabsRef.current,
+            saucesRef.current)
         const distance3 = getDistanceBetweenElements(
-            document.getElementById("tabs"),
-            document.getElementById("main"));
+            tabsRef.current,
+            mainsRef.current);
         const min = Math.min(distance1, distance2, distance3)
-        console.log(min)
         if (min===distance1)
         {
-            bunTab=true;
-            sauceTab=false;
-            mainTab=false;
+            setBunTab(true)
+            setSauceTab(false)
+            setMainTab(false)
         }
         if (min===distance2)
         {
-            bunTab=false;
-            sauceTab=true;
-            mainTab=false;
+            setBunTab(false)
+            setSauceTab(true)
+            setMainTab(false)
         }
         if (min===distance3)
         {
-            bunTab=false;
-            sauceTab=false;
-            mainTab=true;
+            setBunTab(false)
+            setSauceTab(false)
+            setMainTab(true)
         }
     }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
 
     return (
         <div className={`${styles.ingredientContent} ${styles.box} pb-4`}>
             <p className={`${styles.left} pt-10 pb-5 text text_type_main-large`}>Соберите бургер</p>
-            <div id="tabs" className={styles.ingredientsTabs}>
-                <Tab active={bunTab}  onClick={() => executeScroll(bunsRef)}>
+            <div ref={tabsRef} className={styles.ingredientsTabs}>
+                <Tab active={bunTab} onClick={() => executeScroll(bunsRef)}>
                     Булки
                 </Tab>
                 <Tab active={sauceTab}  onClick={() => executeScroll(saucesRef)}>
@@ -103,14 +93,14 @@ export const BurgerIngredients = () => {
                     Начинки
                 </Tab>
             </div>
-            <div className={styles.ingredientsScroll}>
-                <div id="bun" ref={bunsRef}>
+            <div className={styles.ingredientsScroll} onScroll={handleScroll}>
+                <div ref={bunsRef}>
                     <TabComponent data={buns} name="Булки"/>
                 </div>
-                <div id="sauce" ref={saucesRef}>
+                <div ref={saucesRef}>
                     <TabComponent data={sauces} name="Соусы"/>
                 </div>
-                <div id="main" ref={mainsRef}>
+                <div ref={mainsRef}>
                     <TabComponent data={mains} name="Начинки"/>
                 </div>
 

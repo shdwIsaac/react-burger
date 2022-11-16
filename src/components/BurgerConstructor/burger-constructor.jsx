@@ -7,39 +7,16 @@ import {Modal} from "../Modal/modal";
 import {useDispatch, useSelector} from "react-redux";
 import {burgerConstructorSelector} from "../../services/slices/burger-constructor";
 import {modalSelector, openOrderPopup} from "../../services/slices/modal";
-import {createOrder} from "../../services/slices/order-details";
 import {DropTarget} from "../DropTarget/drop-target";
+import {send} from "../../services/slices/order-details";
 
 
 export const BurgerConstructor = () => {
 
     const dispatch = useDispatch()
-    const {sum} = useSelector(burgerConstructorSelector);
+    const {sum,bun, ingredientsConstructor} = useSelector(burgerConstructorSelector);
     const {isOpenOrder} = useSelector(modalSelector);
 
-    //let order = {ingredients: [bun._id, ...filter.map(ingredient => ingredient._id), bun._id]};
-
-    const send = async () => {
-        const postRequest = "https://norma.nomoreparties.space/api/orders"
-        try {
-            const response = await fetch(postRequest, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(),
-            });
-            console.log(response);
-            if (!response.ok) {
-                throw new Error('Ответ сети был не ok.');
-            }
-            dispatch(createOrder(response.json()))
-            dispatch(openOrderPopup)
-        } catch (error) {
-
-            console.log("error", error);
-        }
-    }
 
     return (
         <div className={styles.constructorContent}>
@@ -49,7 +26,7 @@ export const BurgerConstructor = () => {
                     type="primary"/></p></div>
                 <Button htmlType="button" type="primary" onClick={
                     () => {
-                        send()
+                        dispatch(send( {ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id]}))
                     }
                 } size="large">
                     Оформить заказ
