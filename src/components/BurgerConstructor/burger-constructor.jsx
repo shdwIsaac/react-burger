@@ -14,22 +14,11 @@ import {DropTarget} from "../DropTarget/drop-target";
 export const BurgerConstructor = () => {
 
     const dispatch = useDispatch()
-    const {bun, ingredients, sum} = useSelector(burgerConstructorSelector);
+    const {sum} = useSelector(burgerConstructorSelector);
     const {isOpenOrder} = useSelector(modalSelector);
-    const boards = ["bunTop","ingredients","bunBottom"];
-    //const filter = ingredients.filter((element) => element.type !== "bun")
 
     //let order = {ingredients: [bun._id, ...filter.map(ingredient => ingredient._id), bun._id]};
 
-    function reducer() {
-        let price = 0;
-        //price = bun.price * 2;
-        //filter.forEach(ingredient => price = price + ingredient.price)
-        return {sum: price};
-    }
-
-
-    //Тоже наверное перенести в отдельный файл или в целом вся логика работы с общим апи в одном файле?
     const send = async () => {
         const postRequest = "https://norma.nomoreparties.space/api/orders"
         try {
@@ -52,18 +41,9 @@ export const BurgerConstructor = () => {
         }
     }
 
-    //const [totalPrice, totalPriceDispatcher] = useReducer(reducer, initialState, undefined);
-
-    useEffect(() => {
-        //totalPriceDispatcher();
-    }, []);
-
     return (
         <div className={styles.constructorContent}>
-                {
-                    boards.map((item,i)=>(
-                    <DropTarget key={i} board={item}/>
-                ))}
+                    <DropTarget/>
             <div className={`${styles.controls} pt-10 pl-25`}>
                 <div><p className="pt-4 mr-10 text text_type_digits-medium">{sum}<CurrencyIcon
                     type="primary"/></p></div>

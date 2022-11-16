@@ -1,46 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step1 fix">
-      <change afterPath="$PROJECT_DIR$/src/components/App/app.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/Ingredient-details.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/ingredients.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/modal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/slices/order-details.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/constatnts.jsx" afterDir="false" />
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step2 commit">
+      <change afterPath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/app-functions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/app-functions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-prop-types.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay-prop-types.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint1/step2" />
+        <entry key="$PROJECT_DIR$" value="sprint2/step1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,7 +96,7 @@
       <workItem from="1667706972901" duration="70000" />
       <workItem from="1667707055647" duration="3261000" />
       <workItem from="1668061415339" duration="984000" />
-      <workItem from="1668226697511" duration="60957000" />
+      <workItem from="1668226697511" duration="72115000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -207,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667653959436</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="sprint2/step2 commit">
+      <created>1668528673492</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668528673492</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +220,7 @@
     <MESSAGE value="step-2 fix" />
     <MESSAGE value="sprint2/step1 initial" />
     <MESSAGE value="sprint2/step1 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step1 fix" />
+    <MESSAGE value="sprint2/step2 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step2 commit" />
   </component>
 </project>

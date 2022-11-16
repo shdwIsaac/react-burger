@@ -23,6 +23,9 @@ export const BurgerIngredients = () => {
     const saucesRef = useRef(null)
     const mainsRef = useRef(null)
 
+    let bunTab = true;
+    let sauceTab = false;
+    let mainTab = false;
 
     const executeScroll = (ref) => {
         const element = ref
@@ -30,12 +33,53 @@ export const BurgerIngredients = () => {
             behavior: "smooth",
             inline: "start"
         });
-
-
     }
 
-    const handleScroll = () => {
+    function getPositionAtCenter(element) {
+        const {top, left, width, height} = element.getBoundingClientRect();
+        return {
+            x: left + width / 2,
+            y: top + height / 2
+        };
+    }
+    function getDistanceBetweenElements(a, b) {
+        const aPosition = getPositionAtCenter(a);
+        const bPosition = getPositionAtCenter(b);
 
+        return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);
+    }
+
+    const handleScroll = (event) => {
+        console.log(event)
+        const distance1 = getDistanceBetweenElements(
+            document.getElementById("tabs"),
+            document.getElementById("bun"))
+        const distance2 = getDistanceBetweenElements(
+            document.getElementById("tabs"),
+            document.getElementById("sauce"))
+        const distance3 = getDistanceBetweenElements(
+            document.getElementById("tabs"),
+            document.getElementById("main"));
+        const min = Math.min(distance1, distance2, distance3)
+        console.log(min)
+        if (min===distance1)
+        {
+            bunTab=true;
+            sauceTab=false;
+            mainTab=false;
+        }
+        if (min===distance2)
+        {
+            bunTab=false;
+            sauceTab=true;
+            mainTab=false;
+        }
+        if (min===distance3)
+        {
+            bunTab=false;
+            sauceTab=false;
+            mainTab=true;
+        }
     }
 
     useEffect(() => {
@@ -48,25 +92,25 @@ export const BurgerIngredients = () => {
     return (
         <div className={`${styles.ingredientContent} ${styles.box} pb-4`}>
             <p className={`${styles.left} pt-10 pb-5 text text_type_main-large`}>Соберите бургер</p>
-            <div className={styles.ingredientsTabs}>
-                <Tab  onClick={() => executeScroll(bunsRef)}>
+            <div id="tabs" className={styles.ingredientsTabs}>
+                <Tab active={bunTab}  onClick={() => executeScroll(bunsRef)}>
                     Булки
                 </Tab>
-                <Tab  onClick={() => executeScroll(saucesRef)}>
+                <Tab active={sauceTab}  onClick={() => executeScroll(saucesRef)}>
                     Соусы
                 </Tab>
-                <Tab onClick={() => executeScroll(mainsRef)}>
+                <Tab active={mainTab} onClick={() => executeScroll(mainsRef)}>
                     Начинки
                 </Tab>
             </div>
             <div className={styles.ingredientsScroll}>
-                <div ref={bunsRef}>
+                <div id="bun" ref={bunsRef}>
                     <TabComponent data={buns} name="Булки"/>
                 </div>
-                <div ref={saucesRef}>
+                <div id="sauce" ref={saucesRef}>
                     <TabComponent data={sauces} name="Соусы"/>
                 </div>
-                <div ref={mainsRef}>
+                <div id="main" ref={mainsRef}>
                     <TabComponent data={mains} name="Начинки"/>
                 </div>
 

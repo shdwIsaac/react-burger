@@ -15,7 +15,7 @@ export const Cart = (props) => {
     const count = ingredientsConstructor.filter(x=> x._id===id).length
 
     const [, drag] = useDrag({
-        type: props.ingredient.type==='bun' ? 'bun' : 'ingredient',
+        type: 'ingredient',
         item: {id}
     });
 

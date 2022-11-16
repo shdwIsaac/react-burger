@@ -4,7 +4,8 @@ const initialState = {
     bun: null,
     ingredientsConstructor: [],
     sum: 0,
-    bunPrice:0
+    bunPrice:0,
+    ingredientCounter:[],
 }
 
 export const burgerConstructorSlice = createSlice({
@@ -27,16 +28,19 @@ export const burgerConstructorSlice = createSlice({
         },
         deleteIngredient: (state, {payload}) => {
             if (payload > -1) {
-                console.log(payload)
                 state.sum -= state.ingredientsConstructor[payload].price;
                 state.ingredientsConstructor.splice(payload,1)
             }
+        },
+        moveIngredient: (state, {payload}) => {
+            let element = state.ingredientsConstructor[payload.fromIndex];
+            state.ingredientsConstructor.splice(payload.fromIndex, 1);
+            state.ingredientsConstructor.splice(payload.toIndex, 0, element);
         }
     },
-
 },
 )
 
-export const {addIngredient, deleteIngredient} = burgerConstructorSlice.actions
+export const {addIngredient, deleteIngredient,moveIngredient} = burgerConstructorSlice.actions
 
 export const burgerConstructorSelector = state => state.burgerConstructor
