@@ -35,7 +35,6 @@ export function send(order) {
                 throw new Error('Ответ сети был не ok.');
             }
             const data = await response.json();
-            console.log(data);
             dispatch(createOrder(data))
             dispatch(openOrderPopup())
         } catch (error) {
