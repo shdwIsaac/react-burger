@@ -5,18 +5,19 @@ import {useDrag, useDrop} from "react-dnd";
 import {deleteIngredient, moveIngredient} from "../../services/slices/burger-constructor";
 import {useDispatch} from "react-redux";
 import PropTypes from "prop-types";
+import {DRAG_TYPE} from "../../utils/constatnts";
 
 export const BurgerElement = (props) => {
 
     const index = props.index;
     const dispatch = useDispatch()
     const [, drag] = useDrag({
-        type: 'ingredient',
+        type: DRAG_TYPE,
         item: {index}
     });
     const ref = useRef(null)
     const [{handlerId}, drop] = useDrop({
-        accept: 'ingredient',
+        accept: 'DRAG_TYPE',
         collect(monitor) {
             return {
                 handlerId: monitor.getHandlerId(),
