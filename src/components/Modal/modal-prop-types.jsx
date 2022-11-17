@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
-export let ModalPropTypes = {
+export const ModalPropTypes = {
     header: PropTypes.string,
+    children: PropTypes.element.isRequired
 }

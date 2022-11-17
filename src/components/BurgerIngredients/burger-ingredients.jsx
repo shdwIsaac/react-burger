@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 import styles from './burger-ingredients.module.css'
 import {IngredientDetails} from "../IngredientDetails/ingredient-details";
 import {TabComponent} from "../TabComponent/tab-component";
 import {Modal} from "../Modal/modal";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {ingredientsSelector} from "../../services/slices/ingredients";
 import {modalSelector} from "../../services/slices/modal";
 
@@ -35,15 +35,15 @@ export const BurgerIngredients = () => {
         });
     }
 
-    function getPositionAtCenter(element) {
+    function getPosition(element) {
         const {top, left, width, height} = element.getBoundingClientRect();
         return {
             y: top
         };
     }
     function getDistanceBetweenElements(a, b) {
-        const aPosition = getPositionAtCenter(a);
-        const bPosition = getPositionAtCenter(b);
+        const aPosition = getPosition(a);
+        const bPosition = getPosition(b);
 
         return Math.hypot(aPosition.y - bPosition.y);
     }

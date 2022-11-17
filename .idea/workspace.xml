@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step2 fix">
+      <change afterPath="$PROJECT_DIR$/src/components/BurgerElement/burger-element-prop-types.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cart/cart-prop-types.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Cart/cart.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component-prop-types.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details-prop-types.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details-prop-types.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal-prop-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/order-details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/app-functions.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +104,7 @@
       <workItem from="1667706972901" duration="70000" />
       <workItem from="1667707055647" duration="3261000" />
       <workItem from="1668061415339" duration="984000" />
-      <workItem from="1668226697511" duration="79016000" />
+      <workItem from="1668226697511" duration="82636000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -190,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668612306554</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="sprint2/step2 fix">
+      <created>1668619640209</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668619640209</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

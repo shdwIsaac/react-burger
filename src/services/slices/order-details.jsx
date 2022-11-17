@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {openOrderPopup} from "./modal";
+import {baseUrl} from "../../utils/constatnts";
 
 const initialState = {
     currentOrder: null,
@@ -21,10 +22,8 @@ export const orderDetailsSelector = state => state.orderDetails
 
 export function send(order) {
     return async function (dispatch) {
-        const postRequest = "https://norma.nomoreparties.space/api/orders"
+        const postRequest = baseUrl+"orders"
         try {
-            console.log(order)
-            console.log(JSON.stringify(order))
             const response = await fetch(postRequest, {
                 method: "POST",
                 headers: {
@@ -32,7 +31,6 @@ export function send(order) {
                 },
                 body: JSON.stringify(order),
             });
-            console.log(response);
             if (!response.ok) {
                 throw new Error('Ответ сети был не ok.');
             }

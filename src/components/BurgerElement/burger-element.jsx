@@ -1,9 +1,10 @@
-import styles from "../DropTarget/drop-target.module.css";
+import styles from "./burger-element.module.css";
 import {ConstructorElement, DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import React, {useRef} from "react";
 import {useDrag, useDrop} from "react-dnd";
 import {deleteIngredient, moveIngredient} from "../../services/slices/burger-constructor";
 import {useDispatch} from "react-redux";
+import {BurgerElementPropTypes} from "./burger-element-prop-types";
 
 export const BurgerElement = (props) => {
 
@@ -61,3 +62,4 @@ export const BurgerElement = (props) => {
         </div>
     )
 }
+BurgerElement.propTypes = BurgerElementPropTypes

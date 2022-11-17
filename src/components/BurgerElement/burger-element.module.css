@@ -1,0 +1,5 @@
+.ingredientContent {
+    display: flex;
+    align-items: center;
+    cursor: grab;
+}

@@ -1,11 +1,12 @@
 import {burgerConstructorSelector} from "../../services/slices/burger-constructor";
-import styles from "../TabComponent/tab-component.module.css";
+import styles from "./cart.module.css";
 import {Counter, CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {openIngredientPopup} from "../../services/slices/modal";
 import {selectIngredient} from "../../services/slices/Ingredient-details";
 import {useDrag} from "react-dnd";
+import {CartPropTypes} from "./cart-prop-types";
 
 export const Cart = (props) => {
     const dispatch = useDispatch()
@@ -34,3 +35,4 @@ export const Cart = (props) => {
         </div>
     )
 }
+Cart.propTypes = CartPropTypes
