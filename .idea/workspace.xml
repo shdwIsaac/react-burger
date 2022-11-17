@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step2 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,10 @@
       <workItem from="1667706972901" duration="70000" />
       <workItem from="1667707055647" duration="3261000" />
       <workItem from="1668061415339" duration="984000" />
-      <workItem from="1668226697511" duration="89830000" />
+      <workItem from="1668226697511" duration="89906000" />
+      <workItem from="1668692259898" duration="338000" />
+      <workItem from="1668692676868" duration="114000" />
+      <workItem from="1668704933141" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -206,7 +209,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668691333867</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="sprint2/step2 fix">
+      <created>1668691775371</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1668691775371</updated>
+    </task>
+    <task id="LOCAL-00018" summary="sprint2/step2 fix">
+      <created>1668692581939</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1668692581939</updated>
+    </task>
+    <task id="LOCAL-00019" summary="sprint2/step2 fix">
+      <created>1668692785191</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1668692785191</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +247,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/sprint1/step1" />
+                        <option value="sprint2/step2" />
                       </list>
                     </value>
                   </entry>

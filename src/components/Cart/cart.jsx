@@ -34,7 +34,7 @@ export const Cart = (props) => {
             </div>
             <p className="text text_type_main-default">{props.ingredient.name}</p>
             {bun && id === bun._id && <Counter count={2} size="default"/>}
-            {ingredientsConstructor.length !== 0 && ingredientsConstructor.includes(props.ingredient) &&
+            {ingredientsConstructor.length !== 0 && count &&
                 <Counter count={count} size="default"/>}
         </div>
     )
