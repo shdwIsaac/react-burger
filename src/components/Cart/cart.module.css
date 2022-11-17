@@ -1,5 +1,9 @@
 .ingredientPrice {
+    display: flex;
     margin: 4px 0;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
 }
 .card {
     width: 272px;

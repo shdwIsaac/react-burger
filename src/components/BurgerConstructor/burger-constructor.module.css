@@ -1,31 +1,6 @@
 .constructorContent {
     margin-top: 100px;
 }
-
-.constructorScroll {
-    margin: 16px 0;
-    padding: 0 8px;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    row-gap: 20px;
-    height: calc(100vh - 564px);
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.constructorScroll::-webkit-scrollbar {
-    width: 12px;
-}
-
-.constructorScroll::-webkit-scrollbar-track {
-    background: #2F2F37;
-}
-
-.constructorScroll::-webkit-scrollbar-thumb {
-    background-color: #8585AD;
-}
-
 .bunWrapper {
     display: flex;
     justify-content: end;

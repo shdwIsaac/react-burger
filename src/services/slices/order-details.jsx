@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {openOrderPopup} from "./modal";
-import {baseUrl} from "../../utils/constatnts";
+import {BASE_URL} from "../../utils/constatnts";
 
 const initialState = {
     currentOrder: null,
@@ -22,7 +22,7 @@ export const orderDetailsSelector = state => state.orderDetails
 
 export function send(order) {
     return async function (dispatch) {
-        const postRequest = baseUrl+"orders"
+        const postRequest = BASE_URL+"orders"
         try {
             const response = await fetch(postRequest, {
                 method: "POST",
@@ -35,6 +35,7 @@ export function send(order) {
                 throw new Error('Ответ сети был не ok.');
             }
             const data = await response.json();
+            console.log(data);
             dispatch(createOrder(data))
             dispatch(openOrderPopup())
         } catch (error) {

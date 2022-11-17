@@ -4,7 +4,7 @@ import React, {useRef} from "react";
 import {useDrag, useDrop} from "react-dnd";
 import {deleteIngredient, moveIngredient} from "../../services/slices/burger-constructor";
 import {useDispatch} from "react-redux";
-import {BurgerElementPropTypes} from "./burger-element-prop-types";
+import PropTypes from "prop-types";
 
 export const BurgerElement = (props) => {
 
@@ -56,10 +56,17 @@ export const BurgerElement = (props) => {
     return (
         <div ref={ref} className={styles.ingredientContent} data-handler-id={handlerId}>
             <DragIcon type="primary"/>
-            <ConstructorElement text={props.ingredient.name}
+            <ConstructorElement extraClass={styles.element} text={props.ingredient.name}
                                 isLocked={false} price={props.ingredient.price} thumbnail={props.ingredient.image}
                                 handleClose={() => deleteItem(props.index)}/>
         </div>
     )
 }
-BurgerElement.propTypes = BurgerElementPropTypes
+BurgerElement.propTypes = {
+    index: PropTypes.number.isRequired,
+    ingredient: PropTypes.shape({
+        name: PropTypes.string,
+        price: PropTypes.number,
+        image: PropTypes.string,
+    }).isRequired
+}

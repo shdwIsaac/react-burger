@@ -6,24 +6,22 @@ import {ConstructorElement, DragIcon} from "@ya.praktikum/react-developer-burger
 import {addIngredient, burgerConstructorSelector, deleteIngredient} from "../../services/slices/burger-constructor";
 import {ingredientsSelector} from "../../services/slices/ingredients";
 import {BurgerElement} from "../BurgerElement/burger-element";
+import {DRAG_TYPE} from "../../utils/constatnts";
 
 export const DropTarget = () => {
     const dispatch = useDispatch()
     const {ingredientsConstructor, bun} = useSelector(burgerConstructorSelector)
     const {ingredients} = useSelector(ingredientsSelector);
 
-    const ref = useRef(null)
-
-    const [, drag] = useDrag({
-        type: 'ingredient',
-    });
     const [, drop] = useDrop({
-        accept: 'ingredient',
+        accept: DRAG_TYPE,
         drop(itemId) {
             const item = ingredients.find(el => el._id === itemId.id)
             dispatch(addIngredient(item));
         },
     });
+
+    const scrollStyle = ingredientsConstructor.length!==0 ? styles.constructorScroll : styles.constructorWithoutScroll
 
     return (
         <div ref={drop}>
@@ -31,7 +29,7 @@ export const DropTarget = () => {
                 {bun && <ConstructorElement type='top' isLocked={true} text={bun.name + " (вверх)"}
                                             price={bun.price} thumbnail={bun.image}/>}
             </div>
-            <div className={styles.constructorScroll}>
+            <div className={scrollStyle}>
                 {ingredientsConstructor && ingredientsConstructor.map((ingredient, index) =>
                     <BurgerElement key={index} ingredient={ingredient} index={index}/>)
                 }

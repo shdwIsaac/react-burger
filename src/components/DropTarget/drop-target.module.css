@@ -27,6 +27,17 @@
     padding: 300% 90% 15% 10%;
 }
 
+.constructorWithoutScroll {
+    margin: 16px 0;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 20px;
+    height: calc(100vh - 564px);
+    border-radius: 40px 40px 40px 40px;
+}
+
 .constructorScroll {
     margin: 16px 0;
     padding: 0 8px;

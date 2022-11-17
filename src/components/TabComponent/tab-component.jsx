@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './tab-component.module.css'
 import {Cart} from "../Cart/cart";
-import {TabComponentPropTypes} from "./tab-component-prop-types";
+import PropTypes from "prop-types";
 
 export const TabComponent = (props) => {
 
@@ -11,11 +11,14 @@ export const TabComponent = (props) => {
                 {props.name}
             </p>
             <div className={styles.ingredientsWrapper}>
-                {props.data.map((ingredient, index) => {
-                    return <Cart key={index} ingredient={ingredient}/>
+                {props.data.map((ingredient) => {
+                    return <Cart key={ingredient._id} ingredient={ingredient}/>
                 })}
             </div>
         </div>
     )
 }
-TabComponent.propTypes=TabComponentPropTypes
+TabComponent.propTypes={
+    name: PropTypes.string.isRequired,
+    data: PropTypes.array.isRequired,
+}

@@ -7,6 +7,8 @@ import {Modal} from "../Modal/modal";
 import {useSelector} from "react-redux";
 import {ingredientsSelector} from "../../services/slices/ingredients";
 import {modalSelector} from "../../services/slices/modal";
+import {getDistanceBetweenElements} from "../../utils/position-function";
+import {INGREDIENT_TYPE} from "../../utils/constatnts";
 
 
 export const BurgerIngredients = () => {
@@ -14,9 +16,9 @@ export const BurgerIngredients = () => {
     const {ingredients} = useSelector(ingredientsSelector);
     const {isOpenIngredient} = useSelector(modalSelector)
 
-    const buns = ingredients.filter((ingredient) => ingredient.type === 'bun');
-    const mains = ingredients.filter((ingredient) => ingredient.type === 'main');
-    const sauces = ingredients.filter((ingredient) => ingredient.type === 'sauce');
+    const buns = ingredients.filter((ingredient) => ingredient.type === INGREDIENT_TYPE.BUN);
+    const mains = ingredients.filter((ingredient) => ingredient.type === INGREDIENT_TYPE.MAIN);
+    const sauces = ingredients.filter((ingredient) => ingredient.type === INGREDIENT_TYPE.SAUCE);
 
     const tabsRef = useRef(null)
     const bunsRef = useRef(null)
@@ -35,18 +37,7 @@ export const BurgerIngredients = () => {
         });
     }
 
-    function getPosition(element) {
-        const {top, left, width, height} = element.getBoundingClientRect();
-        return {
-            y: top
-        };
-    }
-    function getDistanceBetweenElements(a, b) {
-        const aPosition = getPosition(a);
-        const bPosition = getPosition(b);
 
-        return Math.hypot(aPosition.y - bPosition.y);
-    }
 
     const handleScroll = (event) => {
         const distance1 = getDistanceBetweenElements(

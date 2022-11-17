@@ -10,21 +10,21 @@ export const AppHeader = () => {
     return (
         <header className={styles.header}>
             <div className={styles.boxHeader}>
-                <div className={styles.elementHeader}>
+                <a href="#" className={styles.elementHeader}>
                     <BurgerIcon type="primary"/>
                     <p className="pl-2 text text_type_main-default">Конструктор</p>
-                </div>
-                <div className={styles.elementHeader}>
+                </a>
+                <a href="#" className={styles.elementHeader}>
                     <ListIcon type="secondary"/>
                     <p className="pl-2 text text_type_main-default text_color_inactive">Лента заказов</p>
-                </div>
+                </a>
                 <div className={styles.headerLogo}>
                     <Logo/>
                 </div>
-                <div className={styles.elementHeader}>
+                <a href="#" className={styles.elementHeader}>
                     <ProfileIcon type="secondary"/>
                     <p className="pl-2 text text_type_main-default text_color_inactive">Личный кабинет</p>
-                </div>
+                </a>
             </div>
         </header>
     );

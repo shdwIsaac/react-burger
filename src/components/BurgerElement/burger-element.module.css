@@ -3,3 +3,6 @@
     align-items: center;
     cursor: grab;
 }
+.element {
+    width: 1300px;
+}

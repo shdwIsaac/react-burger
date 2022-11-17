@@ -2,10 +2,10 @@ import React, {useEffect} from "react";
 import {ModalOverlay} from "../ModalOverlay/modal-overlay";
 import styles from './modal.module.css'
 import {CloseIcon} from "@ya.praktikum/react-developer-burger-ui-components";
-import {ModalPropTypes} from "./modal-prop-types";
 import ReactDOM from "react-dom";
 import {useDispatch} from "react-redux";
 import {close} from "../../services/slices/modal";
+import PropTypes from "prop-types";
 
 export const Modal = (props) => {
 
@@ -49,4 +49,7 @@ export const Modal = (props) => {
         </>, modalRoot
     )
 };
-Modal.propTypes = ModalPropTypes;
+Modal.propTypes = {
+    header: PropTypes.string,
+    children: PropTypes.element.isRequired
+}

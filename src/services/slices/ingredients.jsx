@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {baseUrl} from "../../utils/constatnts";
+import {BASE_URL} from "../../utils/constatnts";
 
 const initialState = {
     isLoading: false,
@@ -35,13 +35,12 @@ export function fetchData() {
         dispatch(getData())
         try {
 
-            const response = await fetch(baseUrl+ingredientsSlice.name);
+            const response = await fetch(BASE_URL+ingredientsSlice.name);
             if (!response.ok) {
                 throw new Error('Ответ сети был не ok.');
             }
             const data = await response.json();
             dispatch(getDataSuccess(data.data))
-            console.log(data.data);
         } catch (error) {
             dispatch(getDataFailure)
             console.log("error", error);

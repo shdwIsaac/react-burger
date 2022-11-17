@@ -30,7 +30,7 @@ export const burgerConstructorSlice = createSlice({
                 }
             },
             moveIngredient: (state, {payload}) => {
-                let element = state.ingredientsConstructor[payload.fromIndex];
+                const element = state.ingredientsConstructor[payload.fromIndex];
                 state.ingredientsConstructor.splice(payload.fromIndex, 1);
                 state.ingredientsConstructor.splice(payload.toIndex, 0, element);
             }
