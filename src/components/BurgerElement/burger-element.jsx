@@ -17,7 +17,7 @@ export const BurgerElement = (props) => {
     });
     const ref = useRef(null)
     const [{handlerId}, drop] = useDrop({
-        accept: 'DRAG_TYPE',
+        accept: DRAG_TYPE,
         collect(monitor) {
             return {
                 handlerId: monitor.getHandlerId(),
