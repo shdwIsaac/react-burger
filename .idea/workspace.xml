@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step1 initial">
-      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component-module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/burger-constructor-context.jsx" afterDir="false" />
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step2 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor-prop-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients-module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint1/step2" />
+        <entry key="$PROJECT_DIR$" value="sprint2/step1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,10 +57,11 @@
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\AppHeader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\WebstormProjects\react-burger\src\services\slices" />
+      <recent name="C:\Users\User\WebstormProjects\react-burger\src\utils" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\images" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\App" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\BurgerIngredients" />
-      <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\app-header" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +88,14 @@
       <workItem from="1666764775320" duration="6866000" />
       <workItem from="1666772887187" duration="37639000" />
       <workItem from="1667052411934" duration="31872000" />
-      <workItem from="1667646197805" duration="7456000" />
+      <workItem from="1667646197805" duration="12271000" />
+      <workItem from="1667706972901" duration="70000" />
+      <workItem from="1667707055647" duration="3261000" />
+      <workItem from="1668061415339" duration="984000" />
+      <workItem from="1668226697511" duration="89906000" />
+      <workItem from="1668692259898" duration="338000" />
+      <workItem from="1668692676868" duration="114000" />
+      <workItem from="1668704933141" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1666883226193</created>
@@ -165,7 +167,70 @@
       <option name="project" value="LOCAL" />
       <updated>1667646763634</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="sprint2/step1 fix">
+      <created>1667653959436</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667653959436</updated>
+    </task>
+    <task id="LOCAL-00012" summary="sprint2/step2 commit">
+      <created>1668528673492</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668528673492</updated>
+    </task>
+    <task id="LOCAL-00013" summary="sprint2/step2 fix">
+      <created>1668612306554</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668612306554</updated>
+    </task>
+    <task id="LOCAL-00014" summary="sprint2/step2 fix">
+      <created>1668619640209</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668619640209</updated>
+    </task>
+    <task id="LOCAL-00015" summary="sprint2/step2 fix">
+      <created>1668673272441</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1668673272441</updated>
+    </task>
+    <task id="LOCAL-00016" summary="sprint2/step2 fix">
+      <created>1668691333867</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668691333867</updated>
+    </task>
+    <task id="LOCAL-00017" summary="sprint2/step2 fix">
+      <created>1668691775371</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1668691775371</updated>
+    </task>
+    <task id="LOCAL-00018" summary="sprint2/step2 fix">
+      <created>1668692581939</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1668692581939</updated>
+    </task>
+    <task id="LOCAL-00019" summary="sprint2/step2 fix">
+      <created>1668692785191</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1668692785191</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +247,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/sprint1/step1" />
+                        <option value="sprint2/step2" />
                       </list>
                     </value>
                   </entry>
@@ -202,6 +267,9 @@
     <MESSAGE value="step-2" />
     <MESSAGE value="step-2 fix" />
     <MESSAGE value="sprint2/step1 initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step1 initial" />
+    <MESSAGE value="sprint2/step1 fix" />
+    <MESSAGE value="sprint2/step2 commit" />
+    <MESSAGE value="sprint2/step2 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step2 fix" />
   </component>
 </project>

@@ -1,0 +1,76 @@
+.bunWrapper {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+}
+.bunInvisible{
+    display: flex;
+    justify-content: end;
+    background: #1C1C21;
+    border-radius: 40px 40px 40px 40px;
+    padding: 1% 90% 15% 10%;
+}
+.bunVisible{
+    display: flex;
+    justify-content: end;
+}
+.ingredientContent {
+    display: flex;
+    align-items: center;
+    cursor: grab;
+}
+.ingredientContentEmpty {
+    display: flex;
+    align-items: center;
+    background: #1C1C21;
+    border-radius: 40px 40px 40px 40px;
+    padding: 300% 90% 15% 10%;
+}
+
+.constructorWithoutScroll {
+    margin: 16px 0;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 20px;
+    height: calc(100vh - 564px);
+    border-radius: 40px 40px 40px 40px;
+}
+
+.constructorScroll {
+    margin: 16px 0;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 20px;
+    height: calc(100vh - 564px);
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 40px 40px 40px 40px;
+}
+.constructorScrollEmpty {
+    margin: 16px 0;
+    padding: 0 50%;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: 20px;
+    height: calc(100vh - 564px);
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 40px 40px 40px 40px;
+}
+
+.constructorScroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.constructorScroll::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.constructorScroll::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
+}
