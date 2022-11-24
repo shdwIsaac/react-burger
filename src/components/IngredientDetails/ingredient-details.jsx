@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react'
 import styles from './ingredient-details.module.css'
-import {useSelector} from "react-redux";
-import {ingredientDetailsSelector} from "../../services/slices/Ingredient-details";
+import { useSelector } from 'react-redux'
+import { ingredientDetailsSelector } from '../../services/slices/Ingredient-details'
 
 export const IngredientDetails = () => {
+  const { selectedIngredient } = useSelector(ingredientDetailsSelector)
 
-    const {selectedIngredient} = useSelector(ingredientDetailsSelector);
-
-    return (
+  return (
         <>
             <img className={`${styles.image} mb-15 mt-15`} src={selectedIngredient.image}/>
             <p className="text text_type_main-default">{selectedIngredient.name}</p>
@@ -18,5 +17,5 @@ export const IngredientDetails = () => {
                 <p className="text text_type_main-default text_color_inactive">Углеводы, г {selectedIngredient.carbohydrates}</p>
             </div>
         </>
-    )
+  )
 }

@@ -1,13 +1,9 @@
-import React from "react";
-import {Logo} from '@ya.praktikum/react-developer-burger-ui-components'
-import {BurgerIcon} from '@ya.praktikum/react-developer-burger-ui-components'
-import {ListIcon} from '@ya.praktikum/react-developer-burger-ui-components'
-import {ProfileIcon} from '@ya.praktikum/react-developer-burger-ui-components'
+import React from 'react'
+import { Logo, BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './app-header.module.css'
 
-
 export const AppHeader = () => {
-    return (
+  return (
         <header className={styles.header}>
             <div className={styles.boxHeader}>
                 <a href="#" className={styles.elementHeader}>
@@ -27,5 +23,5 @@ export const AppHeader = () => {
                 </a>
             </div>
         </header>
-    );
+  )
 }

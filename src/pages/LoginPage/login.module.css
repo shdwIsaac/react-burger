@@ -1,0 +1,17 @@
+.content {
+    display: grid;
+    position: relative;
+    top: 300px;
+    width: 23%;
+    margin: auto;
+    row-gap: 20px;
+}
+.content > Button {
+    width: 128px;
+    justify-self: center;
+}
+.content > div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
