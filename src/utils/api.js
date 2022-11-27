@@ -15,38 +15,6 @@ export const serializeQuery = queryParams =>
     return `${acc}${encodeURIComponent(key)}=${encodeURIComponent(value)}${postfix}`
   }, '?')
 
-export const getCountriesRequest = async () =>
-  await fetch('https://cosmic.nomoreparties.space/api/countries', {
-    method: 'GET',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + getCookie('token')
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer'
-  })
-    .then(res => res.json())
-    .then(({ countries }) => countries)
-
-export const getLaureatesRequest = async () =>
-  await fetch('https://cosmic.nomoreparties.space/api/laureates', {
-    method: 'GET',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + getCookie('token')
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer'
-  })
-    .then(res => res.json())
-    .then(({ laureates }) => laureates)
-
 export const loginRequest = async form => {
   return await fetch('https://norma.nomoreparties.space/api/auth/login', {
     method: 'POST',
@@ -114,5 +82,19 @@ export const refreshRequest = async () => {
     },
     redirect: 'follow',
     referrerPolicy: 'no-referrer'
+  })
+}
+export const updateUserRequest = async form => {
+  return await fetch('https://norma.nomoreparties.space/api/auth/user', {
+    method: 'PATCH',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(form)
   })
 }

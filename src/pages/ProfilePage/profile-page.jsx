@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './profile-page.module.css'
 import { Link } from 'react-router-dom'
-import { EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
+import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
 
 export const ProfilePage = () => {
   const [form, setValue] = useState({ name: '', email: '', password: '' })
@@ -27,6 +27,7 @@ export const ProfilePage = () => {
          <Input name='name' value={form.name} onChange={onChange} placeholder='Имя'/>
          <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
          <PasswordInput name='password' value={form.password} onChange={onChange} placeholder='Пароль'/>
+         <Button htmlType='button' >Сохранить</Button>
        </div>
       </div>
 

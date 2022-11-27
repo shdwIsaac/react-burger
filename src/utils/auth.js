@@ -51,6 +51,7 @@ export function useProvideAuth () {
           setUser({ ...data.user, id: data.user._id })
           setCookie('token', data.accessToken.split('Bearer ')[1])
         }
+        console.log(data)
         return data.success
       })
   }

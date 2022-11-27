@@ -20,19 +20,21 @@ export const Cart = (props) => {
   })
 
   return (
-      <Link key={id} to={{ pathname: `/ingredients/${id}`, state: { background: location } }}>
-        <div ref={drag} className={styles.card} key={props.ingredient._id}>
-          <img src={props.ingredient.image}/>
-          <div className={styles.ingredientPrice}>
-            <p className={'text_type_digits-default'}>{props.ingredient.price}</p>
-            <CurrencyIcon type="primary"/>
+      <div className={styles.parent}>
+        <Link key={id} to={{ pathname: `/ingredients/${id}`, state: { background: location } }}>
+          <div ref={drag} className={styles.card} key={props.ingredient._id}>
+            <img src={props.ingredient.image}/>
+            <div className={styles.ingredientPrice}>
+              <p className={'text_type_digits-default'}>{props.ingredient.price}</p>
+              <CurrencyIcon type="primary"/>
+            </div>
+            <p className="text text_type_main-default">{props.ingredient.name}</p>
+            {bun && id === bun._id && <Counter count={2} size="default"/>}
+            {ingredientsConstructor.length !== 0 && count &&
+                <Counter count={count} size="default"/>}
           </div>
-          <p className="text text_type_main-default">{props.ingredient.name}</p>
-          {bun && id === bun._id && <Counter count={2} size="default"/>}
-          {ingredientsConstructor.length !== 0 && count &&
-              <Counter count={count} size="default"/>}
-        </div>
-      </Link>
+        </Link>
+      </div>
   )
 }
 Cart.propTypes = {

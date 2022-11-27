@@ -13,10 +13,11 @@ import { ProfilePage } from '../../pages/ProfilePage/profile-page'
 import { IngredientDetails } from '../IngredientDetails/ingredient-details'
 import { Modal } from '../Modal/modal'
 import { ProtectedRoute } from '../protected-route'
-import { ProvideAuth } from '../../utils/auth'
+import { useAuth } from '../../utils/auth'
 
 function App () {
   const dispatch = useDispatch()
+  const auth = useAuth()
   const { ingredients, isLoading, hasError } = useSelector(ingredientsSelector)
   const location = useLocation()
   const history = useNavigate()
@@ -31,8 +32,12 @@ function App () {
     dispatch(fetchData())
   }, [dispatch])
 
+  useEffect(() => {
+    auth.getUser()
+  }, [])
+
   return (
-      <ProvideAuth>
+      <>
           <div className={styles.app}>
               <AppHeader/>
               {!isLoading && !hasError && ingredients.length &&
@@ -59,7 +64,7 @@ function App () {
                   </Routes>
             )}
           </div>
-  </ProvideAuth>)
+  </>)
 }
 
 export default App

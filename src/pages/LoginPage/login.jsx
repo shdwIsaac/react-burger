@@ -15,7 +15,6 @@ export const LoginPage = () => {
 
   const login = useCallback(
     e => {
-      console.log(form)
       e.preventDefault()
       auth.signIn(form)
     },
