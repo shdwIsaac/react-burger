@@ -1,7 +1,8 @@
-import { Button, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { Link } from 'react-router-dom'
-import React, { useState } from 'react'
+import { Button, EmailInput, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
+import { Link, Navigate } from 'react-router-dom'
+import React, { useCallback, useState } from 'react'
 import styles from './login.module.css'
+import { useAuth } from '../../utils/auth'
 
 export const LoginPage = () => {
   const [form, setValue] = useState({ email: '', password: '' })
@@ -10,12 +11,28 @@ export const LoginPage = () => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
 
+  const auth = useAuth()
+
+  const login = useCallback(
+    e => {
+      e.preventDefault()
+      auth.signIn(form)
+    },
+    [auth, form]
+  )
+
+  if (auth.user) {
+    return (
+        <Navigate to="/profile" replace />
+    )
+  }
+
   return (
         <div className={styles.content}>
             <h2 className="text text_type_main-medium">Вход</h2>
-            <Input value={form.email} onChange={onChange} placeholder={'E-mail'}/>
-            <PasswordInput onChange={onChange} value={form.password} name={'Пароль'} placeholder={'Пароль'}/>
-            <Button htmlType='button'>Войти</Button>
+            <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
+            <PasswordInput onChange={onChange} value={form.password} name='password' placeholder='Пароль'/>
+            <Button onClick={login} htmlType='button'>Войти</Button>
             <div>
                 <p className="text text_type_main-small">Вы - новый пользователь?</p>
                 <Link className="text text_type_main-small text_color_inactive" to='/register'>Зарегистрироваться</Link>

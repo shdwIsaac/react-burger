@@ -7,6 +7,7 @@ import '@ya.praktikum/react-developer-burger-ui-components'
 import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from './services/slices'
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
 const store = configureStore({
   reducer: rootReducer
@@ -17,9 +18,11 @@ const root = ReactDOM.createRoot(
 )
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
       <Provider store={store}>
       <App/>
       </Provider>
+      </BrowserRouter>
   </React.StrictMode>
 )
 
