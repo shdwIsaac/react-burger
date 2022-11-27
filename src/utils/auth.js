@@ -36,6 +36,7 @@ export function useProvideAuth () {
       .then(data => {
         if (data.success) {
           setUser({ ...data.user, id: data.user._id })
+          setCookie('token', data.accessToken.split('Bearer ')[1])
         }
         console.log(data)
         return data.success
@@ -43,24 +44,15 @@ export function useProvideAuth () {
   }
 
   const signIn = async form => {
-    const data = await loginRequest(form)
-      .then(res => {
-        let authToken
-        res.headers.forEach(header => {
-          if (header.indexOf('Bearer') === 0) {
-            authToken = header.split('Bearer ')[1]
-          }
-        })
-        if (authToken) {
-          setCookie('token', authToken)
+    return await loginRequest(form)
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setUser({ ...data.user, id: data.user._id })
+          setCookie('token', data.accessToken.split('Bearer ')[1])
         }
-        return res.json()
+        return data.success
       })
-      .then(data => data)
-
-    if (data.success) {
-      setUser({ ...data.user, id: data.user._id })
-    }
   }
 
   const signOut = async form => {

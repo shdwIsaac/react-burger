@@ -15,6 +15,7 @@ export const LoginPage = () => {
 
   const login = useCallback(
     e => {
+      console.log(form)
       e.preventDefault()
       auth.signIn(form)
     },
@@ -23,7 +24,7 @@ export const LoginPage = () => {
 
   if (auth.user) {
     return (
-        <Navigate to="/profile" replace />
+        <Navigate to="/profile"/>
     )
   }
 
