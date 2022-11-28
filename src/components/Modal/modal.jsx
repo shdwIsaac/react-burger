@@ -3,17 +3,14 @@ import { ModalOverlay } from '../ModalOverlay/modal-overlay'
 import styles from './modal.module.css'
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import ReactDOM from 'react-dom'
-import { useDispatch } from 'react-redux'
-import { close } from '../../services/slices/modal'
 import PropTypes from 'prop-types'
 
 export const Modal = (props) => {
-  const dispatch = useDispatch()
   const modalRoot = document.getElementById('react-modals')
 
   const keyDownEscape = (e) => {
     if (e.key === 'Escape') {
-      dispatch(close())
+      props.onClose()
     }
   }
 
@@ -34,7 +31,7 @@ export const Modal = (props) => {
                     <div className={styles.titleCloseBtn}>
                         <button
                             onClick={() => {
-                              dispatch(close())
+                              props.onClose()
                             }}>
                             <CloseIcon type="primary"/>
                         </button>

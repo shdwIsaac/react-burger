@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from './modal-overlay.module.css'
-import { useDispatch } from 'react-redux'
-import { close } from '../../services/slices/modal'
+import { useNavigate } from 'react-router-dom'
 
 export const ModalOverlay = () => {
-  const dispatch = useDispatch()
+  const history = useNavigate()
 
   return (
-    <div onClick={() => { dispatch(close()) }} className={styles.backdrop}>
+    <div onClick={() => { history(-1) }} className={styles.backdrop}>
     </div>)
 }

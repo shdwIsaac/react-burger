@@ -43,12 +43,12 @@ function App () {
               <AppHeader/>
               {!isLoading && !hasError && ingredients.length &&
                   <Routes location={background || location}>
-                    <Route path='/login' exact={true} element={<AuthorizedRoute user={auth}><LoginPage/></AuthorizedRoute>}/>
+                    <Route path='/login' exact={true} element={<AuthorizedRoute><LoginPage/></AuthorizedRoute>}/>
                       <Route path='/forgot-password' exact={true} element={<AuthorizedRoute user={auth}><ForgotPasswordPage/></AuthorizedRoute>}/>
                       <Route path='/reset-password' exact={true} element={<AuthorizedRoute user={auth}><ResetPasswordPage/></AuthorizedRoute>}/>
                       <Route path='/register' exact={true} element={<AuthorizedRoute user={auth}><RegisterPage/></AuthorizedRoute>}/>
                     <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
-                    <Route path='/profile' exact={true} element={<ProtectedRoute user={auth}>
+                    <Route path='/profile' exact={true} element={<ProtectedRoute user={auth.user}>
                       <ProfilePage/>
                     </ProtectedRoute>}/>
                       <Route path='/' element={<HomePage/>}/>
