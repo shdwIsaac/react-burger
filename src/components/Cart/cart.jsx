@@ -21,7 +21,7 @@ export const Cart = (props) => {
 
   return (
       <div className={styles.parent}>
-        <Link key={id} to={{ pathname: `/ingredients/${id}`, state: { background: location } }}>
+        <Link key={id} to={{ pathname: `/ingredients/${id}` }} state={{ background: location }}>
           <div ref={drag} className={styles.card} key={props.ingredient._id}>
             <img src={props.ingredient.image}/>
             <div className={styles.ingredientPrice}>

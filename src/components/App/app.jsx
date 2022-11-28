@@ -26,7 +26,6 @@ function App () {
   const background = location.state && location.state.background
 
   const handleModalClose = () => {
-    // Возвращаемся к предыдущему пути при закрытии модалки
     history(-1)
   }
 
