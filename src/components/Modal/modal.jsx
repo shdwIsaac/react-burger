@@ -22,27 +22,27 @@ export const Modal = (props) => {
   }, [])
 
   return ReactDOM.createPortal(
-        <>
-            <div className={styles.modalContainer}>
-                <div className={styles.header}>
-                    <div className="text text_type_main-medium">
-                        <p className={styles.headerText}>{props.header}</p>
-                    </div>
-                    <div className={styles.titleCloseBtn}>
-                        <button
-                            onClick={() => {
-                              props.onClose()
-                            }}>
-                            <CloseIcon type="primary"/>
-                        </button>
-                    </div>
-                </div>
-                <div className={styles.centered}>
-                    {props.children}
-                </div>
+      <>
+        <div className={styles.modalContainer}>
+          <div className={styles.header}>
+            <div className="text text_type_main-medium">
+              <p className={styles.headerText}>{props.header}</p>
             </div>
-            <ModalOverlay/>
-        </>, modalRoot
+            <div className={styles.titleCloseBtn}>
+              <button
+                  onClick={() => {
+                    props.onClose()
+                  }}>
+                <CloseIcon type="primary"/>
+              </button>
+            </div>
+          </div>
+          <div className={styles.centered}>
+            {props.children}
+          </div>
+        </div>
+        <ModalOverlay/>
+      </>, modalRoot
   )
 }
 Modal.propTypes = {

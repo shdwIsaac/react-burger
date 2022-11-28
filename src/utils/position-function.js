@@ -4,6 +4,7 @@ function getPosition (element) {
     y: top
   }
 }
+
 export function getDistanceBetweenElements (a, b) {
   const aPosition = getPosition(a)
   const bPosition = getPosition(b)

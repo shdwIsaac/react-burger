@@ -15,25 +15,25 @@ export const BurgerConstructor = () => {
   const { isOpenOrder } = useSelector(modalSelector)
 
   return (
-        <div className={styles.constructorContent}>
-            <DropTarget/>
-            <div className={`${styles.controls} pt-10 pl-25`}>
-                <div><p className="pt-4 mr-10 text text_type_digits-medium">{sum}<CurrencyIcon
-                    type="primary"/></p></div>
-                <Button htmlType="button" type="primary" onClick={
-                    () => {
-                      bun &&
-                        dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
-                    }
-                } size="large">
-                    Оформить заказ
-                </Button>
-            </div>
-            {isOpenOrder && (<Modal>
-                <OrderDetails/>
-            </Modal>)
+      <div className={styles.constructorContent}>
+        <DropTarget/>
+        <div className={`${styles.controls} pt-10 pl-25`}>
+          <div><p className="pt-4 mr-10 text text_type_digits-medium">{sum}<CurrencyIcon
+              type="primary"/></p></div>
+          <Button htmlType="button" type="primary" onClick={
+            () => {
+              bun &&
+              dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
             }
+          } size="large">
+            Оформить заказ
+          </Button>
         </div>
+        {isOpenOrder && (<Modal>
+          <OrderDetails/>
+        </Modal>)
+        }
+      </div>
 
   )
 }

@@ -35,7 +35,7 @@ export const BurgerElement = (props) => {
         }
         const hoverBoundingRect = ref.current?.getBoundingClientRect()
         const hoverMiddleY =
-                    (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
+            (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
         const clientOffset = monitor.getClientOffset()
         const hoverClientY = clientOffset.y - hoverBoundingRect.top
         if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
@@ -55,12 +55,12 @@ export const BurgerElement = (props) => {
   }
   drag(drop(ref))
   return (
-        <div ref={ref} className={styles.ingredientContent} data-handler-id={handlerId}>
-            <DragIcon type="primary"/>
-            <ConstructorElement extraClass={styles.element} text={props.ingredient.name}
-                                isLocked={false} price={props.ingredient.price} thumbnail={props.ingredient.image}
-                                handleClose={() => deleteItem(props.index)}/>
-        </div>
+      <div ref={ref} className={styles.ingredientContent} data-handler-id={handlerId}>
+        <DragIcon type="primary"/>
+        <ConstructorElement extraClass={styles.element} text={props.ingredient.name}
+                            isLocked={false} price={props.ingredient.price} thumbnail={props.ingredient.image}
+                            handleClose={() => deleteItem(props.index)}/>
+      </div>
   )
 }
 BurgerElement.propTypes = {

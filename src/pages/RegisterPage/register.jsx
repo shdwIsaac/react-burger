@@ -23,21 +23,21 @@ export const RegisterPage = () => {
 
   if (auth.user) {
     return (
-        <Navigate to="/" replace />
+        <Navigate to="/" replace/>
     )
   }
 
   return (
-        <div className={styles.content}>
-            <h2 className="text text_type_main-medium">Регистрация</h2>
-            <Input name='name' value={form.name} onChange={onChange} placeholder='Имя'/>
-            <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
-            <PasswordInput name='password' value={form.password} onChange={onChange} placeholder='Пароль'/>
-            <Button onClick={register} htmlType='button'>Зарегистрироваться</Button>
-                <div>
-                    <p className="text text_type_main-small">Уже зарегистрированы?</p>
-                    <Link className="text text_type_main-small text_color_inactive" to='/login'>Войти</Link>
-                </div>
+      <div className={styles.content}>
+        <h2 className="text text_type_main-medium">Регистрация</h2>
+        <Input name='name' value={form.name} onChange={onChange} placeholder='Имя'/>
+        <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
+        <PasswordInput name='password' value={form.password} onChange={onChange} placeholder='Пароль'/>
+        <Button onClick={register} htmlType='button'>Зарегистрироваться</Button>
+        <div>
+          <p className="text text_type_main-small">Уже зарегистрированы?</p>
+          <Link className="text text_type_main-small text_color_inactive" to='/login'>Войти</Link>
         </div>
+      </div>
   )
 }

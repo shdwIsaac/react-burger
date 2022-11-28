@@ -6,6 +6,8 @@ export const ModalOverlay = () => {
   const history = useNavigate()
 
   return (
-    <div onClick={() => { history(-1) }} className={styles.backdrop}>
-    </div>)
+      <div onClick={() => {
+        history(-1)
+      }} className={styles.backdrop}>
+      </div>)
 }

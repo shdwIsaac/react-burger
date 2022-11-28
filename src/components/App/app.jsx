@@ -15,6 +15,7 @@ import { Modal } from '../Modal/modal'
 import { ProtectedRoute } from '../protected-route'
 import { useAuth } from '../../utils/auth'
 import { NotFound } from '../../pages/NotFound/not-found'
+import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
 import { AuthorizedRoute } from '../authorized-route'
 
 function App () {
@@ -39,34 +40,39 @@ function App () {
 
   return (
       <>
-          <div className={styles.app}>
-              <AppHeader/>
-              {!isLoading && !hasError && ingredients.length &&
-                  <Routes location={background || location}>
-                    <Route path='/login' exact={true} element={<AuthorizedRoute><LoginPage/></AuthorizedRoute>}/>
-                      <Route path='/forgot-password' exact={true} element={<AuthorizedRoute user={auth}><ForgotPasswordPage/></AuthorizedRoute>}/>
-                      <Route path='/reset-password' exact={true} element={<AuthorizedRoute user={auth}><ResetPasswordPage/></AuthorizedRoute>}/>
-                      <Route path='/register' exact={true} element={<AuthorizedRoute user={auth}><RegisterPage/></AuthorizedRoute>}/>
-                    <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
-                    <Route path='/profile' exact={true} element={<ProtectedRoute user={auth.user}>
-                      <ProfilePage/>
-                    </ProtectedRoute>}/>
-                      <Route path='/' element={<HomePage/>}/>
-                      <Route element={<NotFound/>}/>
-                  </Routes>
-              }
-            {background && (
-                <Routes>
-                  <Route
+        <div className={styles.app}>
+          <AppHeader/>
+          {!isLoading && !hasError && ingredients.length &&
+              <Routes location={background || location}>
+                <Route path='/login' exact={true}
+                       element={<AuthorizedRoute user={auth.user}><LoginPage/></AuthorizedRoute>}/>
+                <Route path='/forgot-password' exact={true}
+                       element={<AuthorizedRoute user={auth.user}><ForgotPasswordPage/></AuthorizedRoute>}/>
+                <Route path='/reset-password' exact={true}
+                       element={<AuthorizedRoute user={auth.user}><ResetPasswordPage/></AuthorizedRoute>}/>
+                <Route path='/register' exact={true}
+                       element={<AuthorizedRoute user={auth.user}><RegisterPage/></AuthorizedRoute>}/>
+                <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
+                <Route path='/profile' exact={true}
+                       element={<ProtectedRoute user={auth.user}><ProfilePage/></ProtectedRoute>}/>
+                <Route path='/profile/orders' exact={true}
+                       element={<ProtectedRoute user={auth.user}><ProfileOrdersPage/></ProtectedRoute>}/>
+                <Route path='/' element={<HomePage/>}/>
+                <Route path='/not-found' exact element={<NotFound/>}/>
+              </Routes>
+          }
+          {background && (
+              <Routes>
+                <Route
                     path='/ingredients/:ingredientId'
                     /* eslint-disable-next-line react/no-children-prop */
                     element={<Modal onClose={handleModalClose}>
-                      <IngredientDetails />
-                      </Modal>}/>
-                  </Routes>
-            )}
-          </div>
-  </>)
+                      <IngredientDetails/>
+                    </Modal>}/>
+              </Routes>
+          )}
+        </div>
+      </>)
 }
 
 export default App

@@ -7,15 +7,15 @@ import React from 'react'
 
 export const HomePage = () => {
   return (
-        <div className={styles.appContent}>
+      <div className={styles.appContent}>
 
-            <DndProvider backend={HTML5Backend}>
-                <div className={styles.appContentConstructor}>
-                    <BurgerIngredients/>
-                    <BurgerConstructor/>
-                </div>
-            </DndProvider>
+        <DndProvider backend={HTML5Backend}>
+          <div className={styles.appContentConstructor}>
+            <BurgerIngredients/>
+            <BurgerConstructor/>
+          </div>
+        </DndProvider>
 
-        </div>
+      </div>
   )
 }

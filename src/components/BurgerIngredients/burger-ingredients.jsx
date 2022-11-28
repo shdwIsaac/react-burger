@@ -64,37 +64,37 @@ export const BurgerIngredients = () => {
   }
 
   return (
-        <div className={`${styles.ingredientContent} ${styles.box} pb-4`}>
-            <p className={`${styles.left} pt-10 pb-5 text text_type_main-large`}>Соберите бургер</p>
-            <div ref={tabsRef} className={styles.ingredientsTabs}>
-                <Tab active={bunTab} onClick={() => executeScroll(bunsRef)}>
-                    Булки
-                </Tab>
-                <Tab active={sauceTab} onClick={() => executeScroll(saucesRef)}>
-                    Соусы
-                </Tab>
-                <Tab active={mainTab} onClick={() => executeScroll(mainsRef)}>
-                    Начинки
-                </Tab>
-            </div>
-            <div className={styles.ingredientsScroll} onScroll={handleScroll}>
-                <div ref={bunsRef}>
-                    <TabComponent data={buns} name="Булки"/>
-                </div>
-                <div ref={saucesRef}>
-                    <TabComponent data={sauces} name="Соусы"/>
-                </div>
-                <div ref={mainsRef}>
-                    <TabComponent data={mains} name="Начинки"/>
-                </div>
-
-            </div>
-            {
-                isOpenIngredient &&
-                <Modal header="Детали ингредиента">
-                    <IngredientDetails/>
-                </Modal>
-            }
+      <div className={`${styles.ingredientContent} ${styles.box} pb-4`}>
+        <p className={`${styles.left} pt-10 pb-5 text text_type_main-large`}>Соберите бургер</p>
+        <div ref={tabsRef} className={styles.ingredientsTabs}>
+          <Tab active={bunTab} onClick={() => executeScroll(bunsRef)}>
+            Булки
+          </Tab>
+          <Tab active={sauceTab} onClick={() => executeScroll(saucesRef)}>
+            Соусы
+          </Tab>
+          <Tab active={mainTab} onClick={() => executeScroll(mainsRef)}>
+            Начинки
+          </Tab>
         </div>
+        <div className={styles.ingredientsScroll} onScroll={handleScroll}>
+          <div ref={bunsRef}>
+            <TabComponent data={buns} name="Булки"/>
+          </div>
+          <div ref={saucesRef}>
+            <TabComponent data={sauces} name="Соусы"/>
+          </div>
+          <div ref={mainsRef}>
+            <TabComponent data={mains} name="Начинки"/>
+          </div>
+
+        </div>
+        {
+            isOpenIngredient &&
+            <Modal header="Детали ингредиента">
+              <IngredientDetails/>
+            </Modal>
+        }
+      </div>
   )
 }

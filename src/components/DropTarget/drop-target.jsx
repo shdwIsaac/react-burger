@@ -24,20 +24,20 @@ export const DropTarget = () => {
   const scrollStyle = ingredientsConstructor.length !== 0 ? styles.constructorScroll : styles.constructorWithoutScroll
 
   return (
-        <div ref={drop}>
-            <div className={styles.bunWrapper}>
-                {bun && <ConstructorElement type='top' isLocked={true} text={bun.name + ' (вверх)'}
-                                            price={bun.price} thumbnail={bun.image}/>}
-            </div>
-            <div className={scrollStyle}>
-                {ingredientsConstructor && ingredientsConstructor.map((ingredient, index) =>
-                    <BurgerElement key={index} ingredient={ingredient} index={index}/>)
-                }
-            </div>
-            <div className={styles.bunWrapper}>
-                {bun && <ConstructorElement type='bottom' isLocked={true} text={bun.name + ' (низ)'}
-                                            price={bun.price} thumbnail={bun.image}/>}
-            </div>
+      <div ref={drop}>
+        <div className={styles.bunWrapper}>
+          {bun && <ConstructorElement type='top' isLocked={true} text={bun.name + ' (вверх)'}
+                                      price={bun.price} thumbnail={bun.image}/>}
         </div>
+        <div className={scrollStyle}>
+          {ingredientsConstructor && ingredientsConstructor.map((ingredient, index) =>
+              <BurgerElement key={index} ingredient={ingredient} index={index}/>)
+          }
+        </div>
+        <div className={styles.bunWrapper}>
+          {bun && <ConstructorElement type='bottom' isLocked={true} text={bun.name + ' (низ)'}
+                                      price={bun.price} thumbnail={bun.image}/>}
+        </div>
+      </div>
   )
 }

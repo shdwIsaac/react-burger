@@ -28,19 +28,20 @@ export const LoginPage = () => {
   }
 
   return (
-        <div className={styles.content}>
-            <h2 className="text text_type_main-medium">Вход</h2>
-            <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
-            <PasswordInput onChange={onChange} value={form.password} name='password' placeholder='Пароль'/>
-            <Button onClick={login} htmlType='button'>Войти</Button>
-            <div>
-                <p className="text text_type_main-small">Вы - новый пользователь?</p>
-                <Link className="text text_type_main-small text_color_inactive" to='/register'>Зарегистрироваться</Link>
-            </div>
-            <div>
-                <p className="text text_type_main-small">Забыли пароль?</p>
-                <Link className="text text_type_main-small text_color_inactive" to='/forgot-password'>Восстановить пароль</Link>
-            </div>
+      <div className={styles.content}>
+        <h2 className="text text_type_main-medium">Вход</h2>
+        <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
+        <PasswordInput onChange={onChange} value={form.password} name='password' placeholder='Пароль'/>
+        <Button onClick={login} htmlType='button'>Войти</Button>
+        <div>
+          <p className="text text_type_main-small">Вы - новый пользователь?</p>
+          <Link className="text text_type_main-small text_color_inactive" to='/register'>Зарегистрироваться</Link>
         </div>
+        <div>
+          <p className="text text_type_main-small">Забыли пароль?</p>
+          <Link className="text text_type_main-small text_color_inactive" to='/forgot-password'>Восстановить
+            пароль</Link>
+        </div>
+      </div>
   )
 }
