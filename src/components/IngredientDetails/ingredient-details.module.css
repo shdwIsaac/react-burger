@@ -8,9 +8,6 @@
     height: 240px;
 }
 .content {
-    position: absolute;
-    margin-top: 10%;
-    margin-left: 36%;
 }
 .content > div {
     justify-content: center;
