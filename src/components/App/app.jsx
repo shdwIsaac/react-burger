@@ -14,6 +14,8 @@ import { IngredientDetails } from '../IngredientDetails/ingredient-details'
 import { Modal } from '../Modal/modal'
 import { ProtectedRoute } from '../protected-route'
 import { useAuth } from '../../utils/auth'
+import { NotFound } from '../../pages/NotFound/not-found'
+import { AuthorizedRoute } from '../authorized-route'
 
 function App () {
   const dispatch = useDispatch()
@@ -42,19 +44,16 @@ function App () {
               <AppHeader/>
               {!isLoading && !hasError && ingredients.length &&
                   <Routes location={background || location}>
-                    {!auth.user &&
-                    <>
-                      <Route path='/login' exact={true} element={<LoginPage/>}/>
-                      <Route path='/forgot-password' exact={true} element={<ForgotPasswordPage/>}/>
-                      <Route path='/reset-password' exact={true} element={<ResetPasswordPage/>}/>
-                      <Route path='/register' exact={true} element={<RegisterPage/>}/>
-                    </>
-                    }
+                    <Route path='/login' exact={true} element={<AuthorizedRoute user={auth}><LoginPage/></AuthorizedRoute>}/>
+                      <Route path='/forgot-password' exact={true} element={<AuthorizedRoute user={auth}><ForgotPasswordPage/></AuthorizedRoute>}/>
+                      <Route path='/reset-password' exact={true} element={<AuthorizedRoute user={auth}><ResetPasswordPage/></AuthorizedRoute>}/>
+                      <Route path='/register' exact={true} element={<AuthorizedRoute user={auth}><RegisterPage/></AuthorizedRoute>}/>
                     <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
-                    <Route path='/profile' exact={true} element={<ProtectedRoute>
+                    <Route path='/profile' exact={true} element={<ProtectedRoute user={auth}>
                       <ProfilePage/>
                     </ProtectedRoute>}/>
                       <Route path='/' element={<HomePage/>}/>
+                      <Route element={<NotFound/>}/>
                   </Routes>
               }
             {background && (
