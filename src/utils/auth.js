@@ -35,7 +35,7 @@ export function useProvideAuth () {
 
   useEffect(() => {
     const token = getCookie('accessToken')
-    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
+    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now() * 1000) {
       setIsAuth(true)
     }
   }, [])

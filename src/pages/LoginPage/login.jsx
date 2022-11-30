@@ -22,7 +22,7 @@ export const LoginPage = () => {
     [auth, form]
   )
   useEffect(() => {
-    if (auth.user) {
+    if (auth.isAuth) {
       const route = location.state.route
       console.log(route)
       if (location.state.route) {
@@ -30,7 +30,7 @@ export const LoginPage = () => {
       }
       return <Navigate to="/profile"/>
     }
-  }, []
+  }, [auth, form]
   )
 
   return (
