@@ -61,12 +61,12 @@ function App () {
                 <Route path='/not-found' exact element={<NotFound/>}/>
               </Routes>
           }
-          {background && (
+          {!isLoading && !hasError && ingredients.length && background && (
               <Routes>
                 <Route
                     path='/ingredients/:ingredientId'
                     /* eslint-disable-next-line react/no-children-prop */
-                    element={<Modal onClose={handleModalClose}>
+                    element={<Modal header='Детали ингредиента' onClose={handleModalClose}>
                       <IngredientDetails/>
                     </Modal>}/>
               </Routes>

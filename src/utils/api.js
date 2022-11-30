@@ -16,6 +16,8 @@ export const serializeQuery = queryParams =>
     return `${acc}${encodeURIComponent(key)}=${encodeURIComponent(value)}${postfix}`
   }, '?')
 
+export const tokenApi = BASE_URL + 'auth/token'
+
 export const loginApi = BASE_URL + 'auth/login'
 
 export const registerApi = BASE_URL + 'auth/register'
@@ -139,7 +141,7 @@ const checkResponse = (res) => {
 }
 
 export const refreshToken = () => {
-  return fetch('https://norma.nomoreparties.space/api/auth/token', {
+  return fetch(tokenApi, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'

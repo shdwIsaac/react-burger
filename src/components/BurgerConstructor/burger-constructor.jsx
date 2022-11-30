@@ -5,7 +5,7 @@ import { OrderDetails } from '../OrderDetails/order-details'
 import { Modal } from '../Modal/modal'
 import { useDispatch, useSelector } from 'react-redux'
 import { burgerConstructorSelector } from '../../services/slices/burger-constructor'
-import { modalSelector } from '../../services/slices/modal'
+import { modalSelector, close } from '../../services/slices/modal'
 import { DropTarget } from '../DropTarget/drop-target'
 import { send } from '../../services/slices/order-details'
 
@@ -13,6 +13,10 @@ export const BurgerConstructor = () => {
   const dispatch = useDispatch()
   const { sum, bun, ingredientsConstructor } = useSelector(burgerConstructorSelector)
   const { isOpenOrder } = useSelector(modalSelector)
+
+  const closeModal = () => {
+    dispatch(close())
+  }
 
   return (
       <div className={styles.constructorContent}>
@@ -29,7 +33,7 @@ export const BurgerConstructor = () => {
             Оформить заказ
           </Button>
         </div>
-        {isOpenOrder && (<Modal>
+        {isOpenOrder && (<Modal onClose={closeModal}>
           <OrderDetails/>
         </Modal>)
         }
