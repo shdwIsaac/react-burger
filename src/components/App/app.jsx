@@ -37,7 +37,7 @@ function App () {
 
   useEffect(() => {
     const token = getCookie('accessToken')
-    if (JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
+    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
       auth.setIsAuth(true)
     }
   }, [])
