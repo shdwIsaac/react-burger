@@ -83,11 +83,11 @@ export const optionsPostLogoutRequest = () => {
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + getCookie('accessToken')
+      'Content-Type': 'application/json'
     },
     redirect: 'follow',
-    referrerPolicy: 'no-referrer'
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({ token: localStorage.getItem('refreshToken') })
   }
 }
 
@@ -136,12 +136,12 @@ export const optionsPostLogin = form => {
   }
 }
 
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   return res.ok ? res.json() : res.json().then((err) => Promise.reject(err))
 }
 
 export const refreshToken = () => {
-  return fetch(tokenApi, {
+  return request(tokenApi, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -149,7 +149,7 @@ export const refreshToken = () => {
     body: JSON.stringify({
       token: localStorage.getItem('refreshToken')
     })
-  }).then(checkResponse)
+  })
 }
 
 export const fetchWithRefresh = async (url, options) => {
@@ -171,4 +171,8 @@ export const fetchWithRefresh = async (url, options) => {
       return Promise.reject(err)
     }
   }
+}
+export function request (url, options) {
+  // принимает два аргумента: урл и объект опций, как и `fetch`
+  return fetch(url, options).then(checkResponse)
 }

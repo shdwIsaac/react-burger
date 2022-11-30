@@ -13,7 +13,7 @@ import {
   optionsPostRegisterRequest,
   registerApi,
   userApi,
-  forgotPasswordApi, resetPasswordApi, optionsPostResetPasswordRequest
+  forgotPasswordApi, resetPasswordApi, optionsPostResetPasswordRequest, request
 } from './api'
 
 const AuthContext = createContext(undefined)
@@ -33,8 +33,7 @@ export function useProvideAuth () {
   const [user, setUser] = useState(null)
 
   const getUser = async () => {
-    return await fetch(userApi, optionsGetUserRequest())
-      .then(res => res.json())
+    return await request(userApi, optionsGetUserRequest())
       .then(data => {
         if (data.success) {
           setUser(data.user)
@@ -44,8 +43,7 @@ export function useProvideAuth () {
   }
 
   const register = async form => {
-    return await fetch(registerApi, optionsPostRegisterRequest(form))
-      .then(res => res.json())
+    return await request(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
         if (data.success) {
           setUser(data.user)
@@ -56,21 +54,24 @@ export function useProvideAuth () {
   }
 
   const signIn = async form => {
-    return await fetch(loginApi, optionsPostLogin(form))
-      .then(res => res.json())
+    return await request(loginApi, optionsPostLogin(form))
       .then(data => {
         if (data.success) {
           setUser(data.user)
           setCookie('accessToken', data.accessToken.split('Bearer ')[1])
+          setCookie('refreshToken', data.refreshToken)
+          localStorage.setItem('refreshToken', data.refreshToken)
         }
         return data.success
       })
   }
 
   const signOut = async form => {
-    await fetch(logoutApi, optionsPostLogoutRequest(form))
+    await request(logoutApi, optionsPostLogoutRequest(form))
     setUser(null)
-    deleteCookie()
+    deleteCookie('accessToken')
+    deleteCookie('refreshToken')
+    localStorage.removeItem('refreshToken')
   }
 
   const updateUser = async form => {
@@ -84,16 +85,14 @@ export function useProvideAuth () {
   }
 
   const forgotPassword = async form => {
-    return await fetch(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
-      .then(res => res.json())
+    return await request(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
         return data.success
       })
   }
 
   const resetPassword = async form => {
-    return await fetch(resetPasswordApi, optionsPostResetPasswordRequest(form))
-      .then(res => res.json())
+    return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
         return data.success
       })

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { BASE_URL } from '../../utils/constatnts'
+import { request } from '../../utils/api'
 
 const initialState = {
   isLoading: false,
@@ -34,15 +35,11 @@ export function fetchData () {
   return async function (dispatch) {
     dispatch(getData())
     try {
-      const response = await fetch(BASE_URL + ingredientsSlice.name)
-      if (!response.ok) {
-        throw new Error('Ответ сети был не ok.')
-      }
-      const data = await response.json()
-      dispatch(getDataSuccess(data.data))
+      await request(BASE_URL + ingredientsSlice.name)
+        .then(data => dispatch(getDataSuccess(data.data)))
     } catch (error) {
       dispatch(getDataFailure)
       console.log('error', error)
     }
   }
-};
+}

@@ -8,14 +8,26 @@ import { burgerConstructorSelector } from '../../services/slices/burger-construc
 import { modalSelector, close } from '../../services/slices/modal'
 import { DropTarget } from '../DropTarget/drop-target'
 import { send } from '../../services/slices/order-details'
+import { useAuth } from '../../utils/auth'
+import { useNavigate } from 'react-router-dom'
 
 export const BurgerConstructor = () => {
   const dispatch = useDispatch()
   const { sum, bun, ingredientsConstructor } = useSelector(burgerConstructorSelector)
   const { isOpenOrder } = useSelector(modalSelector)
+  const auth = useAuth()
+  const navigate = useNavigate()
 
   const closeModal = () => {
     dispatch(close())
+  }
+
+  const doOrder = () => {
+    if (!auth.user) {
+      navigate('/login', { state: { route: '/' } })
+    }
+    bun &&
+    dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
   }
 
   return (
@@ -24,12 +36,7 @@ export const BurgerConstructor = () => {
         <div className={`${styles.controls} pt-10 pl-25`}>
           <div><p className="pt-4 mr-10 text text_type_digits-medium">{sum}<CurrencyIcon
               type="primary"/></p></div>
-          <Button htmlType="button" type="primary" onClick={
-            () => {
-              bun &&
-              dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
-            }
-          } size="large">
+          <Button htmlType="button" type="primary" onClick={doOrder} size="large">
             Оформить заказ
           </Button>
         </div>
