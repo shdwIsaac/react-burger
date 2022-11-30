@@ -17,7 +17,6 @@ import { useAuth } from '../../utils/auth'
 import { NotFound } from '../../pages/NotFound/not-found'
 import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
 import { AuthorizedRoute } from '../authorized-route'
-import { getCookie } from '../../utils/utils'
 
 function App () {
   const dispatch = useDispatch()
@@ -35,13 +34,6 @@ function App () {
     dispatch(fetchData())
   }, [dispatch])
 
-  useEffect(() => {
-    const token = getCookie('accessToken')
-    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
-      auth.setIsAuth(true)
-    }
-  }, [])
-
   return (
       <>
         <div className={styles.app}>
@@ -49,18 +41,18 @@ function App () {
           {!isLoading && !hasError && ingredients.length &&
               <Routes location={background || location}>
                 <Route path='/login' exact={true}
-                       element={<AuthorizedRoute user={auth.user}><LoginPage/></AuthorizedRoute>}/>
+                       element={<AuthorizedRoute user={auth.isAuth}><LoginPage/></AuthorizedRoute>}/>
                 <Route path='/forgot-password' exact={true}
-                       element={<AuthorizedRoute user={auth.user}><ForgotPasswordPage/></AuthorizedRoute>}/>
+                       element={<AuthorizedRoute user={auth.isAuth}><ForgotPasswordPage/></AuthorizedRoute>}/>
                 <Route path='/reset-password' exact={true}
-                       element={<AuthorizedRoute user={auth.user}><ResetPasswordPage/></AuthorizedRoute>}/>
+                       element={<AuthorizedRoute user={auth.isAuth}><ResetPasswordPage/></AuthorizedRoute>}/>
                 <Route path='/register' exact={true}
-                       element={<AuthorizedRoute user={auth.user}><RegisterPage/></AuthorizedRoute>}/>
+                       element={<AuthorizedRoute user={auth.isAuth}><RegisterPage/></AuthorizedRoute>}/>
                 <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
                 <Route path='/profile' exact={true}
-                       element={<ProtectedRoute user={auth.user}><ProfilePage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute user={auth.isAuth}><ProfilePage/></ProtectedRoute>}/>
                 <Route path='/profile/orders' exact={true}
-                       element={<ProtectedRoute user={auth.user}><ProfileOrdersPage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute user={auth.isAuth}><ProfileOrdersPage/></ProtectedRoute>}/>
                 <Route path='/' element={<HomePage/>}/>
                 <Route path='/not-found' exact element={<NotFound/>}/>
               </Routes>

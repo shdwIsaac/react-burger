@@ -1,5 +1,5 @@
-import React, { useContext, useState, createContext } from 'react'
-import { deleteCookie, setCookie } from './utils'
+import React, { useContext, useState, createContext, useEffect } from 'react'
+import { deleteCookie, getCookie, setCookie } from './utils'
 
 import {
   fetchWithRefresh,
@@ -33,6 +33,13 @@ export function useProvideAuth () {
   const [user, setUser] = useState(null)
   const [isAuth, setIsAuth] = useState(false)
 
+  useEffect(() => {
+    const token = getCookie('accessToken')
+    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
+      setIsAuth(true)
+    }
+  }, [])
+
   const getUser = async () => {
     return await request(userApi, optionsGetUserRequest())
       .then(data => {
@@ -42,7 +49,6 @@ export function useProvideAuth () {
         return data.success
       })
   }
-
   const register = async form => {
     return await request(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
@@ -53,7 +59,6 @@ export function useProvideAuth () {
         return data.success
       })
   }
-
   const signIn = async form => {
     return await request(loginApi, optionsPostLogin(form))
       .then(data => {
@@ -66,7 +71,6 @@ export function useProvideAuth () {
         return data.success
       })
   }
-
   const signOut = async form => {
     await request(logoutApi, optionsPostLogoutRequest(form))
     setUser(null)
@@ -74,7 +78,6 @@ export function useProvideAuth () {
     deleteCookie('refreshToken')
     localStorage.removeItem('refreshToken')
   }
-
   const updateUser = async form => {
     await fetchWithRefresh(userApi, optionsPatchUserRequest(form))
       .then(data => {
@@ -84,14 +87,12 @@ export function useProvideAuth () {
         return data.success
       })
   }
-
   const forgotPassword = async form => {
     return await request(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
         return data.success
       })
   }
-
   const resetPassword = async form => {
     return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
@@ -101,14 +102,14 @@ export function useProvideAuth () {
 
   return {
     user,
+    setIsAuth,
+    isAuth,
     getUser,
     signIn,
     signOut,
     register,
     updateUser,
     forgotPassword,
-    resetPassword,
-    setIsAuth,
-    isAuth
+    resetPassword
   }
 }
