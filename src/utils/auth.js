@@ -31,6 +31,7 @@ export function useAuth () {
 
 export function useProvideAuth () {
   const [user, setUser] = useState(null)
+  const [isAuth, setIsAuth] = useState(false)
 
   const getUser = async () => {
     return await request(userApi, optionsGetUserRequest())
@@ -106,6 +107,8 @@ export function useProvideAuth () {
     register,
     updateUser,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    setIsAuth,
+    isAuth
   }
 }

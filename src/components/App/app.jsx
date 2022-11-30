@@ -17,6 +17,7 @@ import { useAuth } from '../../utils/auth'
 import { NotFound } from '../../pages/NotFound/not-found'
 import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
 import { AuthorizedRoute } from '../authorized-route'
+import { getCookie } from '../../utils/utils'
 
 function App () {
   const dispatch = useDispatch()
@@ -35,7 +36,10 @@ function App () {
   }, [dispatch])
 
   useEffect(() => {
-    auth.getUser()
+    const token = getCookie('accessToken')
+    if (JSON.parse(atob(token.split('.')[1])).exp > Date.now()) {
+      auth.setIsAuth(true)
+    }
   }, [])
 
   return (

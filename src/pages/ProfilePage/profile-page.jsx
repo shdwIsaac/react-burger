@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from './profile-page.module.css'
 import { Link } from 'react-router-dom'
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
@@ -27,10 +27,14 @@ export const ProfilePage = () => {
     [auth, form]
   )
 
+  useEffect(() => {
+    auth.getUser()
+  })
+
   return (
       <div className={styles.content}>
         <div>
-          <Link >
+          <Link to='/profile'>
             <h2 className="text text_type_main-large">Профиль</h2>
           </Link>
           <Link to='/profile/orders'>
