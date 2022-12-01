@@ -9,8 +9,11 @@ export const ProtectedRoute = ({ authChecked, children }) => {
   const location = useLocation()
   const dispatch = useDispatch()
 
-  useEffect(async () => {
-    dispatch(await auth.checkAuth())
+  useEffect(() => {
+    async function checkAuth () {
+      dispatch(await auth.checkAuth())
+    }
+    checkAuth()
   }, [])
 
   if (!authChecked) {
