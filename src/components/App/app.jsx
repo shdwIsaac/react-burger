@@ -49,9 +49,9 @@ function App () {
                        element={<RegisterPage/>}/>
                 <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
                 <Route path='/profile' exact={true}
-                       element={<ProtectedRoute user={auth.isAuth}><ProfilePage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute authChecked={auth.isAuth}><ProfilePage/></ProtectedRoute>}/>
                 <Route path='/profile/orders' exact={true}
-                       element={<ProtectedRoute user={auth.isAuth}><ProfileOrdersPage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute authChecked={auth.isAuth}><ProfileOrdersPage/></ProtectedRoute>}/>
                 <Route path='/' element={<HomePage/>}/>
                 <Route path='*' element={<NotFound/>}/>
               </Routes>
