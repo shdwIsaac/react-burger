@@ -1,18 +1,23 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from './profile-page.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { signOut, updateUser } from '../../services/slices/authorization'
-import { useDispatch } from 'react-redux'
+import { authorizationSelector, signOut, updateUser } from '../../services/slices/authorization'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const ProfilePage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const { user } = useSelector(authorizationSelector)
   const [form, setValue] = useState({ name: '', email: '' })
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
+
+  useEffect(() => {
+    setValue(user)
+  }, [user])
 
   const update = useCallback(
     e => {
