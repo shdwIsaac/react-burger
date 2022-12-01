@@ -15,7 +15,7 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
   }, [])
 
   if (onlyUnAuth && forgotPasswordRequest) {
-    return <Navigate to='/reset-password'/>
+    return <Navigate to='/reset-password' replace={true}/>
   }
 
   if (onlyUnAuth && user) {
