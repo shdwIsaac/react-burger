@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useAuth } from '../utils/auth'
 
 // eslint-disable-next-line react/prop-types
-export const ProtectedRoute = ({ authChecked, children }) => {
+export const ProtectedRoute = ({ authChecked, children, onlyUnAuth }) => {
   const auth = useAuth()
   const location = useLocation()
 
@@ -14,11 +14,11 @@ export const ProtectedRoute = ({ authChecked, children }) => {
     checkAuth()
   }, [])
 
-  if (!authChecked) {
-    return null
-  }
+  // if (onlyUnAuth && auth.user) {
 
-  if (auth.user) {
+  // }
+
+  if (!onlyUnAuth && auth.user) {
     return <Navigate to='/login' state={{ from: location }}/>
   }
   return children
