@@ -35,13 +35,14 @@ export function useProvideAuth () {
 
   useEffect(() => {
     const token = getCookie('accessToken')
-    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now() * 1000) {
+    if (token && JSON.parse(atob(token.split('.')[1])).exp < Date.now() * 1000) {
       setIsAuth(true)
+      console.log(isAuth)
     }
   }, [])
 
   const getUser = async () => {
-    return await request(userApi, optionsGetUserRequest())
+    return await fetchWithRefresh(userApi, optionsGetUserRequest())
       .then(data => {
         if (data.success) {
           setUser(data.user)
@@ -53,8 +54,10 @@ export function useProvideAuth () {
     return await request(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
         if (data.success) {
-          setUser(data.user)
+          setIsAuth(true)
           setCookie('accessToken', data.accessToken.split('Bearer ')[1])
+          setCookie('refreshToken', data.refreshToken)
+          localStorage.setItem('refreshToken', data.refreshToken)
         }
         return data.success
       })
@@ -63,7 +66,7 @@ export function useProvideAuth () {
     return await request(loginApi, optionsPostLogin(form))
       .then(data => {
         if (data.success) {
-          setUser(data.user)
+          setIsAuth(true)
           setCookie('accessToken', data.accessToken.split('Bearer ')[1])
           setCookie('refreshToken', data.refreshToken)
           localStorage.setItem('refreshToken', data.refreshToken)
@@ -73,6 +76,7 @@ export function useProvideAuth () {
   }
   const signOut = async form => {
     await request(logoutApi, optionsPostLogoutRequest(form))
+    setIsAuth(false)
     setUser(null)
     deleteCookie('accessToken')
     deleteCookie('refreshToken')

@@ -16,7 +16,6 @@ import { ProtectedRoute } from '../protected-route'
 import { useAuth } from '../../utils/auth'
 import { NotFound } from '../../pages/NotFound/not-found'
 import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
-import { AuthorizedRoute } from '../authorized-route'
 
 function App () {
   const dispatch = useDispatch()
@@ -41,20 +40,20 @@ function App () {
           {!isLoading && !hasError && ingredients.length &&
               <Routes location={background || location}>
                 <Route path='/login' exact={true}
-                       element={<AuthorizedRoute user={auth.isAuth}><LoginPage/></AuthorizedRoute>}/>
+                       element={<LoginPage/>}/>
                 <Route path='/forgot-password' exact={true}
-                       element={<AuthorizedRoute user={auth.isAuth}><ForgotPasswordPage/></AuthorizedRoute>}/>
+                       element={<ForgotPasswordPage/>}/>
                 <Route path='/reset-password' exact={true}
-                       element={<AuthorizedRoute user={auth.isAuth}><ResetPasswordPage/></AuthorizedRoute>}/>
+                       element={<ResetPasswordPage/>}/>
                 <Route path='/register' exact={true}
-                       element={<AuthorizedRoute user={auth.isAuth}><RegisterPage/></AuthorizedRoute>}/>
+                       element={<RegisterPage/>}/>
                 <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
                 <Route path='/profile' exact={true}
                        element={<ProtectedRoute user={auth.isAuth}><ProfilePage/></ProtectedRoute>}/>
                 <Route path='/profile/orders' exact={true}
                        element={<ProtectedRoute user={auth.isAuth}><ProfileOrdersPage/></ProtectedRoute>}/>
                 <Route path='/' element={<HomePage/>}/>
-                <Route path='/not-found' exact element={<NotFound/>}/>
+                <Route path='*' element={<NotFound/>}/>
               </Routes>
           }
           {!isLoading && !hasError && ingredients.length && background && (

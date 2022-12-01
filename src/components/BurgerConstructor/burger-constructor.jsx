@@ -23,7 +23,7 @@ export const BurgerConstructor = () => {
   }
 
   const doOrder = () => {
-    if (!auth.user) {
+    if (!auth.isAuth) {
       navigate('/login', { state: { route: '/' } })
     }
     bun &&

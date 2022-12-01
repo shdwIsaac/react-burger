@@ -6,11 +6,15 @@ import { useAuth } from '../../utils/auth'
 
 export const ProfilePage = () => {
   const auth = useAuth()
-  const [form, setValue] = useState({ name: auth.user.name, email: auth.user.email })
+  const [form, setValue] = useState({ name: '', email: '' })
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
+
+  useEffect(() => {
+    auth.getUser()
+  }, [])
 
   const updateUser = useCallback(
     e => {
@@ -26,11 +30,6 @@ export const ProfilePage = () => {
     },
     [auth, form]
   )
-
-  useEffect(() => {
-    auth.getUser()
-  })
-
   return (
       <div className={styles.content}>
         <div>
