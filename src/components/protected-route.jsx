@@ -13,12 +13,12 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
     }
     checkAuth()
   }, [])
-
+  console.log(auth.user)
   if (onlyUnAuth && auth.user) {
     return <Navigate to={location.pathname} replace={true} state={{ from: location.pathname }}/>
   }
-
   if (!onlyUnAuth && !auth.user) {
+    console.log(auth.user)
     return <Navigate to='/login' replace={true} state={{ from: location.pathname }}/>
   }
   return children

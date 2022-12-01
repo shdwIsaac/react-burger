@@ -103,9 +103,9 @@ export function useProvideAuth () {
       })
   }
 
-  const checkAuth = () => {
+  const checkAuth = async () => {
     if (isAuth) {
-      return getUser()
+      return await getUser()
     }
   }
 
