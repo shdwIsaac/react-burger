@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useAuth } from '../utils/auth'
 
 // eslint-disable-next-line react/prop-types
-export const ProtectedRoute = ({ authChecked, children, onlyUnAuth }) => {
+export const ProtectedRoute = ({ children, onlyUnAuth }) => {
   const auth = useAuth()
   const location = useLocation()
 
