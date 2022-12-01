@@ -9,8 +9,8 @@ export const ProtectedRoute = ({ authChecked, children }) => {
   const location = useLocation()
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(auth.getUser())
+  useEffect(async () => {
+    dispatch(await auth.checkAuth())
   }, [])
 
   if (!authChecked) {
@@ -18,7 +18,7 @@ export const ProtectedRoute = ({ authChecked, children }) => {
   }
 
   if (!auth.user) {
-    return <Navigate to={{ pathname: '/login', state: { from: location } }} replace/>
+    return <Navigate to={{ pathname: '/login' }} state={{ from: location }} replace/>
   }
   return children
 }

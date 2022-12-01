@@ -37,7 +37,6 @@ export function useProvideAuth () {
     const token = getCookie('accessToken')
     if (token && JSON.parse(atob(token.split('.')[1])).exp < Date.now() * 1000) {
       setIsAuth(true)
-      console.log(isAuth)
     }
   }, [])
 
@@ -104,6 +103,12 @@ export function useProvideAuth () {
       })
   }
 
+  const checkAuth = () => {
+    if (isAuth) {
+      return getUser()
+    }
+  }
+
   return {
     user,
     setIsAuth,
@@ -114,6 +119,7 @@ export function useProvideAuth () {
     register,
     updateUser,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    checkAuth
   }
 }
