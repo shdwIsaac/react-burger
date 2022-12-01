@@ -13,13 +13,13 @@ import { ProfilePage } from '../../pages/ProfilePage/profile-page'
 import { IngredientDetails } from '../IngredientDetails/ingredient-details'
 import { Modal } from '../Modal/modal'
 import { ProtectedRoute } from '../protected-route'
-import { useAuth } from '../../utils/auth'
 import { NotFound } from '../../pages/NotFound/not-found'
 import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
+import { authorizationSelector, checkAuth } from '../../services/slices/authorization'
 
 function App () {
   const dispatch = useDispatch()
-  const auth = useAuth()
+  const { isAuthChecked } = useSelector(authorizationSelector)
   const { ingredients, isLoading, hasError } = useSelector(ingredientsSelector)
   const location = useLocation()
   const history = useNavigate()
@@ -34,11 +34,8 @@ function App () {
   }, [dispatch])
 
   useEffect(() => {
-    async function checkAuth () {
-      await auth.checkAuth()
-    }
-    checkAuth()
-  }, [auth])
+    if (!isAuthChecked) { dispatch(checkAuth()) }
+  }, [])
 
   return (
       <>
@@ -47,18 +44,18 @@ function App () {
           {!isLoading && !hasError && ingredients.length &&
               <Routes location={background || location}>
                 <Route path='/login' exact={true}
-                       element={<LoginPage/>}/>
+                       element={<ProtectedRoute onlyUnAuth={true}><LoginPage/></ProtectedRoute>}/>
                 <Route path='/forgot-password' exact={true}
-                       element={<ForgotPasswordPage/>}/>
+                       element={<ProtectedRoute onlyUnAuth={true}><ForgotPasswordPage/></ProtectedRoute>}/>
                 <Route path='/reset-password' exact={true}
-                       element={<ResetPasswordPage/>}/>
+                       element={<ProtectedRoute onlyUnAuth={true}><ResetPasswordPage/></ProtectedRoute>}/>
                 <Route path='/register' exact={true}
-                       element={<RegisterPage/>}/>
+                       element={<ProtectedRoute onlyUnAuth={true}><RegisterPage/></ProtectedRoute>}/>
                 <Route path='/ingredients/:ingredientId' exact element={<IngredientDetails/>}/>
                 <Route path='/profile' exact={true}
-                       element={<ProtectedRoute authChecked={auth.isAuth}><ProfilePage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute><ProfilePage/></ProtectedRoute>}/>
                 <Route path='/profile/orders' exact={true}
-                       element={<ProtectedRoute authChecked={auth.isAuth}><ProfileOrdersPage/></ProtectedRoute>}/>
+                       element={<ProtectedRoute><ProfileOrdersPage/></ProtectedRoute>}/>
                 <Route path='/' element={<HomePage/>}/>
                 <Route path='*' element={<NotFound/>}/>
               </Routes>

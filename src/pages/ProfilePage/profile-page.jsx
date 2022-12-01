@@ -2,10 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react'
 import styles from './profile-page.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { useAuth } from '../../utils/auth'
+import { getUser, signOut, updateUser } from '../../services/slices/authorization'
 
 export const ProfilePage = () => {
-  const auth = useAuth()
   const navigate = useNavigate()
   const [form, setValue] = useState({ name: '', email: '' })
 
@@ -14,23 +13,23 @@ export const ProfilePage = () => {
   }
 
   useEffect(() => {
-    auth.getUser()
+    getUser()
   }, [])
 
-  const updateUser = useCallback(
+  const update = useCallback(
     e => {
       e.preventDefault()
-      auth.updateUser(form)
+      updateUser(form)
     },
-    [auth, form]
+    [form]
   )
   const logout = useCallback(
     e => {
       e.preventDefault()
-      auth.signOut()
+      signOut()
       navigate('/', { replace: true })
     },
-    [auth, form]
+    [form]
   )
   return (
       <div className={styles.content}>
@@ -49,7 +48,7 @@ export const ProfilePage = () => {
          <Input name='name' value={form.name} onChange={onChange} placeholder='Имя'/>
          <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
          <PasswordInput name='password' value='' onChange={onChange} placeholder='Пароль'/>
-         <Button htmlType='button' onClick={updateUser}>Сохранить</Button>
+         <Button htmlType='button' onClick={update}>Сохранить</Button>
        </div>
       </div>
 

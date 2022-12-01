@@ -1,21 +1,18 @@
 import { Navigate, useLocation } from 'react-router-dom'
 import React from 'react'
-import { useAuth } from '../utils/auth'
+import { useSelector } from 'react-redux'
+import { authorizationSelector } from '../services/slices/authorization'
 
 // eslint-disable-next-line react/prop-types
 export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
-  const auth = useAuth()
+  const { user } = useSelector(authorizationSelector)
   const location = useLocation()
 
-  if (onlyUnAuth && !auth.user) {
-    return <Navigate to={location.pathname}/>
+  if (onlyUnAuth && user) {
+    const fromPage = location.state?.from?.pathname || '/'
+    return <Navigate to={fromPage}/>
   }
-
-  if (onlyUnAuth && auth.user) {
-    return <Navigate to={location.pathname}/>
-  }
-  if (!onlyUnAuth && !auth.user) {
-    console.log(auth.user)
+  if (!onlyUnAuth && !user) {
     return <Navigate to='/login' replace={true} state={{ from: location.pathname }}/>
   }
   return children

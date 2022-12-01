@@ -2,10 +2,9 @@ import { Button, Input, PasswordInput } from '@ya.praktikum/react-developer-burg
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './reset-password.module.css'
-import { useAuth } from '../../utils/auth'
+import { resetPassword } from '../../services/slices/authorization'
 
 export const ResetPasswordPage = () => {
-  const auth = useAuth()
   const [form, setValue] = useState({ password: '', token: '' })
   const navigate = useNavigate()
 
@@ -13,13 +12,13 @@ export const ResetPasswordPage = () => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
 
-  const resetPassword = useCallback(
+  const reset = useCallback(
     e => {
       e.preventDefault()
-      auth.resetPassword(form)
+      resetPassword(form)
       navigate('/login')
     },
-    [auth, form]
+    [form]
   )
 
   return (
@@ -27,7 +26,7 @@ export const ResetPasswordPage = () => {
         <h2 className="text text_type_main-medium">Восстановление пароля</h2>
         <PasswordInput name='password' value={form.password} onChange={onChange} placeholder='Введите новый пароль'/>
         <Input name='token' value={form.token} onChange={onChange} placeholder='Введите код из письма'/>
-        <Button onClick={resetPassword} htmlType='button'>Сохранить</Button>
+        <Button onClick={reset} htmlType='button'>Сохранить</Button>
         <div>
           <p className="text text_type_main-small">Вспомнили пароль?</p>
           <Link className="text text_type_main-small text_color_inactive" to='/login'>Войти</Link>

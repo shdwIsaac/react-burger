@@ -2,10 +2,9 @@ import { Button, EmailInput } from '@ya.praktikum/react-developer-burger-ui-comp
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './forgot-password.module.css'
-import { useAuth } from '../../utils/auth'
+import { forgotPassword } from '../../services/slices/authorization'
 
 export const ForgotPasswordPage = () => {
-  const auth = useAuth()
   const [form, setValue] = useState({ email: '' })
   const navigate = useNavigate()
 
@@ -13,20 +12,20 @@ export const ForgotPasswordPage = () => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
 
-  const forgotPassword = useCallback(
+  const forgot = useCallback(
     e => {
       e.preventDefault()
-      auth.forgotPassword(form)
+      forgotPassword(form)
       navigate('/reset-password')
     },
-    [auth, form]
+    [form]
   )
 
   return (
       <div className={styles.content}>
         <h2 className="text text_type_main-medium">Восстановление пароля</h2>
         <EmailInput name='email' value={form.email} onChange={onChange} placeholder='Укажите e-mail'/>
-        <Button onClick={forgotPassword} htmlType='button'>Восстановить</Button>
+        <Button onClick={forgot} htmlType='button'>Восстановить</Button>
         <div>
           <p className="text text_type_main-small">Вспомнили пароль?</p>
           <Link className="text text_type_main-small text_color_inactive" to='/login'>Войти</Link>

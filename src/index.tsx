@@ -8,7 +8,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from './services/slices'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import { ProvideAuth } from '../src/utils/auth'
 
 const store = configureStore({
   reducer: rootReducer
@@ -19,13 +18,11 @@ const root = ReactDOM.createRoot(
 )
 root.render(
     <React.StrictMode>
-      <ProvideAuth>
         <BrowserRouter>
           <Provider store={store}>
             <App/>
           </Provider>
         </BrowserRouter>
-      </ProvideAuth>
     </React.StrictMode>
 )
 

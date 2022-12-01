@@ -2,7 +2,7 @@ import { Button, EmailInput, PasswordInput } from '@ya.praktikum/react-developer
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './login.module.css'
-import { useAuth } from '../../utils/auth'
+import { signIn } from '../../services/slices/authorization'
 
 export const LoginPage = () => {
   const [form, setValue] = useState({ email: '', password: '' })
@@ -15,15 +15,13 @@ export const LoginPage = () => {
 
   const fromPage = location.state?.from?.pathname || '/'
 
-  const auth = useAuth()
-
   const login = useCallback(
     e => {
       e.preventDefault()
-      auth.signIn(form)
+      signIn(form)
       navigate(fromPage, { replace: true })
     },
-    [auth, form]
+    [form]
   )
   return (
       <div className={styles.content}>

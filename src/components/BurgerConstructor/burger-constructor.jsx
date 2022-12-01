@@ -8,14 +8,14 @@ import { burgerConstructorSelector } from '../../services/slices/burger-construc
 import { modalSelector, close } from '../../services/slices/modal'
 import { DropTarget } from '../DropTarget/drop-target'
 import { send } from '../../services/slices/order-details'
-import { useAuth } from '../../utils/auth'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { authorizationSelector } from '../../services/slices/authorization'
 
 export const BurgerConstructor = () => {
   const dispatch = useDispatch()
   const { sum, bun, ingredientsConstructor } = useSelector(burgerConstructorSelector)
   const { isOpenOrder } = useSelector(modalSelector)
-  const auth = useAuth()
+  const { isAuthChecked } = useSelector(authorizationSelector)
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -24,7 +24,7 @@ export const BurgerConstructor = () => {
   }
 
   const doOrder = () => {
-    if (!auth.isAuth) {
+    if (!isAuthChecked) {
       navigate('/login', { replace: true, state: { from: location.pathname } })
     }
     bun &&
