@@ -27,7 +27,7 @@ export const BurgerConstructor = () => {
     if (!isAuthChecked) {
       navigate('/login', { replace: true, state: { from: location.pathname } })
     }
-    bun &&
+    isAuthChecked && bun &&
     dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
   }
 

@@ -25,7 +25,9 @@ const initialState = {
   updateUserRequest: false,
 
   getUserError: null,
-  getUserRequest: false
+  getUserRequest: false,
+
+  forgotPasswordRequest: false
 }
 
 export const authorizationSlice = createSlice({
@@ -68,17 +70,33 @@ export const authorizationSlice = createSlice({
     logoutSuccess: (state) => {
       state.isAuthChecked = false
       state.user = null
+    },
+    forgotRequest: (state) => {
+      state.forgotPasswordRequest = true
+    },
+    forgotSuccess: (state) => {
+      state.forgotPasswordRequest = false
     }
   }
 })
 
-export const { getUserSuccess, getUserRequest, logoutSuccess, loginRequest, loginSuccess, updateUserSuccess, updateUserRequest } = authorizationSlice.actions
+export const {
+  forgotRequest,
+  getUserSuccess,
+  getUserRequest,
+  logoutSuccess,
+  loginRequest,
+  loginSuccess,
+  updateUserSuccess,
+  updateUserRequest,
+  forgotSuccess
+} = authorizationSlice.actions
 
 export const authorizationSelector = state => state.authorization
 
 export function getUser () {
   return async function (dispatch) {
-    dispatch(getUserRequest)
+    dispatch(getUserRequest())
     return await fetchWithRefresh(userApi, optionsGetUserRequest())
       .then(data => {
         if (data.success) {
@@ -88,16 +106,17 @@ export function getUser () {
       })
   }
 }
+
 export function signIn (form) {
   return async function (dispatch) {
-    dispatch(loginRequest)
+    dispatch(loginRequest())
     return await request(loginApi, optionsPostLogin(form))
       .then(data => {
         if (data.success) {
           setCookie('accessToken', data.accessToken.split('Bearer ')[1])
           setCookie('refreshToken', data.refreshToken)
           localStorage.setItem('refreshToken', data.refreshToken)
-          dispatch(loginSuccess)
+          dispatch(loginSuccess())
         }
         return data.success
       })
@@ -106,14 +125,14 @@ export function signIn (form) {
 
 export function register (form) {
   return async function (dispatch) {
-    dispatch(loginRequest)
+    dispatch(loginRequest())
     return await request(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
         if (data.success) {
           setCookie('accessToken', data.accessToken.split('Bearer ')[1])
           setCookie('refreshToken', data.refreshToken)
           localStorage.setItem('refreshToken', data.refreshToken)
-          dispatch(loginSuccess)
+          dispatch(loginSuccess())
         }
         return data.success
       })
@@ -128,7 +147,7 @@ export function signOut (form) {
           deleteCookie('accessToken')
           deleteCookie('refreshToken')
           localStorage.removeItem('refreshToken')
-          dispatch(logoutSuccess)
+          dispatch(logoutSuccess())
         }
         return data.success
       })
@@ -137,7 +156,7 @@ export function signOut (form) {
 
 export function updateUser (form) {
   return async function (dispatch) {
-    dispatch(updateUserRequest)
+    dispatch(updateUserRequest())
     await fetchWithRefresh(userApi, optionsPatchUserRequest(form))
       .then(data => {
         if (data.success) {
@@ -149,17 +168,20 @@ export function updateUser (form) {
 }
 
 export function forgotPassword (form) {
-  return async function () {
+  return async function (dispatch) {
+    dispatch(forgotRequest())
     return await request(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
         return data.success
       })
   }
 }
+
 export function resetPassword (form) {
-  return async function () {
+  return async function (dispatch) {
     return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
+        dispatch(forgotSuccess())
         return data.success
       })
   }
@@ -169,7 +191,7 @@ export function checkAuth () {
   return async function (dispatch) {
     const token = getCookie('accessToken')
     if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now() * 1000) {
-      dispatch(logoutSuccess)
+      dispatch(logoutSuccess())
     }
   }
 }

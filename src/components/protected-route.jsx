@@ -1,12 +1,22 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { authorizationSelector } from '../services/slices/authorization'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { authorizationSelector, getUser } from '../services/slices/authorization'
 
 // eslint-disable-next-line react/prop-types
 export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
-  const { user } = useSelector(authorizationSelector)
+  const { user, isAuthChecked, forgotPasswordRequest } = useSelector(authorizationSelector)
+  const dispatch = useDispatch()
   const location = useLocation()
+
+  useEffect(() => {
+    isAuthChecked &&
+    dispatch(getUser())
+  }, [])
+
+  if (onlyUnAuth && forgotPasswordRequest) {
+    return <Navigate to='/reset-password'/>
+  }
 
   if (onlyUnAuth && user) {
     const fromPage = location.state?.from?.pathname || '/'

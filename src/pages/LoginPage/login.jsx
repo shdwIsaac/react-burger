@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './login.module.css'
 import { signIn } from '../../services/slices/authorization'
+import { useDispatch } from 'react-redux'
 
 export const LoginPage = () => {
   const [form, setValue] = useState({ email: '', password: '' })
   const navigate = useNavigate()
   const location = useLocation()
+  const dispatch = useDispatch()
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
@@ -18,7 +20,7 @@ export const LoginPage = () => {
   const login = useCallback(
     e => {
       e.preventDefault()
-      signIn(form)
+      dispatch(signIn(form))
       navigate(fromPage, { replace: true })
     },
     [form]
