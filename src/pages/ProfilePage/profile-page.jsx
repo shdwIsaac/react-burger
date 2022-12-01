@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from './profile-page.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
 import { useAuth } from '../../utils/auth'
 
 export const ProfilePage = () => {
   const auth = useAuth()
+  const navigate = useNavigate()
   const [form, setValue] = useState({ name: '', email: '' })
 
   const onChange = e => {
@@ -27,6 +28,7 @@ export const ProfilePage = () => {
     e => {
       e.preventDefault()
       auth.signOut()
+      navigate('/', { replace: true })
     },
     [auth, form]
   )

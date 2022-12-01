@@ -1,5 +1,5 @@
 import { Button, EmailInput, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './login.module.css'
 import { useAuth } from '../../utils/auth'
@@ -7,10 +7,13 @@ import { useAuth } from '../../utils/auth'
 export const LoginPage = () => {
   const [form, setValue] = useState({ email: '', password: '' })
   const navigate = useNavigate()
+  const location = useLocation()
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
+
+  const fromPage = location.state?.from?.pathname || '/'
 
   const auth = useAuth()
 
@@ -18,7 +21,7 @@ export const LoginPage = () => {
     e => {
       e.preventDefault()
       auth.signIn(form)
-      navigate('/profile')
+      navigate(fromPage, { replace: true })
     },
     [auth, form]
   )
