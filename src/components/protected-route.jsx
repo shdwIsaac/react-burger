@@ -14,10 +14,6 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
     dispatch(getUser())
   }, [])
 
-  if (onlyUnAuth && !forgotPasswordRequest) {
-    return <Navigate to='/forgot-password' replace={true}/>
-  }
-
   if (onlyUnAuth && user) {
     const fromPage = location.state?.from?.pathname || '/'
     return <Navigate to={fromPage}/>
@@ -25,5 +21,9 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
   if (!onlyUnAuth && !user) {
     return <Navigate to='/login' replace={true} state={{ from: location.pathname }}/>
   }
+  if (onlyUnAuth && !forgotPasswordRequest) {
+    return <Navigate to='/forgot-password' replace={true}/>
+  }
+
   return children
 }

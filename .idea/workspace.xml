@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint3/step1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/protected-route.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/protected-route.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +110,7 @@
       <workItem from="1669284969747" duration="8880000" />
       <workItem from="1669358292375" duration="44953000" />
       <workItem from="1669724946616" duration="8000" />
-      <workItem from="1669786205389" duration="46665000" />
-    </task>
-    <task id="LOCAL-00007" summary="step-2">
-      <created>1667388187118</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1667388187118</updated>
+      <workItem from="1669786205389" duration="46701000" />
     </task>
     <task id="LOCAL-00008" summary="step-2 fix">
       <created>1667479316561</created>
@@ -454,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669925155614</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="sprint3/step1">
+      <created>1669925193430</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925193430</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
