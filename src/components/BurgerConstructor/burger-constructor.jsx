@@ -25,7 +25,7 @@ export const BurgerConstructor = () => {
 
   const doOrder = () => {
     if (!auth.isAuth) {
-      navigate('/login', { state: { background: location } })
+      navigate('/login', { state: { background: location }, replace: true })
     }
     bun &&
     dispatch(send({ ingredients: [bun._id, ...ingredientsConstructor.map(ingredient => ingredient._id), bun._id] }))
