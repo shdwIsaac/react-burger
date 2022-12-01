@@ -33,6 +33,13 @@ function App () {
     dispatch(fetchData())
   }, [dispatch])
 
+  useEffect(() => {
+    async function checkAuth () {
+      await auth.checkAuth()
+    }
+    checkAuth()
+  }, [auth])
+
   return (
       <>
         <div className={styles.app}>
