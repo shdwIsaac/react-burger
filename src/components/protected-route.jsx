@@ -7,7 +7,10 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
   const auth = useAuth()
   const location = useLocation()
 
-  console.log(auth.user)
+  if (onlyUnAuth && !auth.user) {
+    return <Navigate to={location.pathname}/>
+  }
+
   if (onlyUnAuth && auth.user) {
     return <Navigate to={location.pathname}/>
   }
