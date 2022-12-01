@@ -1,10 +1,11 @@
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './register.module.css'
 import { useAuth } from '../../utils/auth'
 
 export const RegisterPage = () => {
+  const navigate = useNavigate()
   const [form, setValue] = useState({ name: '', email: '', password: '' })
 
   const onChange = e => {
@@ -21,9 +22,9 @@ export const RegisterPage = () => {
     [auth, form]
   )
 
-  if (auth.user) {
+  if (auth.isAuth) {
     return (
-        <Navigate to="/" replace/>
+      navigate('/')
     )
   }
 

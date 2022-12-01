@@ -1,5 +1,5 @@
 import { Button, EmailInput } from '@ya.praktikum/react-developer-burger-ui-components'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './forgot-password.module.css'
 import { useAuth } from '../../utils/auth'
@@ -7,6 +7,7 @@ import { useAuth } from '../../utils/auth'
 export const ForgotPasswordPage = () => {
   const auth = useAuth()
   const [form, setValue] = useState({ email: '' })
+  const navigate = useNavigate()
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
@@ -16,7 +17,7 @@ export const ForgotPasswordPage = () => {
     e => {
       e.preventDefault()
       auth.forgotPassword(form)
-      return <Navigate to='/reset-password'/>
+      navigate('/reset-password')
     },
     [auth, form]
   )
