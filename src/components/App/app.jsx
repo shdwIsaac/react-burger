@@ -15,7 +15,7 @@ import { Modal } from '../Modal/modal'
 import { ProtectedRoute } from '../protected-route'
 import { NotFound } from '../../pages/NotFound/not-found'
 import { ProfileOrdersPage } from '../../pages/ProfileOrdersPage/profile-orders-page'
-import { authorizationSelector, checkAuth } from '../../services/slices/authorization'
+import { authorizationSelector, checkAuth, getUser } from '../../services/slices/authorization'
 
 function App () {
   const dispatch = useDispatch()
@@ -36,6 +36,13 @@ function App () {
   useEffect(() => {
     if (!isAuthChecked) { dispatch(checkAuth()) }
   }, [])
+
+  useEffect(() => {
+    const get = async () => {
+      await dispatch(getUser())
+    }
+    isAuthChecked && get()
+  }, [isAuthChecked])
 
   return (
       <>

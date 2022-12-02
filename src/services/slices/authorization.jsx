@@ -172,6 +172,7 @@ export function forgotPassword (form) {
     dispatch(forgotRequest())
     return await request(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
+        localStorage.setItem('reset', 'true')
         return data.success
       })
   }
@@ -182,6 +183,7 @@ export function resetPassword (form) {
     return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
         dispatch(forgotSuccess())
+        localStorage.removeItem('reset')
         return data.success
       })
   }
@@ -190,7 +192,9 @@ export function resetPassword (form) {
 export function checkAuth () {
   return async function (dispatch) {
     const token = getCookie('accessToken')
-    if (token && JSON.parse(atob(token.split('.')[1])).exp > Date.now() * 1000) {
+    if (token && JSON.parse(atob(token.split('.')[1])).exp * 1000 > Date.now()) {
+      dispatch(loginSuccess())
+    } else {
       dispatch(logoutSuccess())
     }
   }

@@ -3,20 +3,22 @@ import { Link, useNavigate } from 'react-router-dom'
 import React, { useCallback, useState } from 'react'
 import styles from './forgot-password.module.css'
 import { forgotPassword } from '../../services/slices/authorization'
+import { useDispatch } from 'react-redux'
 
 export const ForgotPasswordPage = () => {
   const [form, setValue] = useState({ email: '' })
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
 
   const forgot = useCallback(
-    e => {
+    async e => {
       e.preventDefault()
-      forgotPassword(form)
-      navigate('/reset-password')
+      const success = await dispatch(forgotPassword(form))
+      success && navigate('/reset-password')
     },
     [form]
   )

@@ -1,21 +1,30 @@
 import { Button, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Link, useNavigate } from 'react-router-dom'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styles from './reset-password.module.css'
 import { resetPassword } from '../../services/slices/authorization'
+import { useDispatch } from 'react-redux'
 
 export const ResetPasswordPage = () => {
   const [form, setValue] = useState({ password: '', token: '' })
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const onChange = e => {
     setValue({ ...form, [e.target.name]: e.target.value })
   }
 
+  useEffect(() => {
+    if (localStorage.getItem('reset') !== 'true') {
+      navigate('/forgot-password')
+    }
+  }, []
+  )
+
   const reset = useCallback(
     e => {
       e.preventDefault()
-      resetPassword(form)
+      dispatch(resetPassword(form))
       navigate('/login')
     },
     [form]
