@@ -27,7 +27,10 @@ const initialState = {
   getUserError: null,
   getUserRequest: false,
 
-  forgotPasswordRequest: false
+  forgotPasswordRequest: false,
+  forgotPasswordError: null,
+
+  logoutUserError: null
 }
 
 export const authorizationSlice = createSlice({
@@ -62,6 +65,10 @@ export const authorizationSlice = createSlice({
       state.getUserRequest = false
       state.user = payload
     },
+    getUserError: (state, { payload }) => {
+      state.getUserRequest = false
+      state.getUserError = payload
+    },
     updateUserError: (state, { payload }) => {
       state.loginUserRequest = false
       state.user = null
@@ -71,11 +78,18 @@ export const authorizationSlice = createSlice({
       state.isAuthChecked = false
       state.user = null
     },
+    logoutError: (state, { payload }) => {
+      state.logoutUserError = payload
+    },
     forgotRequest: (state) => {
       state.forgotPasswordRequest = true
     },
     forgotSuccess: (state) => {
       state.forgotPasswordRequest = false
+    },
+    forgotError: (state, { payload }) => {
+      state.forgotPasswordRequest = false
+      state.forgotPasswordError = payload
     }
   }
 })
@@ -89,7 +103,12 @@ export const {
   loginSuccess,
   updateUserSuccess,
   updateUserRequest,
-  forgotSuccess
+  forgotSuccess,
+  updateUserError,
+  forgotError,
+  logoutError,
+  loginError,
+  getUserError
 } = authorizationSlice.actions
 
 export const authorizationSelector = state => state.authorization
@@ -103,7 +122,7 @@ export function getUser () {
           dispatch(getUserSuccess(data.user))
         }
         return data.success
-      })
+      }).catch(error => dispatch(getUserError(error)))
   }
 }
 
@@ -119,7 +138,7 @@ export function signIn (form) {
           dispatch(loginSuccess())
         }
         return data.success
-      })
+      }).catch(error => dispatch(loginError(error)))
   }
 }
 
@@ -135,7 +154,7 @@ export function register (form) {
           dispatch(loginSuccess())
         }
         return data.success
-      })
+      }).catch(error => dispatch(loginError(error)))
   }
 }
 
@@ -150,7 +169,7 @@ export function signOut (form) {
           dispatch(logoutSuccess())
         }
         return data.success
-      })
+      }).catch(error => dispatch(logoutError(error)))
   }
 }
 
@@ -163,7 +182,7 @@ export function updateUser (form) {
           dispatch(updateUserSuccess(data.user))
         }
         return data.success
-      })
+      }).catch(error => dispatch(updateUserError(error)))
   }
 }
 
@@ -174,7 +193,7 @@ export function forgotPassword (form) {
       .then(data => {
         localStorage.setItem('reset', 'true')
         return data.success
-      })
+      }).catch(error => dispatch(forgotError(error)))
   }
 }
 
@@ -185,7 +204,7 @@ export function resetPassword (form) {
         dispatch(forgotSuccess())
         localStorage.removeItem('reset')
         return data.success
-      })
+      }).catch(error => dispatch(forgotError(error)))
   }
 }
 

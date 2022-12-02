@@ -41,7 +41,7 @@ export const Modal = (props) => {
             {props.children}
           </div>
         </div>
-        <ModalOverlay/>
+        <ModalOverlay onClose={props.onClose}/>
       </>, modalRoot
   )
 }

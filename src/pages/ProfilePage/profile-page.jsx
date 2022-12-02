@@ -1,30 +1,27 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import styles from './profile-page.module.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button, EmailInput, Input, PasswordInput } from '@ya.praktikum/react-developer-burger-ui-components'
 import { authorizationSelector, signOut, updateUser } from '../../services/slices/authorization'
 import { useDispatch, useSelector } from 'react-redux'
+import { useForm } from '../../hooks/useForm'
 
 export const ProfilePage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector(authorizationSelector)
-  const [form, setValue] = useState({ name: '', email: '' })
-
-  const onChange = e => {
-    setValue({ ...form, [e.target.name]: e.target.value })
-  }
+  const { values, handleChange, setValues } = useForm({ name: '', email: '' })
 
   useEffect(() => {
-    setValue(user)
+    setValues(user)
   }, [user])
 
   const update = useCallback(
     e => {
       e.preventDefault()
-      dispatch(updateUser(form))
+      dispatch(updateUser(values))
     },
-    [form]
+    [values]
   )
   const logout = useCallback(
     e => {
@@ -32,7 +29,7 @@ export const ProfilePage = () => {
       dispatch(signOut())
       navigate('/', { replace: true })
     },
-    [form]
+    [values]
   )
   return (
       <div className={styles.content}>
@@ -48,10 +45,12 @@ export const ProfilePage = () => {
           </Link>
         </div>
        <div>
-         <Input name='name' value={form.name} onChange={onChange} placeholder='Имя'/>
-         <EmailInput name='email' value={form.email} onChange={onChange} placeholder='E-mail'/>
-         <PasswordInput name='password' value='' onChange={onChange} placeholder='Пароль'/>
-         <Button htmlType='button' onClick={update}>Сохранить</Button>
+         <form onSubmit={update}>
+           <Input name='name' value={values.name} onChange={handleChange} placeholder='Имя'/>
+           <EmailInput name='email' value={values.email} onChange={handleChange} placeholder='E-mail'/>
+           <PasswordInput name='password' value='' onChange={handleChange} placeholder='Пароль'/>
+           <Button htmlType='submit'>Сохранить</Button>
+         </form>
        </div>
       </div>
 

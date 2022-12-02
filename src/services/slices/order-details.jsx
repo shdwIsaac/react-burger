@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { openOrderPopup } from './modal'
 import { BASE_URL } from '../../utils/constatnts'
+import { clearIngredients } from './burger-constructor'
 
 const initialState = {
   currentOrder: null
@@ -37,6 +38,7 @@ export function send (order) {
       const data = await response.json()
       dispatch(createOrder(data))
       dispatch(openOrderPopup())
+      dispatch(clearIngredients())
     } catch (error) {
       console.log('error', error)
     }

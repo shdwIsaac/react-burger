@@ -23,7 +23,7 @@ export const Cart = (props) => {
       <div className={styles.parent}>
         <Link key={id} to={{ pathname: `/ingredients/${id}` }} state={{ background: location }}>
           <div ref={drag} className={styles.card} key={props.ingredient._id}>
-            <img alt='Ингредиент' src={props.ingredient.image}/>
+            <img alt={props.ingredient.name} src={props.ingredient.image}/>
             <div className={styles.ingredientPrice}>
               <p className={'text_type_digits-default'}>{props.ingredient.price}</p>
               <CurrencyIcon type="primary"/>

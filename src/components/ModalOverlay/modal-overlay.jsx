@@ -1,13 +1,9 @@
 import React from 'react'
 import styles from './modal-overlay.module.css'
-import { useNavigate } from 'react-router-dom'
 
-export const ModalOverlay = () => {
-  const history = useNavigate()
-
+export const ModalOverlay = (props) => {
   return (
-      <div onClick={() => {
-        history(-1)
-      }} className={styles.backdrop}>
+      // eslint-disable-next-line react/prop-types
+      <div onClick={() => { props.onClose() }} className={styles.backdrop}>
       </div>)
 }

@@ -7,6 +7,7 @@ import { addIngredient, burgerConstructorSelector } from '../../services/slices/
 import { ingredientsSelector } from '../../services/slices/ingredients'
 import { BurgerElement } from '../BurgerElement/burger-element'
 import { DRAG_TYPE } from '../../utils/constatnts'
+import { v4 as uuidv4 } from 'uuid'
 
 export const DropTarget = () => {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ export const DropTarget = () => {
     accept: DRAG_TYPE,
     drop (itemId) {
       const item = ingredients.find(el => el._id === itemId.id)
-      dispatch(addIngredient(item))
+      dispatch(addIngredient({ ...item, key: uuidv4() }))
     }
   })
 
@@ -31,7 +32,7 @@ export const DropTarget = () => {
         </div>
         <div className={scrollStyle}>
           {ingredientsConstructor && ingredientsConstructor.map((ingredient, index) =>
-              <BurgerElement key={index} ingredient={ingredient} index={index}/>)
+              <BurgerElement key={ingredient.key} ingredient={ingredient} index={index}/>)
           }
         </div>
         <div className={styles.bunWrapper}>
