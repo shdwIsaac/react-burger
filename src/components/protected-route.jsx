@@ -5,17 +5,19 @@ import { authorizationSelector } from '../services/slices/authorization'
 
 // eslint-disable-next-line react/prop-types
 export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
-  const { user } = useSelector(authorizationSelector)
+  const { user, loading } = useSelector(authorizationSelector)
   const location = useLocation()
 
-  if (onlyUnAuth && user) {
-    const fromPage = location.state?.from || '/'
-    console.log(fromPage)
-    return <Navigate to={fromPage} />
-  }
-  if (!onlyUnAuth && !user) {
-    return <Navigate to='/login' replace={true} state={{ from: location.pathname }}/>
-  }
+  console.log(loading)
+  if (!loading) {
+    if (onlyUnAuth && user) {
+      const fromPage = location.state?.from || '/'
+      return <Navigate to={fromPage} />
+    }
+    if (!onlyUnAuth && !user) {
+      return <Navigate to='/login' replace={true} state={{ from: location.pathname }}/>
+    }
 
-  return children
+    return children
+  }
 }

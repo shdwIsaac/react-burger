@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint3/step1 fix">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalOverlay/modal-overlay.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/protected-route.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/protected-route.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ForgotPasswordPage/forgot-password-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ForgotPasswordPage/forgot-password-page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/profile-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/profile-page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegisterPage/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterPage/register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ResetPasswordPage/reset-password-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ResetPasswordPage/reset-password-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/authorization.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/authorization.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/order-details.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +113,7 @@
       <workItem from="1669358292375" duration="44953000" />
       <workItem from="1669724946616" duration="8000" />
       <workItem from="1669786205389" duration="51724000" />
-      <workItem from="1670005137419" duration="6151000" />
-    </task>
-    <task id="LOCAL-00012" summary="sprint2/step2 commit">
-      <created>1668528673492</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1668528673492</updated>
+      <workItem from="1670005137419" duration="7085000" />
     </task>
     <task id="LOCAL-00013" summary="sprint2/step2 fix">
       <created>1668612306554</created>
@@ -474,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669957475827</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="sprint3/step1 fix">
+      <created>1670013416880</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1670013416880</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

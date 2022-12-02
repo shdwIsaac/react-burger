@@ -13,6 +13,8 @@ import { deleteCookie, getCookie, setCookie } from '../../utils/utils'
 const initialState = {
   isAuthChecked: false,
 
+  loading: true,
+
   user: null,
 
   registerUserError: null,
@@ -90,6 +92,9 @@ export const authorizationSlice = createSlice({
     forgotError: (state, { payload }) => {
       state.forgotPasswordRequest = false
       state.forgotPasswordError = payload
+    },
+    isLoad: (state) => {
+      state.loading = false
     }
   }
 })
@@ -108,7 +113,8 @@ export const {
   forgotError,
   logoutError,
   loginError,
-  getUserError
+  getUserError,
+  isLoad
 } = authorizationSlice.actions
 
 export const authorizationSelector = state => state.authorization
