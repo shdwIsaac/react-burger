@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint2/step2 fix">
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint3/step1 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader/app-header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -21,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint2/step1" />
+        <entry key="$PROJECT_DIR$" value="sprint2/step2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,9 +46,13 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/WebstormProjects/test1&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Issue.Navigation&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\User\\WebstormProjects\\react-burger\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -57,8 +65,8 @@
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\AppHeader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\WebstormProjects\react-burger\src\services\slices" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\utils" />
+      <recent name="C:\Users\User\WebstormProjects\react-burger\src\services\slices" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\images" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\App" />
       <recent name="C:\Users\User\WebstormProjects\react-burger\src\components\BurgerIngredients" />
@@ -95,119 +103,17 @@
       <workItem from="1668226697511" duration="89906000" />
       <workItem from="1668692259898" duration="338000" />
       <workItem from="1668692676868" duration="114000" />
-      <workItem from="1668704933141" duration="420000" />
-    </task>
-    <task id="LOCAL-00001" summary="fix">
-      <created>1666883226193</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1666883226193</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fix">
-      <created>1666964145713</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1666964145713</updated>
-    </task>
-    <task id="LOCAL-00003" summary="step-1">
-      <created>1666975319472</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1666975319472</updated>
-    </task>
-    <task id="LOCAL-00004" summary="step-1 fix">
-      <created>1667216649372</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667216649372</updated>
-    </task>
-    <task id="LOCAL-00005" summary="step-1 fix">
-      <created>1667216925359</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1667216925359</updated>
-    </task>
-    <task id="LOCAL-00006" summary="step-2 add popup">
-      <created>1667222199946</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1667222199946</updated>
-    </task>
-    <task id="LOCAL-00007" summary="step-2">
-      <created>1667388187118</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1667388187118</updated>
-    </task>
-    <task id="LOCAL-00008" summary="step-2 fix">
-      <created>1667479316561</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1667479316561</updated>
-    </task>
-    <task id="LOCAL-00009" summary="step-2 fix">
-      <created>1667479566502</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1667479566502</updated>
-    </task>
-    <task id="LOCAL-00010" summary="sprint2/step1 initial">
-      <created>1667646763634</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1667646763634</updated>
-    </task>
-    <task id="LOCAL-00011" summary="sprint2/step1 fix">
-      <created>1667653959436</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1667653959436</updated>
-    </task>
-    <task id="LOCAL-00012" summary="sprint2/step2 commit">
-      <created>1668528673492</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1668528673492</updated>
-    </task>
-    <task id="LOCAL-00013" summary="sprint2/step2 fix">
-      <created>1668612306554</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1668612306554</updated>
-    </task>
-    <task id="LOCAL-00014" summary="sprint2/step2 fix">
-      <created>1668619640209</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1668619640209</updated>
-    </task>
-    <task id="LOCAL-00015" summary="sprint2/step2 fix">
-      <created>1668673272441</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1668673272441</updated>
-    </task>
-    <task id="LOCAL-00016" summary="sprint2/step2 fix">
-      <created>1668691333867</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1668691333867</updated>
+      <workItem from="1668704933141" duration="896000" />
+      <workItem from="1668756902847" duration="1000" />
+      <workItem from="1668760856433" duration="1269000" />
+      <workItem from="1669016245222" duration="3670000" />
+      <workItem from="1669192298238" duration="1124000" />
+      <workItem from="1669284969747" duration="8880000" />
+      <workItem from="1669358292375" duration="44953000" />
+      <workItem from="1669724946616" duration="8000" />
+      <workItem from="1669786205389" duration="51724000" />
+      <workItem from="1670005137419" duration="7111000" />
+      <workItem from="1670042155560" duration="4750000" />
     </task>
     <task id="LOCAL-00017" summary="sprint2/step2 fix">
       <created>1668691775371</created>
@@ -230,7 +136,329 @@
       <option name="project" value="LOCAL" />
       <updated>1668692785191</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="sprint2/step2 fix">
+      <created>1668705414505</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668705414505</updated>
+    </task>
+    <task id="LOCAL-00021" summary="sprint3/step1 initial">
+      <created>1669293485551</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669293485551</updated>
+    </task>
+    <task id="LOCAL-00022" summary="sprint3/step1">
+      <created>1669545273489</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669545273489</updated>
+    </task>
+    <task id="LOCAL-00023" summary="sprint3/step1 fix">
+      <created>1669553109560</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669553109560</updated>
+    </task>
+    <task id="LOCAL-00024" summary="sprint3/step1 fix">
+      <created>1669563646676</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669563646676</updated>
+    </task>
+    <task id="LOCAL-00025" summary="sprint3/step1 fix">
+      <created>1669563982215</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669563982215</updated>
+    </task>
+    <task id="LOCAL-00026" summary="sprint3/step1 fix">
+      <created>1669615947438</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669615947438</updated>
+    </task>
+    <task id="LOCAL-00027" summary="sprint3/step1 fix">
+      <created>1669617211500</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1669617211500</updated>
+    </task>
+    <task id="LOCAL-00028" summary="sprint3/step1 fix">
+      <created>1669618391897</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1669618391898</updated>
+    </task>
+    <task id="LOCAL-00029" summary="sprint3/step1 fix">
+      <created>1669619058198</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1669619058198</updated>
+    </task>
+    <task id="LOCAL-00030" summary="sprint3/step1 fix">
+      <created>1669621912508</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1669621912508</updated>
+    </task>
+    <task id="LOCAL-00031" summary="sprint3/step1 fix">
+      <created>1669655085921</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1669655085921</updated>
+    </task>
+    <task id="LOCAL-00032" summary="sprint3/step1 fix">
+      <created>1669822825544</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1669822825544</updated>
+    </task>
+    <task id="LOCAL-00033" summary="sprint3/step1 fix">
+      <created>1669827370550</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1669827370550</updated>
+    </task>
+    <task id="LOCAL-00034" summary="sprint3/step1 fix">
+      <created>1669830142740</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1669830142740</updated>
+    </task>
+    <task id="LOCAL-00035" summary="sprint3/step1 fix">
+      <created>1669830275843</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1669830275843</updated>
+    </task>
+    <task id="LOCAL-00036" summary="sprint3/step1 fix">
+      <created>1669830904244</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1669830904244</updated>
+    </task>
+    <task id="LOCAL-00037" summary="sprint3/step1 fix">
+      <created>1669831448660</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1669831448660</updated>
+    </task>
+    <task id="LOCAL-00038" summary="sprint3/step1 fix">
+      <created>1669879852025</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1669879852025</updated>
+    </task>
+    <task id="LOCAL-00039" summary="sprint3/step1 fix">
+      <created>1669886179340</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1669886179340</updated>
+    </task>
+    <task id="LOCAL-00040" summary="sprint3/step1 fix">
+      <created>1669886459395</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1669886459395</updated>
+    </task>
+    <task id="LOCAL-00041" summary="sprint3/step1 fix">
+      <created>1669886618868</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1669886618868</updated>
+    </task>
+    <task id="LOCAL-00042" summary="sprint3/step1 fix">
+      <created>1669886990734</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1669886990734</updated>
+    </task>
+    <task id="LOCAL-00043" summary="sprint3/step1 fix">
+      <created>1669888611837</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1669888611837</updated>
+    </task>
+    <task id="LOCAL-00044" summary="sprint3/step1 fix">
+      <created>1669889846908</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1669889846908</updated>
+    </task>
+    <task id="LOCAL-00045" summary="sprint3/step1 fix">
+      <created>1669889868409</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1669889868409</updated>
+    </task>
+    <task id="LOCAL-00046" summary="sprint3/step1 fix">
+      <created>1669890212799</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1669890212799</updated>
+    </task>
+    <task id="LOCAL-00047" summary="sprint3/step1 fix">
+      <created>1669893923005</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1669893923005</updated>
+    </task>
+    <task id="LOCAL-00048" summary="sprint3/step1 fix">
+      <created>1669894647213</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1669894647213</updated>
+    </task>
+    <task id="LOCAL-00049" summary="sprint3/step1 fix">
+      <created>1669894916141</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669894916141</updated>
+    </task>
+    <task id="LOCAL-00050" summary="sprint3/step1 fix">
+      <created>1669895128887</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669895128888</updated>
+    </task>
+    <task id="LOCAL-00051" summary="sprint3/step1 fix">
+      <created>1669898060693</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1669898060693</updated>
+    </task>
+    <task id="LOCAL-00052" summary="sprint3/step1 fix">
+      <created>1669908321817</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669908321817</updated>
+    </task>
+    <task id="LOCAL-00053" summary="sprint3/step1">
+      <created>1669924964537</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1669924964537</updated>
+    </task>
+    <task id="LOCAL-00054" summary="sprint3/step1">
+      <created>1669925093598</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925093598</updated>
+    </task>
+    <task id="LOCAL-00055" summary="sprint3/step1">
+      <created>1669925155614</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925155614</updated>
+    </task>
+    <task id="LOCAL-00056" summary="sprint3/step1">
+      <created>1669925193430</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925193430</updated>
+    </task>
+    <task id="LOCAL-00057" summary="sprint3/step1">
+      <created>1669925230261</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925230261</updated>
+    </task>
+    <task id="LOCAL-00058" summary="sprint3/step1">
+      <created>1669925243116</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925243116</updated>
+    </task>
+    <task id="LOCAL-00059" summary="sprint3/step1">
+      <created>1669925941928</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1669925941928</updated>
+    </task>
+    <task id="LOCAL-00060" summary="sprint3/step1 fix">
+      <created>1669957475827</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1669957475827</updated>
+    </task>
+    <task id="LOCAL-00061" summary="sprint3/step1 fix">
+      <created>1670013416880</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1670013416880</updated>
+    </task>
+    <task id="LOCAL-00062" summary="sprint3/step1 fix">
+      <created>1670014192527</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1670014192527</updated>
+    </task>
+    <task id="LOCAL-00063" summary="sprint3/step1 fix">
+      <created>1670042411995</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1670042411995</updated>
+    </task>
+    <task id="LOCAL-00064" summary="sprint3/step1 fix">
+      <created>1670042624729</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1670042624729</updated>
+    </task>
+    <task id="LOCAL-00065" summary="sprint3/step1 fix">
+      <created>1670049842659</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1670049842659</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +498,9 @@
     <MESSAGE value="sprint2/step1 fix" />
     <MESSAGE value="sprint2/step2 commit" />
     <MESSAGE value="sprint2/step2 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint2/step2 fix" />
+    <MESSAGE value="sprint3/step1 initial" />
+    <MESSAGE value="sprint3/step1" />
+    <MESSAGE value="sprint3/step1 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint3/step1 fix" />
   </component>
 </project>

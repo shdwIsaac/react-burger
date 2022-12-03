@@ -7,3 +7,8 @@
     width: 480px;
     height: 240px;
 }
+.content {
+}
+.content > div {
+    justify-content: center;
+}

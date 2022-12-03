@@ -18,3 +18,7 @@
     width: 240px;
     height: 120px;
 }
+.parent a {
+    text-decoration: none;
+    color: inherit;
+}

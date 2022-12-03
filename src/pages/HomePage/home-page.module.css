@@ -1,0 +1,12 @@
+.appContent {
+    position: relative;
+    top: 88px;
+    width: 80%;
+    margin: auto;
+
+}
+.appContentConstructor {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}

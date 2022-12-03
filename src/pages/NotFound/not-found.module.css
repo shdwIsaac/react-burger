@@ -1,0 +1,7 @@
+.content {
+    display: grid;
+    position: relative;
+    margin: auto;
+    top: 400px;
+    width: 23%;
+}
