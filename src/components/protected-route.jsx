@@ -8,7 +8,6 @@ export const ProtectedRoute = ({ children, onlyUnAuth = false }) => {
   const { user, loading } = useSelector(authorizationSelector)
   const location = useLocation()
 
-  console.log(loading)
   if (!loading) {
     if (onlyUnAuth && user) {
       const fromPage = location.state?.from || '/'
