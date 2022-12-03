@@ -25,11 +25,11 @@ export const LoginPage = () => {
   return (
       <div className={styles.content}>
         <h2 className="text text_type_main-medium">Вход</h2>
-        <form onSubmit={login}>
-          <EmailInput name='email' value={values.email} onChange={handleChange} placeholder='E-mail'/>
-          <PasswordInput onChange={handleChange} value={values.password} name='password' placeholder='Пароль'/>
-          <Button htmlType='submit'>Войти</Button>
-        </form>
+          <form className={styles.inputStyle} onSubmit={login}>
+            <EmailInput name='email' value={values.email} onChange={handleChange} placeholder='E-mail'/>
+            <PasswordInput onChange={handleChange} value={values.password} name='password' placeholder='Пароль'/>
+            <Button htmlType='submit'>Войти</Button>
+          </form>
         <div>
           <p className="text text_type_main-small">Вы - новый пользователь?</p>
           <Link className="text text_type_main-small text_color_inactive" to='/register'>Зарегистрироваться</Link>
