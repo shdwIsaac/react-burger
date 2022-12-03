@@ -1,26 +1,29 @@
 import React from 'react'
 import { Button, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './burger-constructor.module.css'
-import { OrderDetails } from '../OrderDetails/order-details'
 import { Modal } from '../Modal/modal'
 import { useDispatch, useSelector } from 'react-redux'
 import { burgerConstructorSelector } from '../../services/slices/burger-constructor'
 import { modalSelector, close } from '../../services/slices/modal'
 import { DropTarget } from '../DropTarget/drop-target'
-import { send } from '../../services/slices/order-details'
+import { clearOrder, orderDetailsSelector, send } from '../../services/slices/order-details'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { authorizationSelector } from '../../services/slices/authorization'
+import { Loading } from '../Loading/loading'
+import { OrderDetails } from '../OrderDetails/order-details'
 
 export const BurgerConstructor = () => {
   const dispatch = useDispatch()
   const { sum, bun, ingredientsConstructor } = useSelector(burgerConstructorSelector)
   const { isOpenOrder } = useSelector(modalSelector)
+  const { currentOrder } = useSelector(orderDetailsSelector)
   const { isAuthChecked } = useSelector(authorizationSelector)
   const navigate = useNavigate()
   const location = useLocation()
 
   const closeModal = () => {
     dispatch(close())
+    dispatch(clearOrder())
   }
 
   const doOrder = () => {
@@ -42,7 +45,7 @@ export const BurgerConstructor = () => {
           </Button>
         </div>
         {isOpenOrder && (<Modal onClose={closeModal}>
-          <OrderDetails/>
+              {currentOrder ? <OrderDetails/> : <Loading/>}
         </Modal>)
         }
       </div>

@@ -13,16 +13,20 @@ export const orderDetailsSlice = createSlice({
   reducers: {
     createOrder: (state, { payload }) => {
       state.currentOrder = payload
+    },
+    clearOrder: (state) => {
+      state.currentOrder = null
     }
   }
 })
 
-export const { createOrder } = orderDetailsSlice.actions
+export const { createOrder, clearOrder } = orderDetailsSlice.actions
 
 export const orderDetailsSelector = state => state.orderDetails
 
 export function send (order) {
   return async function (dispatch) {
+    dispatch(openOrderPopup())
     const postRequest = BASE_URL + 'orders'
     try {
       const response = await fetch(postRequest, {
@@ -37,7 +41,6 @@ export function send (order) {
       }
       const data = await response.json()
       dispatch(createOrder(data))
-      dispatch(openOrderPopup())
       dispatch(clearIngredients())
     } catch (error) {
       console.log('error', error)

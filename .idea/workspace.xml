@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint3/step1 fix">
-      <change beforePath="$PROJECT_DIR$/src/components/protected-route.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/protected-route.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loading/loading.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loading/loading.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerConstructor/burger-constructor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/order-details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/order-details.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +115,7 @@
       <workItem from="1669724946616" duration="8000" />
       <workItem from="1669786205389" duration="51724000" />
       <workItem from="1670005137419" duration="7111000" />
-      <workItem from="1670042155560" duration="459000" />
-    </task>
-    <task id="LOCAL-00015" summary="sprint2/step2 fix">
-      <created>1668673272441</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1668673272441</updated>
+      <workItem from="1670042155560" duration="2856000" />
     </task>
     <task id="LOCAL-00016" summary="sprint2/step2 fix">
       <created>1668691333867</created>
@@ -456,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670042411995</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="sprint3/step1 fix">
+      <created>1670042624729</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1670042624729</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
