@@ -40,9 +40,12 @@ function App () {
   useEffect(() => {
     const get = async () => {
       await dispatch(getUser())
+    }
+    const load = async () => {
       await dispatch(isLoad())
     }
     isAuthChecked && get()
+    load()
   }, [isAuthChecked])
 
   return (
