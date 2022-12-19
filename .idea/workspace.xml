@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint3/step1 fix">
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint4/step1 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/authorization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/authorization.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,13 +22,14 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint2/step2" />
+        <entry key="$PROJECT_DIR$" value="sprint3/step1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/WebstormProjects/test1&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -52,7 +57,7 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\User\\WebstormProjects\\react-burger\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -113,28 +118,17 @@
       <workItem from="1669724946616" duration="8000" />
       <workItem from="1669786205389" duration="51724000" />
       <workItem from="1670005137419" duration="7111000" />
-      <workItem from="1670042155560" duration="4750000" />
-    </task>
-    <task id="LOCAL-00017" summary="sprint2/step2 fix">
-      <created>1668691775371</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1668691775371</updated>
-    </task>
-    <task id="LOCAL-00018" summary="sprint2/step2 fix">
-      <created>1668692581939</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1668692581939</updated>
-    </task>
-    <task id="LOCAL-00019" summary="sprint2/step2 fix">
-      <created>1668692785191</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1668692785191</updated>
+      <workItem from="1670042155560" duration="4890000" />
+      <workItem from="1670304621960" duration="2457000" />
+      <workItem from="1670307795863" duration="1830000" />
+      <workItem from="1670566188552" duration="366000" />
+      <workItem from="1670761027151" duration="865000" />
+      <workItem from="1670855781600" duration="1675000" />
+      <workItem from="1670912547307" duration="11563000" />
+      <workItem from="1671008278953" duration="21292000" />
+      <workItem from="1671373011760" duration="10339000" />
+      <workItem from="1671458792279" duration="194000" />
+      <workItem from="1671464598578" duration="1611000" />
     </task>
     <task id="LOCAL-00020" summary="sprint2/step2 fix">
       <created>1668705414505</created>
@@ -458,7 +452,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670049842659</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="sprint3/step1 fix">
+      <created>1670058924126</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1670058924126</updated>
+    </task>
+    <task id="LOCAL-00067" summary="sprint4/step1 initial">
+      <created>1671376372436</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1671376372436</updated>
+    </task>
+    <task id="LOCAL-00068" summary="sprint4/step1 fix">
+      <created>1671457665088</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1671457665088</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +490,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="sprint2/step2" />
+                        <option value="sprint4/step1" />
                       </list>
                     </value>
                   </entry>
@@ -501,6 +516,18 @@
     <MESSAGE value="sprint3/step1 initial" />
     <MESSAGE value="sprint3/step1" />
     <MESSAGE value="sprint3/step1 fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint3/step1 fix" />
+    <MESSAGE value="sprint4/step1 initial" />
+    <MESSAGE value="sprint4/step1 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint4/step1 fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/AppHeader/app-header.tsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
