@@ -3,8 +3,13 @@ import { openOrderPopup } from './modal'
 import { BASE_URL } from '../../utils/constatnts'
 import { clearIngredients } from './burger-constructor'
 import { RootState } from './index'
+import { IOrder } from '../../Abstraction/IOrder'
 
-const initialState = {
+interface ICurrentOrder {
+  currentOrder: IOrder | null
+}
+
+const initialState: ICurrentOrder = {
   currentOrder: null
 }
 

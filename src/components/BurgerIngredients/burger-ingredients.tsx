@@ -37,14 +37,14 @@ export const BurgerIngredients: FC = () => {
 
   const handleScroll = (): void => {
     const distance1 = getDistanceBetweenElements(
-      tabsRef.current,
-      bunsRef.current)
+      tabsRef.current as HTMLDivElement,
+      bunsRef.current as HTMLDivElement)
     const distance2 = getDistanceBetweenElements(
-      tabsRef.current,
-      saucesRef.current)
+      tabsRef.current as HTMLDivElement,
+      saucesRef.current as HTMLDivElement)
     const distance3 = getDistanceBetweenElements(
-      tabsRef.current,
-      mainsRef.current)
+      tabsRef.current as HTMLDivElement,
+      mainsRef.current as HTMLDivElement)
     const min = Math.min(distance1, distance2, distance3)
     if (min === distance1) {
       setBunTab(true)

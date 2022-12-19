@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './index'
 import { IIngredientElement } from '../../Abstraction/IIngredientElement'
 
@@ -17,13 +17,12 @@ const initialState: IBurgerConstructor = {
   bunPrice: 0,
   key: null
 }
-
 export const burgerConstructorSlice = createSlice({
   name: 'burgerConstructor',
   initialState,
   reducers: {
-    addIngredient: (state, { payload }) => {
-      if (payload) {
+    addIngredient: (state, { payload }: PayloadAction<any>) => {
+      if (payload != null) {
         state.key = payload.key
         if (payload.type === 'bun') {
           state.sum -= state.bunPrice
@@ -32,6 +31,7 @@ export const burgerConstructorSlice = createSlice({
           state.bun = payload
         } else {
           state.ingredientsConstructor.push(payload)
+          // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
           state.sum += payload.price
         }
       }

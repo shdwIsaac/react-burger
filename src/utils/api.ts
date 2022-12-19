@@ -1,5 +1,6 @@
 import { getCookie, setCookie } from './utils'
 import { BASE_URL } from './constatnts'
+import { IUser } from '../Abstraction/IUser'
 
 export const tokenApi: string = BASE_URL + 'auth/token'
 
@@ -15,7 +16,7 @@ export const forgotPasswordApi: string = BASE_URL + 'password-reset'
 
 export const resetPasswordApi: string = BASE_URL + 'password-reset/reset'
 
-export const optionsPostResetPasswordRequest = (form: any): RequestInit => {
+export const optionsPostResetPasswordRequest = (form: any): CustomRequestInit => {
   return {
     method: 'POST',
     mode: 'cors',
@@ -30,7 +31,7 @@ export const optionsPostResetPasswordRequest = (form: any): RequestInit => {
   }
 }
 
-export const optionsPostForgotPasswordRequest = (form: any): RequestInit => {
+export const optionsPostForgotPasswordRequest = (form: any): CustomRequestInit => {
   return {
     method: 'POST',
     mode: 'cors',
@@ -45,7 +46,7 @@ export const optionsPostForgotPasswordRequest = (form: any): RequestInit => {
   }
 }
 
-export const optionsPatchUserRequest = (form: any): RequestInit => {
+export const optionsPatchUserRequest = (form: any): CustomRequestInit => {
   return {
     method: 'PATCH',
     mode: 'cors',
@@ -61,7 +62,7 @@ export const optionsPatchUserRequest = (form: any): RequestInit => {
   }
 }
 
-export const optionsPostLogoutRequest = (): RequestInit => {
+export const optionsPostLogoutRequest = (): CustomRequestInit => {
   return {
     method: 'POST',
     mode: 'cors',
@@ -76,7 +77,7 @@ export const optionsPostLogoutRequest = (): RequestInit => {
   }
 }
 
-export const optionsGetUserRequest = (): RequestInit => {
+export const optionsGetUserRequest = (): CustomRequestInit => {
   return {
     method: 'GET',
     mode: 'cors',
@@ -91,7 +92,7 @@ export const optionsGetUserRequest = (): RequestInit => {
   }
 }
 
-export const optionsPostRegisterRequest = (form: any): RequestInit => {
+export const optionsPostRegisterRequest = (form: any): CustomRequestInit => {
   return {
     method: 'POST',
     mode: 'cors',
@@ -106,7 +107,7 @@ export const optionsPostRegisterRequest = (form: any): RequestInit => {
   }
 }
 
-export const optionsPostLogin = (form: any): RequestInit => {
+export const optionsPostLogin = (form: any): CustomRequestInit => {
   return {
     method: 'POST',
     mode: 'cors',
@@ -127,7 +128,7 @@ export const checkResponse = async <T>(res: Response): Promise<T> => {
 
 interface IToken {
   success: boolean
-  user: any
+  user: IUser
   accessToken: string
   refreshToken: string
 }
@@ -144,7 +145,15 @@ export const refreshToken = async (): Promise<IToken> => {
   })
 }
 
-export const fetchWithRefresh = async (url: string, options: RequestInit) => {
+interface CustomRequestInit extends RequestInit {
+  headers: HeadersInit
+}
+
+interface CustomResponse extends Response {
+  success: boolean
+}
+
+export const fetchWithRefresh = async (url: string, options: CustomRequestInit): Promise<CustomResponse> => {
   try {
     const res = await fetch(url, options)
     return await checkResponse(res)
@@ -156,7 +165,8 @@ export const fetchWithRefresh = async (url: string, options: RequestInit) => {
       }
       localStorage.setItem('refreshToken', refreshData.refreshToken)
       setCookie('accessToken', refreshData.accessToken, null)
-      options.headers.authorization = refreshData.accessToken
+      // @ts-expect-error
+      options.headers.Authorization = refreshData.accessToken
       const res = await fetch(url, options) // повторяем запрос
       return await checkResponse(res)
     } else {

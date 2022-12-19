@@ -14,7 +14,8 @@ export const ForgotPasswordPage: FC = () => {
   const forgot = useCallback(
     async (e: FormEvent) => {
       e.preventDefault()
-      const success = await dispatch(forgotPassword(values))
+      // @ts-expect-error
+      const success: boolean = await dispatch(forgotPassword(values))
       success && navigate('/reset-password')
     },
     [values]
@@ -23,6 +24,7 @@ export const ForgotPasswordPage: FC = () => {
   return (
       <div className={styles.content}>
         <h2 className="text text_type_main-medium">Восстановление пароля</h2>
+        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <form onSubmit={forgot}>
           <EmailInput name='email' value={values.email} onChange={handleChange} placeholder='Укажите e-mail'/>
           <Button htmlType='submit'>Восстановить</Button>

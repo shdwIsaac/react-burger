@@ -23,7 +23,7 @@ export const App: FC = () => {
   const { ingredients, isLoading, hasError } = useAppSelector(ingredientsSelector)
   const location = useLocation()
   const history = useNavigate()
-  const background: Location = location.state?.background
+  const background: string | null = location.state?.background
 
   const handleModalClose = (): void => {
     history(-1)
@@ -45,7 +45,7 @@ export const App: FC = () => {
       await dispatch(isLoad())
     }
     isAuthChecked && get()
-    load()
+    void load()
   }, [isAuthChecked])
 
   return (
@@ -53,7 +53,7 @@ export const App: FC = () => {
         <div className={styles.app}>
           <AppHeader/>
           {!isLoading && !hasError && (ingredients.length > 0) &&
-              <Routes location={background || location}>
+              <Routes location={background ?? location}>
                 <Route path='/login'
                        element={<ProtectedRoute onlyUnAuth={true}><LoginPage/></ProtectedRoute>}/>
                 <Route path='/forgot-password'

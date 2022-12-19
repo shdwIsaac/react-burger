@@ -10,6 +10,7 @@ import {
 } from '../../utils/api'
 import { deleteCookie, getCookie, setCookie } from '../../utils/utils'
 import { RootState } from './index'
+import { IUser } from '../../Abstraction/IUser'
 
 const initialState = {
   isAuthChecked: false,
@@ -126,6 +127,7 @@ export function getUser () {
     return await fetchWithRefresh(userApi, optionsGetUserRequest())
       .then(data => {
         if (data.success) {
+          // @ts-expect-error
           dispatch(getUserSuccess(data.user))
         }
         return data.success
@@ -136,7 +138,7 @@ export function getUser () {
 export function signIn (form: any) {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(loginRequest())
-    return await request(loginApi, optionsPostLogin(form))
+    return await request<IRegister>(loginApi, optionsPostLogin(form))
       .then(data => {
         if (data.success) {
           setCookie('accessToken', data.accessToken.split('Bearer ')[1], null)
@@ -149,9 +151,10 @@ export function signIn (form: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IRegister {
   success: boolean
-  user: any
+  user: IUser
   accessToken: string
   refreshToken: string
 }
@@ -159,7 +162,7 @@ interface IRegister {
 export function register (form: any) {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(loginRequest())
-    return await request(registerApi, optionsPostRegisterRequest(form))
+    return await request<IRegister>(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
         if (data.success) {
           setCookie('accessToken', data.accessToken.split('Bearer ')[1], null)
@@ -172,9 +175,14 @@ export function register (form: any) {
   }
 }
 
+interface ISignOut {
+  success: boolean
+  message: string
+}
+
 export function signOut () {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
-    await request(logoutApi, optionsPostLogoutRequest())
+    await request<ISignOut>(logoutApi, optionsPostLogoutRequest())
       .then(data => {
         if (data.success) {
           deleteCookie('accessToken')
@@ -193,6 +201,7 @@ export function updateUser (form: any) {
     await fetchWithRefresh(userApi, optionsPatchUserRequest(form))
       .then(data => {
         if (data.success) {
+          // @ts-expect-error
           dispatch(updateUserSuccess(data.user))
         }
         return data.success
@@ -200,10 +209,15 @@ export function updateUser (form: any) {
   }
 }
 
+interface IForgotPassword {
+  success: boolean
+  message: string
+}
+
 export function forgotPassword (form: any): boolean | unknown {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(forgotRequest())
-    return await request(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
+    return await request<IForgotPassword>(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
         localStorage.setItem('reset', 'true')
         return data.success
@@ -217,6 +231,7 @@ export function resetPassword (form: any) {
       .then(data => {
         dispatch(forgotSuccess())
         localStorage.removeItem('reset')
+        // @ts-expect-error
         return data.success
       }).catch(error => dispatch(forgotError(error)))
   }
