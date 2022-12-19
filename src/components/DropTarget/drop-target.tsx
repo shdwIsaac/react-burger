@@ -10,6 +10,10 @@ import { DRAG_TYPE } from '../../utils/constatnts'
 import { v4 as uuidv4 } from 'uuid'
 import { useAppSelector } from '../../services/slices'
 
+interface IDropObject {
+  itemId: string
+}
+
 export const DropTarget: FC = () => {
   const dispatch = useDispatch()
   const { ingredientsConstructor, bun } = useAppSelector(burgerConstructorSelector)
@@ -17,8 +21,8 @@ export const DropTarget: FC = () => {
 
   const [, drop] = useDrop({
     accept: DRAG_TYPE,
-    drop (itemId: any) {
-      const item = ingredients.find(el => el._id === itemId.id)
+    drop (itemDrop: IDropObject) {
+      const item = ingredients.find(el => el._id === itemDrop.itemId)
       dispatch(addIngredient({ ...item, key: uuidv4() }))
     }
   })

@@ -9,11 +9,10 @@ import { IIngredientElement } from '../../Abstraction/IIngredientElement'
 import { useAppSelector } from '../../services/slices'
 
 interface ICart {
-  key: string
   ingredient: IIngredientElement
 }
 
-export const Cart: FC<ICart> = ({ key, ingredient }) => {
+export const Cart: FC<ICart> = ({ ingredient }) => {
   const { bun, ingredientsConstructor } = useAppSelector(burgerConstructorSelector)
   const location = useLocation()
   const count: number = ingredientsConstructor.filter((x: IIngredientElement) => x._id === ingredient._id).length

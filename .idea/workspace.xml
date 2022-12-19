@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint4/step1 initial">
-      <change afterPath="$PROJECT_DIR$/src/Abstraction/IUser.ts" afterDir="false" />
+    <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint4/step1 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderDetails/order-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderDetails/order-details.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/toolkit-hooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abstraction/IOrder.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ForgotPasswordPage/forgot-password-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ForgotPasswordPage/forgot-password-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/authorization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/authorization.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/burger-constructor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/order-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/order-details.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,26 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "js.last.introduce.type": "LET",
-    "last_opened_file_path": "C:/Users/User/WebstormProjects/test1",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.typescriptcompiler",
-    "ts.external.directory.path": "C:\\Users\\User\\WebstormProjects\\react-burger\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/WebstormProjects/test1&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\User\\WebstormProjects\\react-burger\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\WebstormProjects\react-burger\src" />
@@ -131,14 +126,9 @@
       <workItem from="1670855781600" duration="1675000" />
       <workItem from="1670912547307" duration="11563000" />
       <workItem from="1671008278953" duration="21292000" />
-      <workItem from="1671373011760" duration="10245000" />
-    </task>
-    <task id="LOCAL-00019" summary="sprint2/step2 fix">
-      <created>1668692785191</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1668692785191</updated>
+      <workItem from="1671373011760" duration="10339000" />
+      <workItem from="1671458792279" duration="194000" />
+      <workItem from="1671464598578" duration="1611000" />
     </task>
     <task id="LOCAL-00020" summary="sprint2/step2 fix">
       <created>1668705414505</created>
@@ -476,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671376372436</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="sprint4/step1 fix">
+      <created>1671457665088</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1671457665088</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +517,8 @@
     <MESSAGE value="sprint3/step1" />
     <MESSAGE value="sprint3/step1 fix" />
     <MESSAGE value="sprint4/step1 initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="sprint4/step1 initial" />
+    <MESSAGE value="sprint4/step1 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint4/step1 fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

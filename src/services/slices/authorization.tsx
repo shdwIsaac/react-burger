@@ -135,7 +135,12 @@ export function getUser () {
   }
 }
 
-export function signIn (form: any) {
+interface ILogin {
+  email: string
+  password: string
+}
+
+export function signIn (form: ILogin) {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(loginRequest())
     return await request<IRegister>(loginApi, optionsPostLogin(form))
@@ -151,7 +156,6 @@ export function signIn (form: any) {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IRegister {
   success: boolean
   user: IUser
@@ -159,7 +163,11 @@ interface IRegister {
   refreshToken: string
 }
 
-export function register (form: any) {
+interface IRegisterForm extends IUser {
+  password: string
+}
+
+export function register (form: IRegisterForm) {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(loginRequest())
     return await request<IRegister>(registerApi, optionsPostRegisterRequest(form))
@@ -214,7 +222,11 @@ interface IForgotPassword {
   message: string
 }
 
-export function forgotPassword (form: any): boolean | unknown {
+interface IForgotPasswordForm {
+  email: string
+}
+
+export function forgotPassword (form: IForgotPasswordForm): boolean | unknown {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     dispatch(forgotRequest())
     return await request<IForgotPassword>(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
@@ -225,7 +237,12 @@ export function forgotPassword (form: any): boolean | unknown {
   }
 }
 
-export function resetPassword (form: any) {
+interface IResetPassword {
+  password: string
+  token: string
+}
+
+export function resetPassword (form: IResetPassword) {
   return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
     return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
