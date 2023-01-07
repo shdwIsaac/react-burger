@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="207620ac-7be7-4c03-8590-879d88751b3f" name="Changes" comment="sprint4/step1 fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Abstraction/IIngredientElement.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abstraction/IIngredientElement.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Abstraction/IOrder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abstraction/IOrder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Abstraction/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abstraction/IUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerElement/burger-element.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BurgerIngredients/burger-ingredients.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Cart/cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart/cart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DropTarget/drop-target.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IngredientDetails/ingredient-details.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabComponent/tab-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabComponent/tab-component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/authorization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/authorization.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/burger-constructor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/burger-constructor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/ingredients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/ingredients.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/order-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/order-details.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sprint3/step1" />
+        <entry key="$PROJECT_DIR$" value="sprint4/step1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,14 +137,11 @@
       <workItem from="1671008278953" duration="21292000" />
       <workItem from="1671373011760" duration="10339000" />
       <workItem from="1671458792279" duration="194000" />
-      <workItem from="1671464598578" duration="1611000" />
-    </task>
-    <task id="LOCAL-00020" summary="sprint2/step2 fix">
-      <created>1668705414505</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1668705414505</updated>
+      <workItem from="1671464598578" duration="1694000" />
+      <workItem from="1671802778262" duration="127000" />
+      <workItem from="1671802949682" duration="1748000" />
+      <workItem from="1671945456131" duration="4249000" />
+      <workItem from="1672909186800" duration="598000" />
     </task>
     <task id="LOCAL-00021" summary="sprint3/step1 initial">
       <created>1669293485551</created>
@@ -473,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671457665088</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="sprint4/step1 fix">
+      <created>1671466264662</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1671466264662</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

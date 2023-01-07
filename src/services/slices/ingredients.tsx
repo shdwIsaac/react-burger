@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { BASE_URL } from '../../utils/constatnts'
 import { request } from '../../utils/api'
 import { RootState } from './index'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 interface IInitial {
   isLoading: boolean

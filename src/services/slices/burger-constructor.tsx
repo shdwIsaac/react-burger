@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './index'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 interface IBurgerConstructor {
   bun: IIngredientElement | null

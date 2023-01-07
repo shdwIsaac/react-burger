@@ -5,7 +5,7 @@ import { useDrag, useDrop, XYCoord } from 'react-dnd'
 import { deleteIngredient, moveIngredient } from '../../services/slices/burger-constructor'
 import { useDispatch } from 'react-redux'
 import { DRAG_TYPE } from '../../utils/constatnts'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 interface IBurgerElement {
   index: number

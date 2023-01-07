@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styles from './tab-component.module.css'
 import { Cart } from '../Cart/cart'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 interface IngredientProps {
   name: string

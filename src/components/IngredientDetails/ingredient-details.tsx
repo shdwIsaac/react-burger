@@ -3,7 +3,7 @@ import styles from './ingredient-details.module.css'
 import { useParams } from 'react-router-dom'
 import { ingredientsSelector } from '../../services/slices/ingredients'
 import { useAppSelector } from '../../services/slices'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 export const IngredientDetails: FC = () => {
   const { ingredients } = useAppSelector(ingredientsSelector)

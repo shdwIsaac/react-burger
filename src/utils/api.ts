@@ -1,6 +1,6 @@
 import { getCookie, setCookie } from './utils'
 import { BASE_URL } from './constatnts'
-import { IUser } from '../Abstraction/IUser'
+import { IUser } from '../abstraction/IUser'
 
 export const tokenApi: string = BASE_URL + 'auth/token'
 
@@ -149,11 +149,11 @@ interface CustomRequestInit extends RequestInit {
   headers: HeadersInit
 }
 
-interface CustomResponse extends Response {
-  success: boolean
-}
+// interface CustomResponse extends Response {
+// success: boolean
+// }
 
-export const fetchWithRefresh = async (url: string, options: CustomRequestInit): Promise<CustomResponse> => {
+export const fetchWithRefresh = async <T> (url: string, options: CustomRequestInit): Promise<T> => {
   try {
     const res = await fetch(url, options)
     return await checkResponse(res)

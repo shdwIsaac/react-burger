@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 import { useDrag } from 'react-dnd'
 import { DRAG_TYPE } from '../../utils/constatnts'
 import { Link, useLocation } from 'react-router-dom'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 import { useAppSelector } from '../../services/slices'
 
 interface ICart {

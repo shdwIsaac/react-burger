@@ -67,6 +67,10 @@ export const App: FC = () => {
                        element={<ProtectedRoute><ProfilePage/></ProtectedRoute>}/>
                 <Route path='/profile/orders'
                        element={<ProtectedRoute><ProfileOrdersPage/></ProtectedRoute>}/>
+                <Route path='/profile/orders/:id'
+                       element={<ProtectedRoute><ProfileOrdersPage/></ProtectedRoute>}/>
+                <Route path='/feed' element={<NotFound/>}/>
+                <Route path='/feed/:id' element={<NotFound/>}/>
                 <Route path='/' element={<HomePage/>}/>
                 <Route path='*' element={<NotFound/>}/>
               </Routes>

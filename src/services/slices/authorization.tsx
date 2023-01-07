@@ -1,4 +1,4 @@
-import { Action, createSlice, ThunkDispatch } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import {
   fetchWithRefresh, forgotPasswordApi,
   loginApi, logoutApi,
@@ -9,8 +9,8 @@ import {
   userApi
 } from '../../utils/api'
 import { deleteCookie, getCookie, setCookie } from '../../utils/utils'
-import { RootState } from './index'
-import { IUser } from '../../Abstraction/IUser'
+import { AppDispatch, RootState } from './index'
+import { IUser } from '../../abstraction/IUser'
 
 const initialState = {
   isAuthChecked: false,
@@ -121,13 +121,17 @@ export const {
 
 export const authorizationSelector = (state: RootState): RootState['authorization'] => state.authorization
 
+interface IUpdateUser {
+  success: boolean
+  user: IUser
+}
+
 export function getUser () {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     dispatch(getUserRequest())
-    return await fetchWithRefresh(userApi, optionsGetUserRequest())
+    return await fetchWithRefresh<IUpdateUser>(userApi, optionsGetUserRequest())
       .then(data => {
         if (data.success) {
-          // @ts-expect-error
           dispatch(getUserSuccess(data.user))
         }
         return data.success
@@ -141,7 +145,7 @@ interface ILogin {
 }
 
 export function signIn (form: ILogin) {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     dispatch(loginRequest())
     return await request<IRegister>(loginApi, optionsPostLogin(form))
       .then(data => {
@@ -168,7 +172,7 @@ interface IRegisterForm extends IUser {
 }
 
 export function register (form: IRegisterForm) {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     dispatch(loginRequest())
     return await request<IRegister>(registerApi, optionsPostRegisterRequest(form))
       .then(data => {
@@ -189,7 +193,7 @@ interface ISignOut {
 }
 
 export function signOut () {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     await request<ISignOut>(logoutApi, optionsPostLogoutRequest())
       .then(data => {
         if (data.success) {
@@ -204,12 +208,11 @@ export function signOut () {
 }
 
 export function updateUser (form: any) {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     dispatch(updateUserRequest())
-    await fetchWithRefresh(userApi, optionsPatchUserRequest(form))
+    await fetchWithRefresh<IUpdateUser>(userApi, optionsPatchUserRequest(form))
       .then(data => {
         if (data.success) {
-          // @ts-expect-error
           dispatch(updateUserSuccess(data.user))
         }
         return data.success
@@ -227,7 +230,7 @@ interface IForgotPasswordForm {
 }
 
 export function forgotPassword (form: IForgotPasswordForm): boolean | unknown {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     dispatch(forgotRequest())
     return await request<IForgotPassword>(forgotPasswordApi, optionsPostForgotPasswordRequest(form))
       .then(data => {
@@ -242,20 +245,24 @@ interface IResetPassword {
   token: string
 }
 
+interface ISuccessResetPassword {
+  success: boolean
+  message: string
+}
+
 export function resetPassword (form: IResetPassword) {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
-    return await request(resetPasswordApi, optionsPostResetPasswordRequest(form))
+  return async function (dispatch: AppDispatch) {
+    return await request<ISuccessResetPassword>(resetPasswordApi, optionsPostResetPasswordRequest(form))
       .then(data => {
         dispatch(forgotSuccess())
         localStorage.removeItem('reset')
-        // @ts-expect-error
         return data.success
       }).catch(error => dispatch(forgotError(error)))
   }
 }
 
 export function checkAuth (): any {
-  return async function (dispatch: ThunkDispatch<RootState, void, Action>) {
+  return async function (dispatch: AppDispatch) {
     const token = getCookie('accessToken')
     if (token != null && JSON.parse(atob(token.split('.')[1])).exp * 1000 > Date.now()) {
       dispatch(loginSuccess())

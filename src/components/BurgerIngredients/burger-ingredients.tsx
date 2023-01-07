@@ -9,7 +9,7 @@ import { modalSelector } from '../../services/slices/modal'
 import { getDistanceBetweenElements } from '../../utils/position-function'
 import { INGREDIENT_TYPE } from '../../utils/constatnts'
 import { useAppSelector } from '../../services/slices'
-import { IIngredientElement } from '../../Abstraction/IIngredientElement'
+import { IIngredientElement } from '../../abstraction/IIngredientElement'
 
 export const BurgerIngredients: FC = () => {
   const { ingredients } = useAppSelector(ingredientsSelector)
