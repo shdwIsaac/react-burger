@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from 'react-router-dom'
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
 import { authorizationSelector } from '../services/slices/authorization'
 import { useAppSelector } from '../services/slices'
 

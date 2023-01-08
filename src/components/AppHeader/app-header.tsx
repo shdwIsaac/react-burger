@@ -15,7 +15,7 @@ export const AppHeader: FC = () => {
             <BurgerIcon type={(isConstructor == null) ? 'secondary' : 'primary'}/>
             <p className={'pl-2 text text_type_main-default ' + ((isConstructor == null) ? 'text_color_inactive' : '')}>Конструктор</p>
           </Link>
-          <Link to='/' className={styles.elementHeader}>
+          <Link to='/feed' className={styles.elementHeader}>
             <ListIcon type="secondary"/>
             <p className="pl-2 text text_type_main-default text_color_inactive">Лента заказов</p>
           </Link>
